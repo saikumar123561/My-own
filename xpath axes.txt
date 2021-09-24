@@ -1,0 +1,33 @@
+
+
+
+Xpath Axes
+===========
+
+Selenium Locators - Part 3 | Advanced X Path with Axes Methods        --->   youtube   -->  
+
+
+-->  child:        //tagname[@id="name"]/child::tagname
+
+-->  parent:       //*[@id="name"]/parent::tagname
+
+-->  following:       //*[@id="name"]/following::tagname          -->       following elements of current node
+
+-->  preceding:       //*[@id="name"]/preceding::tagname                 -->   preceding element of current node
+
+-->  following-sibiling:       //*[@id="name"]/following-sibiling::sibiling tag[@class="xxx"]             -->      younger
+
+-->  preceding-sibiling:       //*[@id="name"]/preceding-sibiling::previous tag[@class="xxx"]              -->   elder
+
+-->  Ancestor:           //*[@id="name"]/ancestor::tagname          (or)            //*[@id="name"]/ancestor::*           -->  grandparent, parent etc
+
+-->  Descendant:     //*[@id="name"]/descendant::tagname      -->    grand child
+
+
+
+
+
+fb:  //input[@id='u_3_2_vK']/ancestor::div[@id='reg_form_box']//div[@class='mbm _1iy_ _a4y rfloat _ohf']
+
+
+

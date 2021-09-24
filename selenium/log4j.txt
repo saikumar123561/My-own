@@ -1,0 +1,50 @@
+what is log?
+A) capturing activities at the time of program execution
+
+types of logs
+
+info, warning, error, fatal
+
+Q) how to genrate logs?
+A) using Apache log4j api.properties file
+
+
+Q) where to create this file?
+A) src/main/resources/log4j.properties   (we need to write in the form of key and value)
+
+
+
+consoleAppender is the appender for "console"
+
+RollinFileAppender is the appender for "file"
+
+
+
+
+
+
+===========================================================================================================
+
+
+
+cookies are generally temporary files
+
+types : session cookies, persistent cookies 
+
+seesion cookies: once we close the browser that session will be closed and ultimately the cookies will be deleted.
+persistent cookies: even if we close the browser our data which is present inside the cookies will be save on our file system
+
+parameters: Name, Domain, Path, Expiry Date, Secure Connection
+
+will see how can we manage by browser
+
+
+===========================================================================================================
+
+Q) Handling 'Accept All Cookies' option using Selenium WebDriver?
+
+if we don't accept then this app doesn't have the permission to add the cookies to the browser   (app may not work properly)
+
+driver.findElement(By.xpath("xxxxxxxxxx")).click();
+
+===========================================================================================================

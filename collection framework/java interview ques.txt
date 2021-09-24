@@ -1,0 +1,85 @@
+Arrays
+===========
+
+1) interview question. how to sort Array in ascending order?  -->  we can iterate in 2 ways
+2) how to remove the duplicates from array
+3) how to find the  duplicate no/word in array
+4) i want do searcing in arrays
+
+
+
+
+List
+=========
+1) i have a list with no|names i want to print in asc order  -->  Collections class
+2) i have a list with no|names i want to print in des order  -->  in collections class reverse metho
+3) how to remove the duplicates from arraylist   -->  3 ways
+4) i have a list with numbers i want to get min no and max no
+5) how to find the duplicates elements from list
+6) i have a list i want to remove the duplicates and also i want to perform sorting (in ascending)  -->  using treeset
+
+
+arrays
+collection framework
+utility classes
+cursors
+generics
+
+
+Q) diff btw String and StringBuffer? | diff btw String, StringBuffer and StringBuilder? | diff btw StringBuffer and StringBuilder? 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q) how to fetch the values from set in order  
+we can use linkedhashset and iterate the elements 
+we can convert set to list and iterate the elements
+
+public class Settt {
+public static void main(String[] args) {
+	Set set = new LinkedHashSet<>();
+	
+    set.add("sai");
+    set.add("kumar");
+    set.add("april");
+    
+    Iterator itr = set.iterator();
+	
+    while(itr.hasNext())
+    {
+    	Object ob = itr.next();
+    	String st = (String) ob;
+    	System.out.println(st);
+    }
+}
+
+}
+
+
+                                                           or
+public class Settt {
+public static void main(String[] args) {
+	Set set = new HashSet<>();
+	
+    set.add("sai");
+    set.add("kumar");
+    set.add("april");
+    
+    List list = new ArrayList<>(set);
+    
+    Iterator itr = list.iterator();
+	
+    while(itr.hasNext())
+    {
+    	Object ob = itr.next();
+    	String st = (String) ob;
+    	System.out.println(st);
+    }
+}
+
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,53 @@
+14 April & 15 April
+
+Through ITesResult we are tracking the status of the TC
+if the TC is failed | skip we are taking screenshot
+we implemented this screenshot implementation as part of ScreenshotUtility interface
+we are taking screenshot using getScreenshotAs() and we are taking in the form of File using OutputType interface    -->        using                                                                                                                                                                                                 getScreenshotAs(OutputType.File);
+and we are copying the file to specific location using FileUtils class              -->        FileUtils.copyFile(src, new File(dest));
+
+
+
+public void afterTCExecution(ITestResult result)  {                                            //ITestResult is a listner
+
+if(result.getStatus() == ITestResult.FAILURE) {                                                    //tracking the TC status      
+ScreenshotUtility.getScreenshotAs();                                                                      
+Syso("TC is Failed so taking screenshot for : " + tcName);
+extentTest.log(LogStatus.FAIL, "TC is Faile : " + tcName);
+
+----------------------------------------------------------------------------------------------------
+
+interface ScreenshotUtility extends Base_Test {
+
+public static void takeScreenshot()  {
+TakeScreenshot shot = (TakeScreenshot) Base_Test.getDriver();
+File file = shot.getScreenshotAs(OutputType.FILE);                                 //OutputType is an interface      FILE, BASE64, BYTES
+FileUtils.copyFile(file, new File("xxxxxxxxxxxxxxxxxxx+tcName_".jpeg"));                       //to copy the file in specific location
+
+}
+
+}
+
+
+=============================================================================================================
+
+
+Reports
+=================
+
+By using ExtentReports API we are generating html reports
+
+
+ExtentReports extentReports = new ExtentReports("location");             --->              @BeforeTest
+
+ExtentTest extentTest = extentReports.startTest(TCName);                      --->               @BeforeMethod
+
+extentTest.log(LogStatus.FAIL, "message");
+extentTest.log(LogStatus.PASS, "message");                                                  --->                @Test, @AfterMethod
+extentTest.log(LogStatus.SKIP, "message");
+
+extentReports.endTest(extentTest);                                                                --->                  @AfterMethod
+extentReports.flush();     
+                                                                                   
+extentReports.close();                                                                                          --->                    @AfterTest
+

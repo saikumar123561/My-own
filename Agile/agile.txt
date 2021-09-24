@@ -1,0 +1,174 @@
+
+product backlog    -->   contains entire req of the project. req prioritize by PO. and brings top items to the team.
+
+sprint planning     -->  during this meeting we estimate the story points, we plan what are all the stories to be develop and test for the current sprint.
+
+sprint backlog   -->  the output of sprint planning is sprint backlog. req for the current sprint. create sprint and add user stories.
+
+sprint    -->     we usually have 2 weeks of sprint during this sprint dev write the code parallely we write the test, we have daily standup calls where we discuss about the progress of the sprint, working on assinged stories
+
+like what we have completed, what are we working on, as well as any block items / issues we highlight
+
+increment    -->   the output of sprint is potentially shippable product
+
+sprint review   -->   once the story is completed we give demo to PO take the feedback and finish the sprint. 
+if any new requiremtns from PO will accomodate in the next sprint
+
+retrospective calls   -->   once the sprint is completed we have retrospective meeting we meet together we discuss during the sprint what went well and what went wrong and best practices to improve the process.
+
+repeat the workflow for each sprint
+
+===========================================================================================================
+
+product owner    -->   someone who represent client or stake holders. client give req to PO. we will get req from PO. prioritize the req. 
+Scrum master     -->  manage the scrum  (scrum meeting, retrospective, any blockers, any conflicts btw Dev and testers .....)
+
+uset stories:   as a user, i need ................................. so that  .................................  by PO
+
+===========================================================================================================
+
+agile testing:
+=============
+
+it's methadology not testing
+
+waterfall model and expalin drawback
+
+terms of agile methadology
+   - backlog  --> is nothing but requirements list
+   -Story   -->  each req will be div into stories. a story is nothing but req
+   -Jira  -->  all these work flow wiil be managed in a tool called jira
+   -story points  -->   
+   -sprint planning session   -->     (dev, qa, client, scrum master  -->  scrum master asks client about his priority), within the time period can deliver the these
+   -sprints  (2 weeks, 1 month)
+   -scrum master -->  he is the one who is running agile methadolaoy | master of the project 	| his responsiblity is to ontime sprints are getting released
+   -prioritizing -->  done by PO
+   -scrum meeting   -->   everyday  10-15min   (dev, qa, client will be involve scrum master initiate this meetings).
+   -retrospective calls  -->  organized by scrum master, after u sign off all u meet together and discuss wt we have done well in the previous sprint are there any changes needs to be implemented, what did go well, wt didn't go well, wt are the achivements 
+     ex: from qa side time line is not okay   (we have to suggestion what went good in the previous sprint and wt need to be improved)
+
+advantages: daily meetings, collobaration will be more, client satisfaction  
+
+we have a huge sprint backlog in our company based on the backlog list 
+
+
+
+
+
+interview questions:
+======================
+
+Q) adv of agile methadology?
+client is very much satisfied
+more colloboration     (daily standups)
+we know what are the chages happening in the project   we can do the work collectively
+increased over the deleverables.   what is focused in the current sprint
+fail fast
+
+
+Q)  can u change the length of sprint in project?
+A) yes definetly based on necessity from the project management team decides. product owner and scrum master decision.
+
+
+
+Q) what is retrospective meeting and why it is imp?
+very imp it will help to improve our process,  everytime after sprint all sit togethter 
+wt happened in the last sprint how well we perfrom
+what are the issues faced and why these issues and how can we recover these issues in the next sprint 
+we can share best practices to continue 
+it leads to the success of the project
+
+                                                           
+============================================================================================================
+
+                                                                                                             SDLC
+
+SDLC is a process used to design, develop and test the software. The software development is divided into separate phases.				
+
+requirement gathering				
+system analysis/analize the requirements		
+designing				
+coding 				
+testing				
+deployment				
+maintenance
+
+
+============================================================================================================
+
+                                                                                                  waterfall model  vs Agile
+
+
+In waterfall model ll the phases of SDLC will funtion one after the other in linear manner that is the outcome of one phase acts as an input to the other phase and so on	
+
+but here the drawback is if the customer comeup with new requirements we cannot accept as we don't have scope to move back to previous phase and make the changes.
+
+where as
+
+Agile is a software development methadology to build software continuously using short iterations of 1 to 4 weeks so that development is aligned with the changing bussiness needs. In this model we take customer feedback after completing each iteration. so if the customer give any new requirements we can make changes. 
+
+advantages
+==========
+here the client and team know exactly what is complete and what is not.					
+after every sprint we can give a piece software to the customer. customer is very much satisfied.
+
+============================================================================================================
+
+what are the terms used in agile process?     -->  sprint
+who is ur product owner?        from client side | company side 
+who will finalise the req         -->        PO
+
+
+
+SDLC
+
+Software development process is divided into distinct phases.
+waterfall is structured software development methadology
+it is ideal for small projects
+cost will be low
+clearly defined stages, req are very well understood
+
+
+
+
+it sepates project development lifecycle into sprints
+agile methadology is known for its flexibility
+it is ideal for large size projects cost is very high
+agile model is known for its flexibility
+
+
+
+
+waterfall model is the simplest model of the software development. A 
+				
+					
+advantages: 					
+requirements are very well understood					
+clearly defined stages					
+easy to manage					
+it is the faster way to complete the project					
+it works well for small size projects		
+
+disadvantages					
+high amount of risk and uncertainiy					
+Very difficult to move back to makes changes in the previous phases.					
+It is not an ideal model for a large size project
+
+-----------------------------------------------------------------------------------------------------------------------------------
+agile is a software development methadology to build software continuously using short iterations of 1 to 4 weeks so that development is aligned with the 
+changing bussiness needs. In this model we take customer feedback after completing each iteration.					
+advantages					
+it is useful for large projects					
+here the client and team know exactly what is complete and what is not.					
+if we get any new requirements from client we can make changes					
+					
+disadvantages					
+It is not useful method for small development projects.					
+cost is very high
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,88 @@
+
+Q)where u implemented abstraction?
+
+page objects and test class  -->  we have done this insid the page class where we defined all the implementation part in page class and calling those methods in test class
+
+
+Q) Abstraction -->   page classes we used abstract concept, entire implementation part is here and just calling these methods in Tests class,  ScreenshotUtility interface also
+
+Datahiding  -->   in BaseTest class we declared all variables as private, in page classes
+
+Encapsulation   -->   in BaseTest class we declared all variables as private, as well in page class
+
+inheritance   -->     page class, test class, ScreenshotUtility  | FrameworkException extends Exception
+
+implements    -->     ReRun_Failed_TCS implements IRetryAnalyzer  and Annotation_Retry implements IAnnotationTransformer
+
+ActionsEngine is a best example of readonly class
+
+we implemented overriding in order to rerun the failed test cases
+
+Q) where u implemented constructors  -->  PropertiesReader, ExcelReader, TextReader
+
+overloading   -->    PropertiesReader  (properties class method and map interface methods)
+
+Q) where u implemented overloading in framework level?
+A) refer 17 april,   PropertiesReader class used getPropertyValue()  -->  for overloading
+
+Q) where u implemented collection framework   -->   propertiesReader, ExcelReader,
+
+Q) where u implemented cursors   -->      
+
+pojo  -->   read once write any no of times, driver instance created once and we represent in no of times
+
+interfaces  -->     ScreenshotUtility, 
+
+this, super key words     -->     PropertiesReader, ExcelReader, TextReader, DateTimeUtilities
+
+exception handling      -->  try catch inside the ExcelReader, PropertiesReader
+
+generics    -->    propertiesReader, ExcelReader, TextReader
+
+throw     -->     PropertiesReader, 
+
+throws   -->  at method level for 
+
+customized exceptions   -->   for all custom functions like propertiesReader, ExcelReader, TextReader
+=============================================================================================================
+
+Q) diff btw Hybrid and POM?
+
+in data driven with hybrid framework we are maintaining all our webelement identification in properties files
+
+instead of clubbing
+for each page we r going to maintain webelements in specific webpage  (benifit is identification and readability will be more)
+
+
+=============================================================================================================
+
+
+
+interfaces
+fn interfaces
+fully abstract interfaces
+
+
+
+
+
+
+
+Datahiding  
+Abstraction
+Encapsulation  
+inheritance   
+implements       
+readonly class
+overloading   
+overriding     
+constructors      
+collection framework 
+cursors   
+pojo       
+interfaces  
+this, super key words
+exception handling  
+generics    
+throw     
+throws

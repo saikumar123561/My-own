@@ -1,0 +1,35 @@
+
+release cycle: major, minor, hotfix
+
+
+major -->  3 months
+
+minor  -->  3 months
+
+hotfix  -->
+
+
+we have scrum master who decides how many features come in sprint1, 2, 3 .....
+
+in each sprint we pick some stories from product backlog
+we perform fn and automation testing
+
+
+
+
+
+statement -->  6 months
+
+
+ONGVXAGZI06IF
+
+
+agile 
+
+2 weeks of sprint
+
+user stories in jira what has to go in which sprint
+
+major, minor
+
+scrum master take care of sprint

@@ -1,0 +1,58 @@
+
+
+i have libraires, utilities .....
+
+understanding the flow of the framework
+through debugging i am checking each and every step how exactly it is working to get the confidence
+
+
+
+
+to identify where is the bug    -->  we need to do debugging to fix the bug
+
+approach   -->  bruteforce method
+
+
+debug:
+========
+
+breakpoint   -->  double click (one dot will be created that is called debugging point, the moment we execute the program it will stop where put the debug point)
+
+in debugging mode we solve the script issues and internal depth of the code
+
+how to get into debugging mode   -->  open perspective   -->  debug   -->   15:30
+debug as   -->  testng
+
+we have 4 debugging options are available 
+f6  -->  if u want to execute line no x
+f8  -->  move to next debug   (resume)
+f5  -->  step into   (enters inside the method)    for user defined methods u can use f5 not for custom fn
+f7  -->
+
+at run time we can check the expressions, statements values, variable values
+
+
+Assert.assertTrue(home.enterUsername());
+
+===========================================================================================
+
+* how can u speed up the selenium scripts
+
+it will disable the images loading (page will load ) automatically script will improve  (images will be hidden)
+
+we can do with chromeoptions and firefoxoptions
+
+===============================================================================================
+
+* how to create dynamic xpath
+
+randomly some texts and string are coming  (if these are dynamic in nature)
+
+
+
+
+
+
+
+
+

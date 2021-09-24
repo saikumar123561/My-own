@@ -1,0 +1,210 @@
+
+
+Q) how to convert an array of String to ArrayList?
+
+String[] names = {"sai", "sri", "manoj", "anusha"};
+
+List<String> list = Arrays.asList(names);
+
+now iterate 
+
+=============================================================================================================
+
+How to make a Collection thread safe?
+
+Collections.synchronizedList(list);
+
+Collections.synchronizedSet(set);
+
+Collections.synchronizedMap(map);
+
+examples:
+===========
+
+List
+=====
+
+we have class also
+===================
+CopyOnWriteArrayList l = new CopyOnWriteArrayList();
+Vector<String> v = new Vector<>();
+
+using synchronized method:
+==========================
+ArrayList<String> l = Collections.synchronizedList(new ArrayList<>());
+
+converting:
+================
+ArrayList<String> l = new ArrayList<>();
+List<String> l1 = Collections.synchronizedList(l);
+
+---------------------------------------------------------------------------------------------------------------
+
+Set
+=======
+
+converting
+==============
+Set<String> set = new HashSet<>();
+Set<String> set1 = Collections.synchronizedSet(set);
+
+using synchronized method:
+===========================
+Set<String> set = Collections.synchronizedSet(new HashSet<>());
+
+---------------------------------------------------------------------------------------------------------------
+
+Map
+======
+
+ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+
+HashTable<String, String> map = new HashTable<>();
+
+using synchronized method:
+==========================
+
+Map<String, String> map = Collections.synchronizedMap(new HashMap<>());
+
+converting:
+================
+
+Map<String, String> map = new HashMap<>();
+Map<String, String> map1 = Collections.synchronizedMap(map);
+=============================================================================================================
+
+Q) how to avoid ConcurrentModificationException while iterating a collection?
+
+if we are using jdk 1.5 or higher version then we can use ConcurrentHashMap and CopyOnWriteArrayList classes.
+
+and we can iterate
+=============================================================================================================
+
+Q) what is UnSupportedOperationException?
+
+this exception is thrown on invoked methods which are not supported by actual collection type.
+
+
+ex:   i will take immutable map with one single entry         
+
+Map<Integer, String> map = Collections.singletonMap(1, "sai");            -->   list and map available
+System.out.println(map.get(1));
+
+map.put(2, "kumar");            // the moment we add another key we get this "UnsupportedOperationException"
+
+=============================================================================================================
+
+Q) how many ways we can store String data in java?
+
+String   --->     String name = "saikumar";
+
+String s = new String("sai");
+
+StringBuffer       -->   StringBuffer sbf = new StringBuffer("saikumar");
+
+StringBuilder     -->   StringBuilder sbd = new StringBuilder("saikumar");
+
+char[]      -->
+
+
+=============================================================================================================
+
+Q) diff btw Stream and Collection?
+
+Collections is used to represent group of data like List, Set, Map. whreas Streams are used to perform complex data processing operations. 
+
+we can add | remove elements from collection, but we cannot add | remove elements from streams.
+
+Streams    -->  filtering, mapping, matching.
+
+=============================================================================================================
+
+Q) what is the benifit of generics?
+
+Generics allows us to provide the type of Object that a collection can contain, so if we add any element of other type it thows compile time error.
+
+to get type safety     
+
+since the code is clean we can avoid type casting
+
+=============================================================================================================
+
+Q) diff btw ArrayList and LinkedList?
+
+LinkedList is fast when we want assign | delete the values in between because it follows the concept of double LinkedList to store ele.
+ArrayList is slow when we want assign | delete the values in between because it follows the concept of dynamic array to store ele.
+
+in case of fetching the elements ArrayList is best choice LinkedList is slow
+
+ArrayList implements RandomAccess Interface so we get the elements with same speed
+where as LinkedList doesn't implements RandomAccess Interface so it is slow
+
+=============================================================================================================
+
+Q) diff btw comparable and comparator?
+
+comparable   -->  compareTo();
+
+comparator  -->  compare();
+
+=============================================================================================================
+
+Q) Diff btw HashMap and HashTable?
+
+HashMap allows null for both key and value whereas HashTable does't allow null for both key and value.
+
+HashMap is not synchronized whereas HashTable is synchronized.
+
+HashMap performance is high when comapred to HashTable.
+
+=============================================================================================================
+
+Q) diff btw Set and Map?
+
+
+=============================================================================================================
+
+Q) diff btw HashMap and TreeMap?
+
+=============================================================================================================
+
+Q) diff btw containsKey(), keySet(), values(), entrySet()?
+
+containsKey()   -->  it returns true if map
+
+=============================================================================================================
+
+Q) why Map interface does not extends Collection inteface?
+
+Map represents the data in the form of Key and Value.
+
+Collection c = map.values();
+=============================================================================================================
+
+Q) how to convert ArrayList to Array and Array to ArrayList?
+
+Array to ArrayList            -->    Arrays.asList(l); 
+===============
+
+String[] l = String {"sai", "sri", "manoj"};
+
+List<String> list = Arrays.asList(l);
+
+ArrayList to Array       -->    using toArray();
+===============
+
+
+		List<String> list = new ArrayList<>();
+
+		list.add("sai");
+		list.add("sri");
+
+		String[] st = new String[list.size()];
+		list.toArray(st);
+		
+		for(String s : st)
+		{
+			System.out.println(s);
+		}
+
+=============================================================================================================

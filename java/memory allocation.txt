@@ -1,0 +1,31 @@
+
+Memory allocation
+====================
+
+Heap memory is used for storage 
+Stack memory is used for execution	
+
+
+
+Stack
+==========
+stores methods (local variables) 
+LIFO mechanism
+(here memory allocation is taken care by JVM) when method is called it is allocated and when method return it is deallocated
+ref variables  are created here and it points to Objects
+
+
+Heap
+===========
+it stores newly created Objects   
+eden space, survivor 1, survivor 2, garbage collector will move the objects to survivor 1, survivor 2 once eden space got full
+(here memory allocation is taken care by garbage collector. it will destroy the objects that doesn't have ref)
+
+
+permanent generation | after jdk 1.8 metaspace 
+============================================
+stores static variables and static methods
+
+for permanent generation size was fixed| after jdk 1.8 metaspace it can increase the size based on requirement
+
+

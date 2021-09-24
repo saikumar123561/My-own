@@ -1,0 +1,113 @@
+
+link    -->   https://www.jdoodle.com/execute-sql-online/#
+
+
+
+Sql   (Structure query language) is the standard language
+
+with the help of sql we can interact with databases
+
+types of databases: oracle, mysql, sql server, microsoft access, excel files
+
+Queries
+=========
+
+Insert     -->    create
+Select     -->   retrive               -->       crud operations
+Update  -->  update 
+Delete   -->   delete
+
+
+i want to store the data of the emp info  -->   name, empid, designation, emailid, phno, salary
+
+product -->   name, id, seller, description, price, color
+
+the data will be stored in the form of rows and columns inside the database
+
+
+
+whenever we are creating db
+=========================
+we need to create db table 
+we should create db table Schema  (Schema means wt kind of data it is, how many columns will be there, what is the table name)
+column data types
+
+
+example:
+============
+
+create table Employees
+(
+     EmpId varchar(255),
+     EmpName varchar(255),
+     Age int,
+     PhnoneNumber int,
+     EmailId varchar(255),
+     Address varchar(255)
+);
+
+insert into Employees values(69, "sai", 26, 8655849445, "saik265email", "banjara hills");
+insert into Employees values(65, "sai", 26, 8655849445, "saik265email", "banjara hills");
+insert into Employees values(56, "sri", 26, 9655849445, "srik265email", "kharkhana");
+insert into Employees values(70, "manoj", 26, 6655849445, "manoj265email", "secundrabad");
+insert into Employees values(23, "sai", 27, 8655849445, "saikoolemail", "indra nagar");
+
+-- select * from Employees;
+
+
+-- select count(*) from Employees;
+
+-- select * from Employees where EmpName = "sai";
+
+-- select * from Employees where EmpName = "sai" and Age = 27;
+
+-- select * from Employees where Age>26;
+
+-- select * from Employees where EmpName = "sri" or Age = 27;
+
+-- select distinct * from Employees;
+
+select count (distinct EmpId) from Employees;
+
+
+
+output:
+
+69|sai|26|8655849445|saik265email|banjara hills
+69|sri|26|9655849445|srik265email|kharkhana
+69|manoj|26|6655849445|manoj265email|secundrabad
+
+
+
+example2:
+==============
+
+create table customers
+(
+      Name varchar(255),
+      country varchar(255),
+      phonenumber int,
+      email varchar(255)
+
+);
+
+insert into customers values("sai", "india", "86884943", "sai@gmail");
+insert into customers values("kumar", "india", "86884943", "sai@gmail");
+insert into customers values("peter", "USA", "26884943", "peter@gmail");
+insert into customers values("thomas", "Germany", "36884943", "thomas@gmail");
+insert into customers values("antoni", "Australia", "46884943", "antoni@gmail");
+insert into customers values("sara", "Brazil", "56884943", "sara@gmail");
+
+
+
+-- select * from customers where country = "India";
+
+-- select * from customers where NOT country = "Germany";
+
+select * from customers where country = "india" AND (name = "sai" OR name = "kumar");
+
+
+
+
+
+

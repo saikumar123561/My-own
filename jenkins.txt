@@ -1,0 +1,105 @@
+
+download jenkins                  we are accessing jenkins through ip address
+==================
+
+pre requisite:
+==============
+256 MB of RAM
+1 GB drive space
+
+older versions of java are not supported
+java 8 is supported  (32/64 bit)
+9, 10 and 12 are not supported
+
+
+jenkins version: 2.277.2 
+
+downloading through war     -->  download war   -->  cmd prompt  (java -jar location of jenkins war)
+
+.jenkins is the root dir
+
+--------------------------------------------------------------------------------------------------------------------------
+
+all the jobs will come in workspace
+
+config.xml file     -->  to make configurations of jenkins
+
+manage jenkins  -->  system configuration
+
+let's say we have 2 executors -->  it means parallely i can run only 2 builds
+
+labels  -->    for each agent we can provide a label
+we generally connect our jenkins master to mul slave machines/agent to distribute the load of jenkins
+to create slaves  -->  go to now file    -->  C:\Users\user\OneDrive\Pictures\Seli\karthik\now,   C:\Users\user\OneDrive\Pictures\Seli\karthik\jenkins\jyothi
+
+quiet period --> let's if i keep 5 then jenkins will wait for 5 seconds before running these build
+
+build triggers  -->  we can set when should be the email should trigger (build failure, success, always, unstable ...)
+
+
+global tool configuration   --> to set the path of java, git maven
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+freestyle job    -->  video 4
+
+to Trigger builds   -->   C:\Users\user\OneDrive\Pictures\Seli\karthik\jenkins
+cron job  -->   C:\Users\user\OneDrive\Pictures\Seli\karthik\cron
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+scripted pipeline:
+=======================
+
+node {
+    
+    stage('git clone') { 
+          git credentialsId: 'git', url: 'http://10.128.15.209/root/medicare.git'
+                    }
+    stage('clean') { 
+          sh "mvn clean"
+                    }
+    stage('compile') { 
+          sh "mvn compile"
+                    }
+    stage('package') { 
+          sh "mvn package"
+                    } 
+    stage('deploy') { 
+          sh "mvn deploy"
+                    }                    
+    }
+
+
+
+build triggers
+================
+poll scm
+peridically
+trigger build remotely
+build after other project builds
+
+
+build periodically: it build the project periodically irrespective to whether or not any changes were made
+   poll scm: it checks if any changes/new commits were made in scm then trigger the build. 
+
+
+how will u define post in jenkins?
+A) post is a section that done after the completion of the pipeline, and it depends upon the status of the build conditions would be successs, failure, always, aborted ....
+
+https://medium.com/@gustavo.guss/how-to-do-post-build-in-jenkins-pipeline-d1e7233909b8
+Email Notification in Jenkins | 6 Steps to Configure Email Notification | Jenkins Tutorial | Edureka  -- youtube
+Configure Jenkins Mail Notification for Any Build Failures | Jenkins Tutorial  -- youtube -- LearnITGuide Tutorials
+
+
+always --> means irrespective of the result of the build (emial notification)
+smtp port --> 465
+
+first u need to do configuration in            manage jenkins --> configure system
+
+under post build section: email notification ---> u can see 2 options 1) to send noti for every unstable build
+2) to send noti to the individuals who commited the change for the broken build.
+
+under post build section: editable email notification ---> to send noti with the log messages 
+
+for pipeline there won't be any post build section. u need to write script.

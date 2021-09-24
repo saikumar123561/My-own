@@ -1,0 +1,361 @@
+
+
+
+Q)Different ways for refreshing the page using Selenium WebDriver
+
+driver.navigate().refresh();
+
+Actions actions = new Actions(driver);
+actions.sendKeys(Keys.F5);
+
+driver.get(driver.getCurrentUrl());
+
+=============================================================================================================
+ 
+Q) Difference between getWindowHandle() and getWinowHandles() ?
+
+window handle is nothing but unique address to identify the window.
+
+getWindowHandle()   -->  get us window handle of currently focused window.  it returns in the form of String.
+
+
+getWindowHandles()     -->   get us all the window handles of all currently opened windows. it returns in the form of Set<String>
+
+saiautomations   -->   Window   -->    Windowsss class
+
+=============================================================================================================
+
+Q) How to handle hidden elements in Selenium WebDriver?
+
+we cannot handle hidden elements  in Selenium WebDriver  
+
+we get exceptions   -->   ElementNotVisible , ElementNotInteractable
+
+if we want to handle we need to go for JavaScrintExecutor. we need to execute java script code to handle hidden elements.
+
+-->  implemented in     saiautomations   -->   Window   -->    Windowsss class
+
+
+document.getElementById('xxxxx')
+document.getElementByClassName('xxxxx')
+
+jse.executeScript("document.getElementByClassName('xxxxx')");
+=============================================================================================================
+
+Q) How can you find broken links in a page using Selenium WebDriver?
+
+A) based on response codes
+
+200 Ok
+
+404 Not Found
+
+links are associated with tag anchor tag "a", and contains common attribute href   -->  collect the links   -->  send http request to each link 
+
+if we get 4xx or 5xx HTTP status codes in the response from the server, when we hit URL, then they are broken links.
+
+-->  implemented in     saiautomations   -->   Window   -->  Broken class
+=============================================================================================================
+
+Q) How to find more than one web element in Selenium WebDriver?
+
+findElements();
+
+=============================================================================================================
+
+Q) How to read a JavaScript variable in Selenium WebDriver?
+
+driver.get("https://google.com");
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		
+		String title = (String) jse.executeScript("return document.title");
+		
+		System.out.println(title);
+
+=============================================================================================================
+
+Q) what is JavaScriptExecutor and in which case it will help in Selenium ?
+
+A) JavaScriptExecutor is a predefined interface in Selenium WebDriver API.
+
+using JavaScriptExecutor we can run JavaScript code in Selenium.
+ 
+we use generally use JavaScriptExecutor in Selenium WebDriver
+when the normal click() is not working, sendKeys(), hidden elements
+Selenium don't have capability to scroll the page
+highlight the webelement
+and many more cases where Selenium WebDriver default things are not going to help.
+
+
+refer selenium package    -->   JSE classs
+
+=============================================================================================================
+
+Q) How to handle Ajax calls in Selenium WebDriver?
+
+there are some components in the page that doesn't require page load to load, that particular elements those are ajax calls.
+
+irrespective of the page load this ajax call go to the server and get the response from the server and load the elements without the need of the page getting loaded
+
+the problem is selenium wait for the all the elements to be loaded  
+
+for page loading selenium will wait but ajax calls selenium won't wait.  we need to implement waiting mechanism to handle ajax calls
+
+refer  HashMap package   -->   Ajaaxx class
+
+=============================================================================================================
+
+Q) List some scenarios which we cannot automate using Selenium WebDriver?
+
+captcha, Bar code | QR code, otp, video controls (play, pause ..... buttons)
+
+desktop app it can only automate web app
+
+=============================================================================================================
+
+Q) How you build object repository in your project framework? 
+
+i have used Page Object model and Page Factory to build Object repo in my project framework.
+
+Page Object model and Page Factory are design patterns
+
+the purpose of Page Factory is to support POM design -->  to available driver to all the locators present in the page to initialise elements.
+
+=============================================================================================================
+
+Q) What is Page Object Model (POM) ?
+
+Page Object Model is a design pattern. where we maintain page objects and test cases separately.
+each and every page in the app, we need to create a separte java class
+
+and in each page class we write the By locators available in that particular page and the  corresponding methods to interact with those elements.
+
+=============================================================================================================
+
+Q) What is Page Factory?
+
+it is a pre defined class in selenium. it supports the POM design by intialising the objects.
+
+all the web elements are identified by @FindBy annotation. this annotation is belong to the page factory.
+this annotation use the attributes like id, name, classname, xpath, css, partial linktext
+
+=============================================================================================================
+
+
+Q) What is the difference between Page Object Model and Page Factory?
+
+POM is design pattern. the purpose of it to maintain all the pages available in the app in the form of java class.
+why we creating the pages    -->   to segregate the UI elements available in the particular page.
+ 
+Page Factory is a predefined class in Selenium WebDriver. it supports the POM design by intialising the objects.
+
+
+=============================================================================================================
+
+Q) What are the advantages of Page Object Model?
+
+the main advantage is if there are any UI changes for any page, i don't require to change my test class. we need to just update in page objects class.
+
+we get more readability
+
+eleminate redundancy  -->  no duplicity
+
+=============================================================================================================
+
+Q) How can we use Recovery Scenario in Selenium WebDriver? 
+
+Recovery Scenario means it will continue the automated test execution even we get any unexpected exception. 
+
+Exception Handling   -->   try-catch block
+
+using try-catch block to create recovery scenario. we can handle the exceptions and continue the automation tests.
+
+try {
+the code which may get the exception
+} catch(Exception e) {
+
+e.printStackTracce();            -->   handle the exception
+}
+=============================================================================================================
+
+Q) How to upload a file in Selenium WebDriver?
+
+using sendKeys()                    
+
+browse, attach           prerequisite element should contain attribute type=file
+
+=============================================================================================================
+
+Q) How to download a file in Selenium WebDriver?
+
+
+Q) How to run Selenium WebDriver tests from command line? 
+
+first we need to make sure the tests are running correctly from eclipse IDE.
+
+java -jar TestOne.jar
+
+=============================================================================================================
+
+Q) How to switch to frames in Selenium WebDriver? 
+
+frames are associated with the tagname iframe
+
+
+Q) How to connect to a database in Selenium?                  -->   we need to download mysql java dependecy
+
+Connection con = DriverManager.getConnection(dburl, username,password);
+
+dburl --->   jdbc:typeofdatabase:url:portno/databasename
+
+jdbc:mysql:url:3306:sai
+
+=============================================================================================================
+
+Q) How to resize browser window using Selenium WebDriver?
+
+Dimension dim = new Dimension(500, 900);                     --> we need to provide width and height of the window.   500 -width    900 - height
+
+driver.manage().window().setSize()
+
+
+=============================================================================================================
+
+Q) How to scroll web page up and down using Selenium WebDriver?
+
+we can run Javascript code
+
+jse.executeScript("window.scrollBy(0, 400)");      -->            scroll down
+
+jse.executeScript("window.scrollBy(0, -200)");      -->            scroll up
+
+
+window.scrollBy(0, 400)
+                             hori    vertical  
+
+=============================================================================================================
+
+Q) How to perform right click (contextClick) action in Selenium WebDriver?
+
+actions.contextClick(ele).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).perform();
+
+actions.dragAndDrop(src, dest).perform();
+
+                                                                                                                           or
+actions.clickAndHold(src)
+.moveToElement(dest).release().perform();
+=============================================================================================================
+
+Q) How to highlight elements using Selenium WebDriver?
+
+jse.executeScript("arguments[0].setAttribute('style','background: yellow; border: 2px solid red')", searchBox);
+
+    java.executeScript("arguments[0].style.border='3px solid red'", id);
+    java.executeScript("arguments[0].style.background='yellow'", id);
+
+=============================================================================================================
+
+Q) Have you used cross browser testing tool to run Selenium Scripts on cloud?
+
+I have used SauceLabs to run our Selenium Scripts on Cloud
+Practical Demonstration
+Write the below code in main method
+WebDriver driver = new RemoteWebDriver(new java.net.URL(),caps);
+Search for 'SauceLabs Platform Configurator' and get the auto-generated capabilities code
+Paste the auto-generated code
+Search for 'saucelabs getting started with selenium website testing'
+And copy paste three lines of code directly inside the class
+Modify the username in the code
+Go to Account > User Settings and copy the Access Key and paste into the code
+Write some sample selenium code
+View the code here 
+Execute the code and watch under SauceLabs > Automated > Test Results
+
+=============================================================================================================
+
+Q) What are the DesiredCapabitlies in Selenium WebDriver and their use?
+
+DesiredCapabilities is a predefined class in Selenium WebDriver
+DesiredCapabilities used to set properties for browser like browser name, platform(os), version etc
+
+we can make changes to the browser like install plugins, zoom setting, blocking popups, allowing popups
+
+if we want to handle insecure certificates then we need to set desiredcapabilities
+cap.setAcceptInsecureCerts(true);                 -->         same we can achieve ChromeOptions class also
+
+
+
+
+
+We use DesiredCapabilities when we are running our tests on a remote node machine or remote cloud machine
+Using DesiredCapabilities we can specify in which browser and OS the Test should run, when the tests are running in remote node machine or cloud machine.
+
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class Demo {
+
+	public static void main(String[] args) throws MalformedURLException {
+		
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setBrowserName("chrome");
+		caps.setPlatform(Platform.WINDOWS);
+		
+		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.106:4444/wd/hub"),dc);
+		driver.get("http://omayo.blogspot.com/");
+		driver.findElement(By.name("q")).sendKeys("Arun");
+		driver.findElement(By.xpath("//input[@class='gsc-search-button']")).click();
+		
+		driver.close();
+		
+	}
+
+}
+
+=============================================================================================================
+
+Q) How to open the browser in maximized window?
+
+ChromeOptions options = new ChromeOptions();
+options.addArguments("start-maximized");
+
+WebDriver driver = new ChromeDriver(options);
+
+
+to open incognito
+=====================
+
+options.addArguments("incognito");
+
+options.addArguments("headless");
+
+=============================================================================================================
+
+Q) What is Continuous Integration? (Interview Question #58)
+
+
+Continuous Integration is a development practice
+One of the most effective Agile Practices
+where Dev push their code frequently into SCM. and the code is validated by creating a build and running automated tests against the build.
+
+Each and every check-in or integration, are generally verified by the automated tests
+
+=============================================================================================================
+
+Q) How to achieve database testing in Selenium? (Interview Question #59)
+
+
+code check in the video
+
+=============================================================================================================
+
+Q) How to create and run TestNG.xml?
+

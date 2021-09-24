@@ -1,0 +1,124 @@
+Reports:
+=============
+
+
+Q) how u worked on reports?
+A) in order to work with extentreports we have to extentreports api  (we r using "extent html reports")
+
+download freemarker and extentreports jar files
+
+
+
+
+
+
+
+
+
+
+Data driven with hybrid framework
+
+folder structure
+
+our framework begins with contains base package in that package we have 2 classes one is base test and other is actionsengine
+in base test we are writing the core driver fn like opening the browser, closing the browser with the help of testng annotations. next we are taking openbrowser method -->  here we are launching the browser with the help of @parameters
+ 
+befroeTCExecution method  -  to track which test case is going to execute, with the help of predefined method class which is coming from java.lang.reflect
+
+afterTCExecution method  - here we are tracking out which test case status and adding reports, if fails | skips take a screenshot, this screenshot utility we implemented as the part of one interface called screenshotutility (screenshotutility is our implemented methods) 
+
+before method and after method there we tracking the tc status execution and then while executing the tc there may be a chance of 
+failure, skip and success. if it is fail and skipped we are taking the screenshot and attaching to the reports
+
+next supporters -->  
+
+in this package we have custom function to work with the properties files we have predefined class called properties reader, to work with the excel sheets we have predefined class called excel reader, to work with the text files we have predefined class called text reader.
+
+
+
+-------------------------------------------------------
+base   -->    Base_Test, ActionsEngine
+
+supporters -->  PropertiesReader, ExcelReader, TextReader
+
+reports  -->  here we writing custom fn in extentreports
+
+customised exceptions  -->  FrameworkException   (here we created our own exceptions)
+
+listners  -->  ReRun_Faile_TCS, AnnotationRetry   (here we are taking the classes to rerun the failed tc's )
+
+utilities  -->  DriversPaths, ScreenshotUtility, PojoUtility(we maintain all the object creation here)
+
+//objectrepo  -->  or.properties file  (here we are maintaining all the webelment identification in the form of properties files)
+
+pageObjects   -->  Gmail_Home_Page, Ui_Home_Page
+
+testdata  -->  excel sheets   (we are maintaining out testdata)
+
+bussinessscripts  -->  TC's
+
+folders  -->  drivers, reports, screenshots, popups, confi.properties file
+-----------------------------------------------------------------------------
+
+ActionsEngine is a best example of readonly class
+
+we implemented overriding in order to rerun the failed test cases
+
+where u implemented constructors  -->  propertiesReader, excelReader
+
+overloading   -->    propertiesReader
+Q) where u implemented overloading in framework level?
+A) refer 17 april,   PropertiesReader class used getPropertyValue()  -->  for overloading
+
+where u implemented collection framework   -->   propertiesReader
+
+where u implemented cursors   -->  
+
+pojo  -->
+
+interfaces  -->
+
+this, super key words
+
+exception handling
+
+generics
+
+throw 
+
+throws 
+
+in data driven with hybrid framework we are maintaining all our webelement identification in properties files
+==================================================================================================================================
+instead of clubbing
+for each page we r going to maintain webelements in specific webpage  (benifit is identification and readability will be more)
+
+
+
+
+in utilities   -->  to avoid duplicate code  
+================================================
+DriversPaths  (interface)       --> internal implementation of launching the browser  
+ScreenshotUtility  (interface)  --> internal implementation of how to take screenshot
+PojoUtility   (class)   -->   we maintain all the object creation here
+
+
+in supporters  -->  to support our framework code
+======================================================
+
+PropertiesReader  (class)  -->  to read the data from properties files
+ExcelReader  (class)   -->   to work with excel sheets (by using it we can provide intialisation through constructor)
+
+in order to work with the properties files we have custom functions in PropertiesReader class
+in order to work with the Excel sheets we have custom functions in ExcelReader class
+
+
+
+
+
+
+interfaces
+fn interfaces
+fully abstract interfaces
+
+

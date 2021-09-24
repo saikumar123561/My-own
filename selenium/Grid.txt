@@ -1,0 +1,32 @@
+
+Grid
+========
+
+Q) when do we use?
+
+if our requirement is to distribute the selenium automation tests across mul machines having diff OS, diff browser types and diff browser versions.
+
+
+
+Q) advantages of selenium grid?
+
+it distributes the selenium automation tests across mul machines having diff OS, diff browser types and diff browser versions.
+
+Selenium when used with TestNG, can enable the parallel execution of tests across the mul machines, which will reduce the execution time of tests without reducing the performance of the machines.
+
+========================================================================================================
+
+Q) What is a Hub in Selenium Grid?
+
+hub acts as a central machine to distribute the selenium automation Tests across the node.
+
+automation Tests will be available in hub
+
+========================================================================================================
+
+Q) What is a Node in Selenium Grid?
+
+where the execution of automated test takes place based on the request from hub
+node machine can be diff platform from hub machine
+========================================================================================================
+

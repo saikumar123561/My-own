@@ -1,0 +1,51 @@
+
+
+ChromeOptions
+===============
+
+pageLoad Strategy    -->    to speed up the execution
+==================
+
+options.setPageLoadStrategy(PageLoadStrategy.EAGER);     -->   NORMAL, NONE
+
+
+maximize                  it will open the window in maximize mode at the time of launching the browser  /    it works for chrome and edge
+===========
+
+options.addArguments("start-maximized");
+
+to open incognito
+=====================
+
+options.addArguments("incognito");
+
+
+proxy servers               -->   whenever we use the proxy everything goes via this proxy only
+=============
+
+we get proxy address from the company   (we need to run the app at proxy level)
+
+options.addArguments("--proxy-server = http://17.43.55.35:8081");
+
+
+headless browser
+==================
+
+
+ex:
+
+ChromeOptions options = new ChromeOptions();
+
+options.addArguments("headless");
+
+WebDriver driver = new ChromeDriver(options);
+
+
+
+
+
+
+
+
+
+

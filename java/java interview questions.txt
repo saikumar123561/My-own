@@ -1,0 +1,368 @@
+
+Q) what is String, StringBuffer and StringBuilder?
+
+A) All these 3 are used to represent the group of characters written inside the double quotes.
+
+=============================================================================================================
+
+Q) why String Objects are immutable where as StringBuffer and StringBuilder Objects are mutable?
+
+A) Once we assign a value to the String variable we cannot perform changes to that variable, if we try to change then new Object is going to create.
+
+because several ref pointing to the same Object. if we try to change, remaing ref will be impacted. so String is immutable.
+
+
+But in case of StringBuffer for every value we create a separate Object by using ref. 
+if we try to change the remaining ref will not be impacted.
+
+=============================================================================================================
+
+Q) when should go for String, StringBuffer and StringBuilder?
+
+if the content is fixed and will not change frequently then we can go for String Object, because Once we assign a value to the String variable we cannot perform changes to that variable, if we try to change then new Object is going to create. so it occupies more memory.
+
+
+if the content change frequently then choose StringBuffer because the changes will be performed on existing Object only instead of creating new Object. and if our req is thread safety then StringBuffer is highly recommended.
+
+if the content change frequently and thread safety is not requied then we can go for StringBuilder
+
+=============================================================================================================
+Q) Abstract class
+
+whenever we know the implementation part partially then we can go for abstract. then we can declared as abstract. 
+you cannot create Object of abstract classs.
+it may or may not contains abstract methods.
+
+when we declare class as abstract and inside the methods as static then it becomes read only class.
+
+Abstract method
+
+A method that is declared as abstract
+No method body, we cannot write code.
+child classes are responsible to provide implementation of abstract methods.
+ 
+=============================================================================================================
+
+Q) can i call Abstract method from non abstract method?
+
+yes, we can call Abstract method from non abstract method in a abstract class.
+
+=============================================================================================================
+
+Q) can we declare class as abstract without abstract methods?
+
+yes, we can. it allows both abstract methods and non abstract methods also.
+
+
+=============================================================================================================
+
+Q) can final class contains abstract methods?
+
+No, final class cannot contain abstract methods but abstract class can contains final methods.
+
+=============================================================================================================
+
+Local, Static and Instance variables in Java | Learn Coding  -->  youtube  -->  10:00
+
+Q) what is the main diff btw instance variable and static variable?
+
+instance variables:
+----------------------------
+instance variable declared inside the class. 
+cannot reinitialized directly inside the class. to reintialize we should do inside method /constructors
+we need to access instance variablefor through object ref 
+for instance variables memory will be created when we create an object of class and destroyed when the object is destroyed
+
+static variables:
+-----------------------
+static variables declared inside the class
+cannot reinitialized directly inside the class. to reintialize we should do inside method /constructors
+we need to access static variable through classname
+for static variable only single memory will be created
+
+local variables:
+-----------------------
+declared inside the methods, as method parameters, control statements, inside constructors
+scope is within that limit only
+
+=============================================================================================================
+
+Q) use of static keyword in java?
+
+static is a keyword By using static we can do memory management. 
+if we declare a variable and method as static we can call through class name instead of creating object.
+
+whenever there is a requirement to share variable to mul Objects of class instead of creating separate Object then we can go for static keyword.
+
+=============================================================================================================
+ 
+Q) diff btw == and .equals?
+
+.equals() is a method in java used to compare two Strings, while
+== is operator to check whether the two Strings are referring to same Object.
+
+=============================================================================================================
+
+Q) can we apply inheritance concept for static method?
+
+yes, inheritance can be apply for static methods as well as main methods also
+hence while executing child class, if the child class doesn't contain the main method then parent class main method will be executed.
+
+=============================================================================================================
+
+Q) Explain public static void main(String[] args)?
+
+it is a starting point for execution of java program. it is predefined method.
+
+public -->  access modifier. public means that this method can be accessible by any class.
+
+static -->  it is a keyword. it defines that this method can access without creating Object of a class.
+
+void   -->  it defines the method return no value.
+
+main  -->  it is the name of the method that JVM can identify it as a main method.
+
+String args[]  -->  it is a parameter passed to the main method.
+
+
+we cannot change these becuase the jvm has been designed like that
+=============================================================================================================
+
+Q) diff btw Collections.synchronizedMap(map)   and ConcurrentHashMap?
+
+Collections.synchronizedMap(map)  is a method and ConcurrentHashMap is an implementation class of map interface.
+
+by using Collections.synchronizedMap(map) we can make map object thread safety, it locks whole map Object.
+
+but ConcurrentHashMap also provides the thread safety but it does not lock the whole map, it just locks part of it.
+
+=============================================================================================================
+
+Q) when we should go for ArrayList and LinkedList?
+
+if our requirement is fetching(retrieving) the elements then ArrayList is best choice.
+
+if our requirement is frequent insertion and deletion operations then LinkedList is best choice.
+
+=============================================================================================================
+
+Q) can u expalin the final keyword?
+
+=============================================================================================================
+
+Q) what is exception? diff btw checked and unchecked exceptions?
+
+An exception is an unwanted event that disturbs the normal flow of program.
+
+checked exceptions:  the exceptions which are checked  by the compiler for smooth execution of the program at runtime is called checked exceptions. we can handle with try-catch block or throws keyword.
+
+ex: FileNotFoundException, IOException, InterruptedException, ClassNotFoundException
+checked excpetions are handled by try-catch block and throws keyword.
+
+unchecked exceptions:  the exceptions which are not checked by the compiler is called unchecked exceptions.
+
+ex: NullPointerException, ArrayIndexOutOfBoundException, IllegalArgumentException, IllegalStaleException
+selenium  -->  noSuchElementException, StaleElementException
+
+unchecked exceptions we can handle by following the standards.
+=============================================================================================================
+
+Q) diff btw List and Set?
+
+List allows null elements whereas Set allows only one null element.    (because set doesn't allows duplicates)
+
+=============================================================================================================
+
+Q) Diff btw HashMap and HashTable?
+
+HashMap allows null for both key and value whereas HashTable does't allow null for both key and value.
+
+HashMap is not synchronized whereas HashTable is synchronized.
+
+HashMap performance is high when comapred to HashTable.
+
+=============================================================================================================
+
+How to make a Collection thread safe?
+
+Collections.synchronizedList(listobjectref);    
+
+Collections.synchronizedSet(set);
+
+Collections.synchronizedMap(map);
+
+=============================================================================================================
+
+Q) when to use HashMap and TreeMap?
+
+if our requirement is sorting then we should go for TreeMap. By default it provides natural sorting order (ascending order). 
+if we want descending order then our class should implement Comparator interface.
+
+if our requirement is to maintain insertion order then should for HashMap.
+
+=============================================================================================================
+
+Q) what is synchronized method and synchronized block?
+
+synchronized is a keyword and it is applicable for methods and blocks but not for class and variables.
+
+if a method is declared as synchronized then at a time only one thread is allowed to execute.
+
+if very few lines of the code required synchronization then it is not recommended to delcare entire method as synchronized. 
+we can put those lines inside the in synchronized block. so that waiting time will be reduced & improves performance of the system.
+
+=============================================================================================================
+
+what is DeadLock?
+
+if 2 threads are waiting for each other forever then it is called DeadLock
+
+=============================================================================================================
+
+Q) diff btw default and protected modifiers?
+
+if u don't specify access modifier to the methods and variables then jvm will assign default modifer.
+
+public  -->   we can access anywhere, open for all classes.
+
+protected   -->   within the package or sub class within the class.
+
+default -->  we can access with in the package.
+
+private   -->  we can access within the class.
+
+public   -->  protected -->  default   -->  private
+=============================================================================================================
+
+Q) OOPS 
+
+what is class and object?
+
+abstraction? how it is achieved?
+
+encapsulation? how it is necessary?
+
+inheritance? types?
+
+polymorphism?  overloading vs overriding?
+
+representing same thing in many forms is called polymorphism
+=============================================================================================================
+
+Q) what is class and what is Object?
+
+A class is a container where we write the programs. from which Objects are created. inside the class we define variables and methods 
+variables are used to store the data value and methods are used to provide the implemenation part.
+
+An object is instance of class
+
+=============================================================================================================
+
+Q) what is static?
+
+static keyword in java is used for memory management mainly.
+
+it applies at class, variable, method, block
+
+if we method | variable as static we can access without creating Object. through classname we can access.
+
+whenever there is a requirement to share method or variable to mul Objects of class instead of creating separate Object then we can go for static keyword
+
+=============================================================================================================
+
+Q) what do u mean by Constructor?
+
+The purpose of the Constructors is to provide the initialization of variables.
+
+syntax of Constructor:
+======================
+
+Constructor has same name as Classname
+
+it doesn't have return type, inside the constructor the first statement should be either super() or this()
+
+the constructor can be overloaded
+
+constructors are going to be executed whenever we create an object
+
+types of constructors : default and parameterized.
+=============================================================================================================
+
+Q) what is meant by local variable and instance variable?
+
+The variables declared inside the method, method parameters, constructors, Constructor parameters, control statements are called local variables. The scope is within the limit only.
+
+An instance variable is defined inside a class and outside the method. and the scope is through out the class
+for every Object a separate copy of instance variable will be created
+
+=============================================================================================================
+
+Q) what is inheritance?
+
+Q) what is encapsulation?
+
+encapsulation is nothing but wrapping data into a single unit. it protects the code from others.
+it is also known as data hiding.
+
+=============================================================================================================
+
+Q) what is polymorphism?
+
+represenitn one thing in many ways
+
+overloading  vs overriding
+
+=============================================================================================================
+
+Q) what is meant by interface?
+
+an interface is a service copy where we are going to maintain the services in the form of abstract methods.
+if we don't know the implementation part completely then we can go for interface.
+by default every method inside the interface becomes public, abstract
+by default every variable inside the interface beomes public, static, final
+to provide the implementation of abstract methods child classes are responsible
+
+inside the interface we can take default, static and after jdk 1.9 private methods also. 
+=============================================================================================================
+
+Q) What is Abstract class?
+
+a class that declared as abstract is known as Abstract class. we cannot create Object of these class.
+
+it can have abstract methods, and concrete methods.
+
+=============================================================================================================
+
+Q) what is Thread?
+
+Thread is a class which implements runnable interface. from java.lang package.
+
+=============================================================================================================
+
+Q) diff btw Array and ArrayList?
+
+=============================================================================================================
+
+Q) diff btw ArrayList and Vector?
+
+Arraylist is not synchronized and it is not thread safe. 
+Vector is synchronized and it is thread safe.
+
+ArrayList is not legacy class. where as vector is legacy class.
+
+ArrayList is fast whereas Vector is slow.
+
+ArrayList increases its size 50% of its array size.
+Vector increases its size by doubling the array size.
+
+=============================================================================================================
+
+Q) exception handling keywords?
+
+finally    -->   irrespective of the exception it is going to execute
+throw   -->  used to throw a customized exception.
+
+throws   
+try    -->  it is used to handle checked exceptions.           
+catch
+

@@ -1,0 +1,64 @@
+
+Q) what is smoke testing?
+
+testing the basic and critical fn of an app before starting fn testing and regression testing to make sure it is working fine is known as smoke testing.
+it is done to verify the build is acceptable or not.
+
+
+Q) why smoke testing?         negative7
+
+this is done to avoid any critical fn missing in middle of fn testing, where we cannot perform the actual testing.
+in middle of testing if we come to know that some critical fn is missing then that will effect current sprint.
+
+
+Also known as     -->     Build verification, +ve, healthcheck of the product, skim, dry run testing, confident testing
+
+
+Q) when u do smoke testing?
+
+when we get the new build
+
+we must be ready with our test cases
+
+after doing smoke testing we send the report to all the technical teams i.e; TE and Dev 
+
+smoke -->  everyday using automation suite to check the critical fn are working as expected.
+
+=============================================================================================================
+
+smoke vs sanity
+
+smoke is done to verify the build is acceptable or not. like to check the basic and critical fn of an app befrore stariting fn testing to make sure it is working fine.
+
+whereas 
+
+sanity testing is to test all impacted areas before starting your regression testing. like bug fixes are working fine and new fn are not impacting the related modules.
+
+sanity testing might not automated but smoke testing is automated
+
+=============================================================================================================
+
+Regression Testing
+===================
+
+Before every release we do regression testing to make sure that new fn and bug fixes are not impacting the existing fn.
+
+for these our QA environment should stable before we start regression testing.
+
+=============================================================================================================
+
+ad-hoc testing
+
+testing the app randomly without looking into the requirements
+
+
+open the app in 2 diff browsers and in one of the browser i changed the password and in the second browser it is showing home page or it is asking to give credentials
+
+when?
+
+before giving the app to the customer
+=============================================================================================================
+
+
+
+

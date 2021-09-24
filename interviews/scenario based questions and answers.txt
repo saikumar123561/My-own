@@ -1,0 +1,272 @@
+
+
+Q) suppose u find a bug in production. how would u make sure that the same bug is not introduced again?
+
+'Test Coverage Matrix' should be used to record the missed case and then for future events you can never miss on those critical bugs released to production."
+
+Before every release we do regression testing, whatever the bug we saw that will be added as regression testing.
+so everytime this fn is going to be tested before going to the production.
+
+We will note it in JIRA, and make it a part of regression testing for all the future events.
+
+======================================================================================================
+
+Q) What do u do when ur developer denies Bug?
+
+we need to provide Bussiness Documentation reference by highlight which page and line covers that requirement. 
+still not convince involve PO/Bussiness Analyst for discussion
+
+
+if bug is not reproducible (means in his machine it is working)
+==========================================================
+provide screenshots of the bug, Give Timestamp on when i recognized this issue so that dev can check in app logs
+i will provide the test data 
+
+
+======================================================================================================
+
+Q) what is ur greatest challenge while doing regression testing?
+
+Due to delay in build deployment from dev. not getting enough time to do regression testing.
+we escalted many times. dev team said there are mul issues build deployment, code developement, infrastructure
+especially in agile we have small sprints. in these cases regression testing becomes biggest challege.
+
+
+Test Data issue  -->    proper test data 
+Improper selection of regression TC might skip a major regression defect to be found
+
+======================================================================================================
+
+Q) diff btw fn testing and non fn testng?
+
+fn testing verifies that app is working as per the customer requirement.
+
+non fn testing verifies the how well our app is working with respect to performance, load, security
+how well our app managing the load
+
+=====================================================================================================
+
+Q) what are the challenges u faced while performing software testing?
+
+delay in build deployment   -->   due to we don't have enough time to get much exposure to think and test
+
+Environment availability    -->   whenever we encouter this issues we raise a ticket, sometimes delay in response
+
+Requirements are frequently changing especially after writing the TC or after developing automation scripts 
+
+delay in fixing the defects from dev  
+
+
+with respect to selenium :  https://dzone.com/articles/top-11-challenges-in-automation-testing-using-sele
+
+window based popups: these are part of the operating system not browser and it is beyond Selenium's capabilities.   -->  AutoIt
+
+ Timeout or Sync Issue: most of the times we face this issue due to the elements are loaded at the specific time due to end up with test script fail. to handle this we can implement explicit, implicit ..
+
+Cross Browser Testing: selenium is widely used for automating cross browser testing as it supports mul language and os. 
+While automating cross-browser testing with Selenium some elements of the web app work in one browser and not in others.
+to handle this we need to run the test script again and again on diff browsers analyze the results. if it fails on some browsers then we have to change the locator strategy. 
+
+Identifying Dynamic Elements: the webelement attributes are frequently changing as a result test script fails
+we can handle with dynamic xpath and dynamic css selectors. and also we can use functions like starts with, endswith ......
+
+ Page Loading: some of the web pages in a web app take time to load but due to that Selenium script might not be able to identify the element. to handle using explicit to give enough time to load the elements
+
+======================================================================================================
+
+Q) what are the different levels of testing?
+
+unit  -->  done by dev to validate their own code
+
+integration  -->  to verify two components are sucessfully connected
+
+system   -->   where we perform end to end testing to verify whether the system is working as per customer requirement
+
+Acceptance testing   -->  The main Purpose of UAT is to validate end to end business flow and it is done by PO and will give the feedback. 
+UAT is done in the final phase before moving the software application to the production environment.
+
+
+======================================================================================================
+
+Q) Drawbacks in Agile u faced?
+
+very small sprints, we won't get much exposure to think and test   -->  especially when there is delay in build deployment
+frequent change in requirements       -->  especially after writing the Automation scripts
+
+======================================================================================================
+
+Q) what is ur approach when u have high priority release to be delivered in very short time?
+
+run automation suite like nightly builds
+run unit tests
+i will take high level priority bussiness TC for manual testing 
+
+
+Q) how to deal when u get last min req change?
+
+i will throughly understand the req change first 
+with this req change what are the impacted areas on our app 
+based on impact do we have enough time to test these change 
+if we don't have limit time then i will highlight this issue in standup meeting
+
+======================================================================================================
+
+Q) explain if ur project delivery is preponed?
+
+Testing is very much imp before release to the production
+
+so i will discuss for the scope to increase QA resources.
+
+
+Q) smoke vs sanity?
+
+smoke -->  everyday using automation suite to check the critical fn are working as expected.
+
+======================================================================================================
+
+Q) if small section of code in app is updated what is ur test approach in validating it?
+
+i will ask dev what are the areas he|she updated the code and i will test those areas. 
+
+======================================================================================================
+
+Q) Ad-hoc and exploratory testing?
+
+Ad-hoc testing is testing the app randomly without looking into requirements to make sure nothing is breaking
+first we need to have good knowlege about the app.
+
+exploratory testing is testing the app randomly but we don't have good knowledge about the app
+
+======================================================================================================
+
+Q) how u select the TC for regression
+
+The selection of test cases is done on the basis of code change in the module.
+
+i will choose the TC which covers major fn of the app| high priority     -->   which is used more often.
+i will choose the TC that are failing frequently 
+I will choose the TC which are modified during the current release like bug fixes, new features added, enhancements and its related dependent fn.
+Functionalities which are frequently used.
+
+======================================================================================================
+
+Q) have u ever manged writing the TC without having document?
+
+understand and exploring the existing product to come up with scenarios
+spend time with PO or seniors who worked on the tool earlier 
+going through the production bugs which found previously for product so that edge TC are not missed
+
+======================================================================================================
+
+Q) what is the first action u perform as a tester when app throws any weird errors.
+
+open dev tools   -->  i will go to console and look for any java script errors
+open network tab  -->  i will check any request responses are failed.
+verify app logs to understand the actual issue and copy that send it to dev
+
+i will provide all these info to the Dev
+======================================================================================================
+
+Q) how do u solve if there is any conflict with ur peer QA on any technical aspect?
+
+If that situation i will give the reasons and also i put my data and present it.
+
+still not convince then involve the team and discuss the conflict issue with larger audience and i will take suggestions from team about the conflict.
+
+
+======================================================================================================
+
+Q) how do we decide if TC is not ideal candidate for automation?
+
+tests which are highly dependent on data with frequent changes everytime like otp
+captcha, barcodes, two factor auth
+
+TC which cannot be automated due to technical issues like captha
+tests 
+
+because these are dynamic in nature
+======================================================================================================
+
+Q) diff btw regression and retesting?
+
+Before every release we do regression testing to make sure that new fn and bug fixes are not impacting the existing fn.
+that might be adding the features or deleting or updating or modifying
+
+testing the previously failed TC to make sure they are fixed or not.  we don't automate, we do it manually.
+
+retesting is done on failed TC. whereas regression is done on passed TC.
+
+======================================================================================================
+
+Q) what's the most intresting bug that u have found recently?
+
+button it leads to decrease in revenue, impacting customer
+
+tell why it is imp
+how u found that
+was this issue front end or back end
+
+
+arrange and save after refresh it is not saving
+after login into app not able to access particular section.
+plan purchase but he|she cannot have access. 
+======================================================================================================
+
+Q) in agile env in case u have any doubts regarding ur project how do u approach?
+
+for domain related queries, i will reach out to PO | bussiness analyst
+
+======================================================================================================
+
+Q) as a tester how u differentiate dummy login pg and ur app pg?
+
+app logs, every activity will be recorded and will be placed in logs
+
+======================================================================================================
+
+Q) how will u tell if enough TC hve been created to test a product?  | How you decide when to stop writing test cases?
+
+from each bussiness req do we identified enough one test scenario.
+from each TS have we derived all the TC like +ve and -ve TC
+
+at last using Requirement Traceability Matrix map our TC with req specification.
+
+
+======================================================================================================
+
+Q) what are the things u consider before going for regresssion testing?
+
+we need to have Test suite for Regression
+we need to check our regrssion suite TC to verify all the tc are covered or not as part of regression and if changes required we need to make changes and review them.
+for these our QA environment should stable before we start regression testing. and go for the regression testing.
+
+=====================================================================================================
+
+Q) Best Practices of Regression Testing?
+
+--> Prepare a Test suite for Regression and Automate all the test cases of the test suite..
+
+--> Update the Regression suite whenever it is required like if any new defect which is not covered in the test case is found, and a test case for the same should be updated in the test suite so that the testing is not missed for the same next time. The regression test suite should be managed properly by continuously updating the test cases.
+
+--> Execute the Regression test cases whenever there is any change in the code, the bug is fixed, new functionality is added, an enhancement to the existing functionality is done, etc.
+
+--> Create a test execution Report which includes the Pass/Fails status of the executed test cases.
+
+======================================================================================================
+
+Q) is regression testing done manually or automated?
+
+first we need to do regression testing for old build and for new build we will do either manul or automation testing on impacted areas and bug fixes
+
+
+Q) what is the best time to do regression testing?
+
+whenever changes are happened in build | bug fixes 
+Before every release we do regression testing to make sure that new fn and bug fixes are not impacting the existing fn.
+
+
+
+
+
+
+

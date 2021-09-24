@@ -1,0 +1,109 @@
+
+
+domain knowledge
+understand the fn of the app
+exploring the app
+test plan template
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hi ...,
+
+while exploring the app we got the below few doubts. Could u please take out some time for answering them 
+so that we will be done exploring and understanding the app.
+
+Regards,
+sai.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Planning
+--------------------------
+
+Scope:
+------------
+
+Inclusions   (in scope)
+----------------
+. Register
+. Login
+..........
+
+Test Env
+--------------: 
+windows 10  -->  chrome
+windows 10  -->  firefox
+windows 10  -->  IE 11
+Windows 10 -->  Edge
+Mac OS  -->  Safari
+Linux OS  -->  firefox
+Android mobile devices  -->   chrome
+Iphone device  -->  safari
+
+what are the diff test env that we have to perform testing of this app    -->  question
+
+
+exclusions:
+-------------------
+all the features except that are mentioned in inclusions
+third party app or third party payment gateways
+
+
+Test Strategy:   (sometimes test strategy will be a diff documents)
+----------------------
+Step#1  -->  word
+using step#1 we create the TC's
+
+Step#2  -->  word
+we do in depth testing
+
+Step#3  -->  word
+best practices
+
+Roles and Responsibilities:
+---------------------------------------
+
+Test Schedule:
+-----------------------
+
+Test Deliverables:
+-----------------------------
+
+Entry and Exit Criteria:
+--------------------------------
+
+Tools:
+-----------
+
+====================================================================================================
+
+Test Scenario   -->   what to test
+
+Test Cases  -->  how to test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

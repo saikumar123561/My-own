@@ -1,0 +1,39 @@
+
+ChromeOptions   -->  https://defectracker.com/2019/04/25/cucumberoptions-parameters/
+
+
+Monochrome
+------------------------
+This option can either set as true or false (default value is false). 
+If it is set as true, it means that the console output for the Cucumber test are much more readable. 
+And if it is set as false, then the console output is not as readable as it should be
+
+==========================================================================================================
+
+
+
+
+
+
+
+@FindBy(id = "Email")
+private WebElement txtEmail;      -->  noun
+
+
+public void enterUserName(String uname) {            -->   verb
+       txtEmail.clear();
+       txtEmail.sendKeys(uname);
+} 
+
+
+package packagename
+
+import statements
+
+class
+
+instance variables
+
+constructors
+
+methods

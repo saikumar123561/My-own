@@ -1,0 +1,64 @@
+
+priority of arithemetic operators   -->    *, /, %, +, -
+
+
+=========================================================================================================
+
+
+Q) what is static variable and static method?
+The static variable is a class level variable and it is common to all the class objects i.e. a single copy of the static variable is shared among all the class objects.
+A static method manipulates the static variables in a class.
+
+
+
+public class PraTwo {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("enter the first number");
+
+		int first = scanner.nextInt();
+
+		System.out.println("enter the second number");
+
+		int second = scanner.nextInt();
+		
+		scanner.close();
+		
+		System.out.println("total : " + (first + second));
+	}
+}
+
+
+=========================================================================================================
+
+The sum of 2 bytes is an integer
+
+public class PraOnce {
+public static void main(String[] args) {
+	
+	byte b = 23;
+	byte c = 34;
+	byte result = (byte) (b + c);
+	
+	System.out.println(result);
+	
+	int result1 = b + c;
+	System.out.println(result1);
+	
+	final byte d = 24;
+	final byte e = 26;
+	
+	byte result3 = d + e;
+	
+	System.out.println(result3);
+}
+	
+	
+}
+
+=========================================================================================================
+
+

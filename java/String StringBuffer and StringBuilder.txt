@@ -1,0 +1,108 @@
+
+
+StringBuffer vs StringBuilder                       it is synchronized means after completion of thread one is then thread two is going to execute
+===========================
+
+it is mutable  (we can change the existing objects)
+StringBuffer is synchronized and  we get thread safety, we can execute only one thread at a time
+introduced in java 1.0
+
+
+StringBuilder
+
+it is mutable   (we can change the existing objects)
+StringBuilder is not synchronized and  we won't get thread safety, it executes mul thread
+introduced in java 1.5
+
+always prefer StringBuffer. 
+if we have mul threads in our app then go for StringBuilder
+if we don't have mul threads in our app then go for StringBuffer
+ 
+
+String
+===========
+
+String is immutable. once we assign a value to the String variable we cannot perform changes to the existing object. if we try to change it will create new object. it occupies memory.
+
+if u want to change the old object then go for StringBuffer and StringBuilder
+
+Ex: 
+
+		String name = "sai";
+		
+		String name2 = name.concat("kumar");
+		
+		System.out.println(name);    //sai
+		System.out.println(name2);   //saikumar
+		
+		StringBuffer sbf = new StringBuffer("sai");  
+		sbf.append("kumar"); 
+
+		System.out.println(sbf);   //saikumar
+
+	}
+}
+
+
+
+
+String vs StringBuffer and StringBuilder
+=================================================
+
+String is immutable we cannot perform changes to the existing object. it will create new object if we try to change
+
+StringBuffer and StringBuilder muttable we can perform the changes in existing object
+
+disadvantages of string:
+
+String is immutable, we cannot change the existing object
+
+String sai = "name";     --> if u want to modify (only one object is going to create SCP area)
+String sai1 = sai.concat("kumar") -->  u can modify like this -->  2 objects are going to create one is SCP area & other in heap area)
+so requires more memory. to avoid we need to use StringBuffers
+
+
+
+
+Q) Write a program to prove StringBuilder is faster than StringBuffer
+
+
+public class Stringgg {
+
+	public static void main(String[] args) {
+		Word demo = new Word();
+		demo.builder();
+		demo.buffer();
+	}
+
+	public void builder() {
+		long start = System.currentTimeMillis();
+		StringBuilder bd = new StringBuilder();
+		for (long i = 1; i < 10000000; i++) {
+			bd.append(i);
+			bd.append(" ");
+			bd.append(i);
+			bd.append(" ");
+			bd.append(i);
+		}
+
+		System.out.println("string builder : " + ((System.currentTimeMillis()) - start) + "ms");
+	}
+
+	public void buffer() {
+		long start = System.currentTimeMillis();
+		StringBuffer bf = new StringBuffer();
+		for (long i = 1; i < 10000000; i++) {
+			bf.append(i);
+			bf.append(" ");
+			bf.append(i);
+			bf.append(" ");
+			bf.append(i);
+		}
+
+		System.out.println("string buffer : " + ((System.currentTimeMillis()) - start) + "ms");
+	}
+
+}
+
+

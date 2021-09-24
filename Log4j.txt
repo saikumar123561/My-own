@@ -1,0 +1,48 @@
+
+what is log?
+capturing info/activities at the time of program execution.
+
+types/level of logs: info, warn, debug, fatal
+
+how to generate logs?    -->   using Apache log4j api
+how it works?    -->   it reads log4j configuration from log4j.properties/log4j.xml file 
+
+we don't need to go to remote machine and check logs everytime. we can monitor the logs directly from local system also.
+
+we can identify the failures/exceptions at run time
+
+
+Log4j
+==========
+
+-->  download log4j dependencies/jars
+
+-->  place Log4j.properties (or) Log4j.xml in project home dir
+
+WebDriver driver = new ChromeDriver();
+-->  Logger logger = Logger.getLogger("classname");                
+       DOMConfigurator.configure("Log4j.xml");                                         -->  if u use Log4j.xml
+
+-->  Logger logger = Logger.getLogger("class");
+       PropertyConfigurator.configure("Log4j.properties");                                           -->  if u use Log4j.properties
+
+
+logger.info("browser is opened");                         -->   for every line we write comment in the sameway this logger also works
+driver.get("url");
+
+logger.info("clicked on login button");
+login.click();
+
+so whatever messages we are passing will be logged into logfile at the backend
+
+so when we execute the program it creates the log folder in our project
+-->  if we use Log4j.xml   ---    it creates a text file "logfile.log"
+-->  if we use Log4j.properties   --    it creates a folder "Log" -- creates 3 files inside Log folder
+
+
+
+
+
+
+
+ 

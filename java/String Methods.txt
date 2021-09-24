@@ -1,0 +1,125 @@
+Q) What is String?
+A) String is a collection of characters which is written in double quotes. index starts with 0
+
+selenium   -->  Mnc, Strings
+
+
+String methods
+================                                              -->            1May
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String s = "saikumar";
+
+String s2 = s.replace('s', '$');
+Syso(s2);      //$aikumar
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String s = "saikumar";
+
+String s1 = s.replaceAll("sai", "kumar");
+Syso(s1);      //kumarkumar
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+length();
+concat();
+subString();
+charAt(2);   
+indexOf();          index space also calculates
+replace();
+replaceAll();
+equals();
+equalsIgnoreCase();          //space is also considered          but it ignores only case sensitive
+contains("s");          //true |false
+split();
+toCharArray();
+trim();
+toUpperCase();
+toLowerCase();
+                                         
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String s = "sai kumar";
+		
+		String[] s1 = s.split(" ");
+		
+		for (String ss : s1) {
+			System.out.println(ss);           //sai
+		}                                                                         //kumar
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String s = "sai kumar";
+		
+		char[] c = s.toCharArray();
+		
+		for (char d : c) {
+			
+			System.out.println(d);
+		}
+
+output:
+
+s
+a 
+i
+.............
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+String name = "sai";    //1 scp      (scp stores the literals)
+
+String n = new String("saikumar");   // 2 heap scp
+
+String nam = "sai";        0 objects     
+
+String n1 = new String("sai");      //1 heap
+
+
+total : 4 
+----------------------------------------------------------------------
+
+Syso(name==nam);             //true
+
+Syso(n==nam);                    //false
+
+
+Syso(n=n1);                //false 
+
+
+Syso(n.equals(n1));            //false
+
+
+ex:
+public class Rou {
+
+	String name = "sai"; 
+	String n = new String("saikumar");
+	String n3 = new String("saikumar");
+	String nam = "sai";
+	String n1 = new String("sai");
+	String n2 = new String("sai");
+	
+	public void verify() {
+		System.out.println(name==nam);    //true
+		System.out.println(n==nam);       //false
+		System.out.println(n==n1);        //false
+		System.out.println(n.equals(n1));     //false
+		System.out.println(n1.equals(n2));    //true
+		System.out.println(n.equals(n3));     //true
+		System.out.println(n==n3);            //false
+		
+ 
+	}
+	
+	public static void main(String[] args) {
+		Rou de = new Rou();
+		de.verify();
+	}
+}
+

@@ -1,0 +1,20 @@
+
+
+
+ctrl + shift + x   -->  upper case
+ctrl + shift + y   -->  lower case
+ctrl + shift + f   -->  the code will be formatted
+source  -->  generate getters and setters
+ctrl + shift + O   -->  we can import all the statements, to remove unused imports
+
+  -->  ctrl + 3  -->   search
+
+-->    ctrl + o  /  ctrl + f3    --> to search for desired element in the class, it list all the methods
+
+alt + shift + r   -->  for example if u want to change the local variable of driver just double click and press the shortcut and enter whatever u want so that it will change globally
+
+
+ctrl + l  -->  u can search for which line u want to go
+
+ctrl + o  -->  u can directly navigate to the specific methods
+

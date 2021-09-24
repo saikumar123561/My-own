@@ -1,0 +1,142 @@
+
+2nd may 1st
+
+configuration cmds
+====================
+first email and username
+
+they all are associated with LDAP Account
+-------------------------------------------------------------------------------------------------------------------------------------
+
+How to clone and import the project form github to eclipse
+========================================
+
+create one folder in ur local machine   -->  enter into that    -->   git clone url
+go to eclipse -->  file  -->  import   -->  maven existing projects   -->  finish
+
+understanding the flow of the framework
+through debugging i am checking each and every step how exactly it is working to get the confidence
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+How to work after importing the project into eclipse
+==============================================
+
+-->  after cloning/importing the project into the local workspace/eclipse
+
+-->  git branch US301/adminpage        (from master branch, creates a branch)
+
+-->  git checkout US301/adminpage     (switch to that branch)
+
+-->  write the TC's in eclipse
+
+-->  git add C:\Users\user\OneDrive\Desktop\LIC\saikumar\src\test\java\com\erieautomation\bussinessscripts\FacebookTest.java
+
+-->  git commit -m "added admin page code"
+
+-->  git push -u origin <branchname>       (creates and push that US301/adminpage branch to remote repo)
+
+-->  now raise PR request     (pull request)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Explain your PR process?
+
+How to raise new pull request    -->  46:00  {What is GIT PULL Request  (naveen)}
+
+every day we need to raise PR   (for review)
+
+fine ravi, i will work upon it and update the pr once again
+there is a dependency btw US301 and US302
+-------------------------------------------------------------------------------------------------------------------------------------
+Merge:
+=======
+
+from master branch       -->    git merge feature1
+
+branch name -->  US301
+master is having the latest stable code
+-------------------------------------------------------------------------------------------------------------------------------------
+
+how to push our project to git hub
+=================================
+
+--->   git init (from the workspace, it will create a local repo)
+
+-->   git add .   (move to staging area)
+
+-->  git commit -m "message"    (move to local repo)
+
+--> git remote add origin https://github.com/saikumar123561/sai.git    (git remote add <name of repo> <url>)
+
+-->  git push -u origin <branchname>          (branch name of remote repo)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+how to pull specific branch
+=================================
+
+-->  git pull origin <branchname>       (pull specific branch)
+
+-->  git checkout <branchname>
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Git
+
+architecture / workflow
+
+workspace     -->    staging/index        -->  local repo    -->   remote repo
+
+
+workspace  -->  where we maintain our files, make changes locally. which are usually untracked files
+
+staging/index  -->    once we move these files to staging then it convert it to tracked files
+
+local repo    -->   once we commit then the files move to local repo
+
+remote repo   -->   we push these files to remote repo 
+
+
+git init  -->  to initialise local repo   (when we clone also local repo is going to initialise)
+git status    -->  
+git log  -->  
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+differences
+=================
+
+space  -->  unchange
++    -->  destination
+-    -->   source
+
+if u don't specify the file then it compares all the files
+
+git diff sai.txt          -->  to check the diff btw WD and Staging
+
+git diff HEAD sai.txt     -->    to check the diff btw WD and local repo
+
+git diff --staged HEAD sai.txt       -->    to check the diff btw staging and local repo
+
+git log --oneline         -->   gives the id of all the commits
+
+git diff commitid sai.txt    -->   compare file btw WD with specific commit
+
+git diff --staged commitid    (no need to mention the file)   -->  check the diff btw staging and specific commit
+
+git diff id1 id2 sai.txt       -->  btw 2 diff commits
+
+git diff master test     -->  check the diff btw 2 branches
+
+git diff master url master
+====================================================================================================
+
+git checkout -- sai.txt    -->  discard the changes which are there in unstanged changes in the tracked files of WD
+
+
+
+
+
+naveen  --> Selenium + Jenkins + GIT Integration : Run your Test Cases from GIT Hub using Jenkins
+21:00, 24:40 -->  how to generate html reports through jenkins
+

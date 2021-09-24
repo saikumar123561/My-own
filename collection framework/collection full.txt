@@ -1,0 +1,309 @@
+                                                                                                             Collection Framework
+                                                                                                             ===================
+
+
+Advantages:
+===============
+it reduces the programming effort
+it provides inbuilt methods
+code will be optimized | high performance
+dev increase productivity
+
+common exceptions:
+====================
+
+NullPointerException   -->  ref is pointing to null
+ClassCastException       --> 
+IllegalArgumentException  -->    if we invalid argument
+IllegalStateException    -->   
+UnSupportedOperationException       -->
+
+
+Q) diff btw ArrayList and LinkedList?
+Q) random access is not possible in LinkedList
+
+LinkedList is fast when we want assign(add based on index) | delete (remove based on index) the values in between because it follows the concept of double linked list
+ArrayList is slow when we want assign | delete the values in between because it follows the concept of dynamic array.
+
+in case of fetching the elements ArrayList is best choice LinkedList is slow
+
+ArrayList implements RandomAccess Interface so we get the elements with same speed
+where as LinkedList doesn't implements RandomAccess Interface so it is slow
+
+=============================================================================================================
+
+treeset we can represent only homo, sorting, duplicates don't allow, null don't allow. (NullPointerException)
+treemap we can represent only homo (keys), sorting, duplicates don't allow, null don't allow (key)
+
+
+diff btw ArrayList vs Vector?
+A) Vector provides Synchronization.
+
+diff btw HashMap vs HashTable?
+hashmap allows null elements and it is not Synchronized it is not thread safety. 
+HashTable doesn't allow null elements and it is Synchronized it is thread safety.
+
+Stack        -->   last in first out (LIFO) order
+Vector     -->    first in first out   (FIFO) order
+
+Q) if i want to use hashmap with thread safety?
+A) ConcurrentHashMap
+
+Q) if i want to use ArrayList with thread safety?
+A) CopyOnWriteArrayList
+
+LinkedList implements Queue interface also
+
+
+Queue   -->  when we want to store and acess first in first outs(FIFO)
+
+
+=============================================================================================
+
+default capacity of ArrayList is 10
+
+what u means raw type
+get the values based on index
+ArrayIndexOutOfBoundException
+neg index is not allowed
+how to get low ind
+how to get hig ind
+iterate arraylist
+
+
+public static void main(String[] args) {
+		
+		ArrayList<Object> ar = new ArrayList<>();
+		
+		ar.add(1);
+		ar.add(1.23f);
+		ar.add("sai");
+		
+		//based on index
+		System.out.println("based on index : " + ar.get(2));
+		
+		//out of bound exception
+		//System.out.println(ar.get(3));
+		
+		//negative index
+		//System.out.println(ar.get(-1));
+		
+		//lowest    (first we need to sort)
+		System.out.println("lowest index : " + ar.get(0));
+		
+		//highest
+		System.out.println("highest index : " + ar.get(ar.size()-1));
+		
+		//iterate
+		
+		//typical for loop
+		for(int i=0; i<ar.size(); i++)
+		{
+			System.out.println(ar.get(i));
+		}
+		
+		//enhanced for loop
+		System.out.println("-----------------");
+		
+		for(Object ele : ar)
+		{
+			System.out.println(ele);
+		}
+		
+		
+		System.out.println("-----------------");
+		
+		Iterator it = ar.iterator();
+		
+		while(it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+		
+		//streams with lamda  jdk 8
+		System.out.println("-----------------");
+		
+		ar.forEach(sai -> System.out.println(sai));
+		
+	}
+
+
+//list with other collection
+List<Integer> numbers = new ArrayList<Integer>(Arrays.asList(23, 34, 45, 67));
+=============================================================================================
+
+add    -->  based on index 
+addAll     -->  complete and based on index
+
+contains  -->   true | false
+indexOf   
+
+lastIndexOf  -->   of particular element
+remove   -->   based on index
+remove("xxx")      -->   remove direct values
+removeif    -->    15:00
+singleton 
+subList
+
+
+public static void main(String[] args) {
+		
+		List<Integer> numbers = new ArrayList<Integer>(Arrays.asList(23, 34, 45, 67));	
+		
+		numbers.add(2, 35);
+		System.out.println(numbers);                      //23, 34, 35, 45, 67
+		
+		List<Integer> numbers1 = new ArrayList<Integer>(Arrays.asList(23, 34, 45, 67));	
+		
+		numbers.addAll(3, numbers1);
+		System.out.println(numbers);
+		
+		numbers.addAll(numbers1);
+		System.out.println(numbers);
+		
+		System.out.println(numbers.contains(34));              //true | false
+		
+		System.out.println(numbers.indexOf(35)>0);        //to check which index it is there
+		System.out.println(numbers.indexOf(35));
+		
+		int i = numbers.lastIndexOf(67);
+		System.out.println(i);
+		
+		System.out.println(numbers);
+		numbers.remove(3);
+		System.out.println(numbers);
+		
+		numbers.remove(2);
+		System.out.println(numbers);
+		
+		List<Integer> numbers2 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));	
+		numbers2.removeIf(num -> num%2 ==0);
+		System.out.println(numbers2);                                       //remove even number
+		
+		List<Integer> numbers3 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));	
+		numbers3.removeIf(num -> num%2 ==1);
+		System.out.println(numbers3);                                    //remove odd numbers
+		
+		System.out.println(numbers);
+		numbers.retainAll(Collections.singleton(23));
+		System.out.println(numbers);                                            //how many times 23 is there those many times it prints
+		
+		
+		List<Integer> numbers4 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
+		
+		List<Integer> subList = new ArrayList<Integer>(numbers4.subList(2, 7));
+		
+		System.out.println(subList);
+		
+		
+	}
+
+=============================================================================================
+
+
+what is the name of the thread safe array list 
+
+CopyOnWriteArrayList list = new CopyOnWriteArrayList();
+
+list.add("sai");
+list.add("kumar");
+
+Iterator<String> it = list.iterator();
+            
+             while(it.hasNext())   {
+                 Syso(it.next());
+           }
+
+------------------------------------------------------------------------------------------------------------------------------
+which method is responsible to generate one schronized arraylist?
+
+
+List<String > list = Collections.synchronizedList(new ArrayList<String>());
+
+list.add("sai");
+list.add("kumar");
+
+
+synchronized (list) {
+            Iterator<String> it = list.iterator();
+            
+             while(it.hasNext())   {
+                 Syso(it.next());
+           }
+}
+
+======================================================================================
+
+remove dup using jdk8 streams
+------------------------------------------------------
+
+public static void main(String[] args) {
+	
+		ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(2, 3, 3, 4, 2, 5, 3, 2));
+		
+		List<Integer> unique = list.stream().distinct().collect(Collectors.toList());
+	
+	    System.out.println(unique);
+	}
+
+
+
+======================================================================================
+
+comparision of lists
+=====================
+
+public static void main(String[] args) {
+
+		ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(2, 3, 3, 4, 2, 5, 3, 2));
+
+		ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(2, 3, 3, 4, 2, 5, 2, 3));
+
+		// to verify 2 lists are equal or not. first we need to sort
+
+		Collections.sort(list);
+		Collections.sort(list1);
+		System.out.println(list.equals(list1));     //true or false
+
+		// find out the additional elements of list4
+
+		ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "F"));
+
+		ArrayList<String> list4 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "E"));
+		
+		list4.removeAll(list3);
+		System.out.println(list4);   //E
+		
+		
+		//missing elements of list6
+
+		ArrayList<String> list5 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "F"));
+
+		ArrayList<String> list6 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "E"));
+		
+		list6.removeAll(list5);
+		System.out.println(list6);     //E
+		
+		//common elements
+
+		ArrayList<String> list7 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "F"));
+
+		ArrayList<String> list8 = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "E"));
+		
+		list7.retainAll(list8);
+		System.out.println(list7);       //A B C D
+		
+		
+	}
+
+=========================================================================================================
+
+
+
+
+
+indexOf
+lastIndexOf
+removeIf
+sublist
+retainAll

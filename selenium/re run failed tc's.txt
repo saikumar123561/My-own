@@ -1,0 +1,112 @@
+
+Q) i have 100 TC's in that 50 got executed another 50 got failed due to some app issue | network issue, so how will u run only the failed 
+TC's?
+why test fails:
+
+* application is down
+* server is not responding     
+* network issue
+* scripting issue   -->  we need to identify fix it and run again (like locator has been changed)
+
+
+we have testng-failed.xml file  -->  here we have entry of only failed TC's   
+after running it, we will get the report of failed TC's also
+
+==========================================================================================================
+
+
+how to re run failed tc's?
+=======================================
+
+approach 1 -->  @Test level
+
+Theory
+============
+Step 1: our custom class should implements a interface called IRetryAnalyzer.
+Step 2: next we need to override a method called retry method, inside that method we need to implement the logic of failed TC's.
+Step 3: @Test level we have attribute called retryanalyzer there specify our corresponding retryanalyzer
+
+
+ex:
+========
+public class ReRun_Failed_TCS implements IRetryAnalyzer
+{
+      int retryCount = 0;
+      int maxRetryCount = 3;
+
+public boolean retry(ITestResult result)
+{
+     if(ITestResult.FAILURE==result.getStatus()&&retryCount<=maxRetryCount)
+     {
+          retryCount++;
+          return true;
+     } 
+     return false;
+}
+
+}
+@Test(retryAnalyzer=packagename.classname.class)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+approach 2  -->  runtime level   (recommended)
+
+
+Theory:
+============
+Step 1: our custom class should implements a interface called IRetryAnalyzer.
+Step 2: next we need to provide the implementation method of IRetryAnalyzer interface (retry override) called retry method, inside that method we need to implement the logic of failed TC's.
+Step3: one more custom class i.e. AnnotationRetry & it should implements IAnnotationTransformer interface and provide the implementation method called transform methods and inside the method pass the setRetryanalyzer method and we need tell where is ur retryanalyzer class.
+
+step4: in xml file write the listner tag
+
+
+ex:
+=========
+public class ReRun_Failed_TCS implements IRetryAnalyzer
+{
+      int retryCount = 0;
+      int maxRetryCount = 3;
+
+public boolean retry(ITestResult result)
+{
+     if(ITestResult.FAILURE==result.getStatus()&&retryCount<=maxRetryCount)
+     {
+          retryCount++;
+          return true;
+     }
+     return false;
+}
+
+
+public AnnotationRetry implements IAnnotationTransformer {
+
+public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+  
+          annotation.setRetryAnalyzer(ReRun_Failed_TCS.class);
+
+
+}
+
+
+}
+
+
+xml file:     -->  u need to pass the listner here
+===============
+
+
+<Suite name= "Suite";
+<listners> 
+<listner class-name="packagename.AnnotationRetry"></listner>
+</listners>
+ <test thread-count="5" name="Test">
+ <classes>  
+ <class> name="packagename.classname">
+ <class> name="packagename.classname">
+ </class>
+ </classes>
+ </test>
+</suite>
+ 
+

@@ -1,0 +1,139 @@
+
+System Testing:  UI Testing   -->   usability testing   -->  functional testing   -->   non functional testing
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+UI Testing: 
+==========
+
+size, position, width, height of the elements
+error messages are getting displayed
+
+verify the link color, and where exactly placed and when we click the color is changing or not
+verify elements font, color, size
+colors of font
+elements like buttons, icons etc are properly placed or not
+mandatory fields specified with asterik
+pre populated texts
+label texts are aligned properly
+spelling mistakes
+alignments
+size of the characters
+place holder
+width and height of the text box
+elements overlapping
+Buttons:
+==========
+button enabled or disabled
+press tab key till it get to submit application button
+button alignment
+correct label is displayed on the button
+single click and double click
+Hovering the mouse should highlight the button
+space bar key should work as enter key
+Buttons across the website has similar font, size, shape and color
+for alerts --->  Enter button (OK)
+ESC should select as (cancel)
+GUI includes text boxes, check boxes, radio buttons, buttons, drop downs, icons, size, color, font, images, 
+
+
+radio button"
+============
+check whether default radio button is selected
+at a time only one radio button should selected
+select the radio button using mouse click
+using tab key navigate to radio button to select use arrow keys
+check radio button is properly aligned
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Functional Testing
+=================
+
+Here we focus on customer requirements
+
+Object properties testing: checking the properties of elements present in the app
+                                                   ex: text box / button is disabled/enabled, visible, focus 
+
+Database / backend testing: testing the communication btw UI and database
+                                 database is a storage area where the data is stored (data is stored in the form of tables)                                    
+                                 as a fn tester we need to perform certain operations from UI inserting, submitting, updating, deleting, selecting the data
+these are called DML (data manipulation language) operations
+in mysql we have commands such as "select, insert, delete, update"  -->  44 - 48:00  (sdet) Manual Software Testing Training Part-4 | 2021
+
+Error handling: testing the app by performing incorrect actions. similar to negative testing   (it should show proper validation messages)
+
+calculations / manipulations testing: financial/banking app  -->  1:02
+
+links existence & links execution: related to web app
+                                                               where exactly the links are placed    -->    links existence
+                                                               when we perform click action on link whether it is navigating to proper page or not   -->  links execution
+Internal links: when we click on the link it will navigate to the same page but jump to the diff section
+External links: when we click on the link it will navigate to someother page
+Broken links: the link exists but not enable, not able to perform action on that link
+
+cookies and sessions: related to web app   (we test whether the browser is creating the cookies or not)
+                cookies are temporary files created by browser while browsing the pages through internet.
+                Ex: our browser will save the data   (u login to fb and closed without logout, so our browser will save the data in the form of cookies)
+                cookies contains data,                         
+
+sessions: sessions will be created by server side  / session mechanism from server side       cookies will be created by client side(browser)
+                   sessions are the time slots created by server and session will be expired after sometime if we are idle for some duration of time
+                   Ex: once we login into banking app after few min if we acess the app it says session is expired   (time slot will be created like how much time the app is inactive)      -->   1:15
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Non Functional Testing:
+=====================
+
+After functionality is stable Non Functional Testing comes in to the picture
+here we focus on customer expectation.    -->    1:22
+my app should be respond fast, my app should work on diff env, my app should be safe from unauthorized users/hackers
+
+for performance testing  separate (dedicated) env should required with high volumes servers.
+
+performance testing   -->  load testing, stress testing, volume testing  (speed of the app. how well my app is working when mul requests are coming.)
+performace testing is done for web app
+
+load testing: testing the app by increasing the load by         and verify the response time
+
+stress testing: testing the app beyond the limit
+        
+                               
+1:25
+
+
+security testing
+recovery testing
+compatibility testing
+configuration testing
+installation testing
+sanitation/garbage testing
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Regression testing:
+=================
+
+unit regression testing: testing the specific module where exactly we reported the bug.
+
+Regional regression testing: testing the modified modules along with the impacted moudles.
+                                                  how do u know the impacted areas?
+                                                  impact analysis meeting conducts to identify the impacted modules with QA and Dev.
+
+Full Regression: Testing the main feature and remaining part of the app.
+            Ex: Dev has done changes in many modules, instead of identifying the impacted modules we perform one round of full regression.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

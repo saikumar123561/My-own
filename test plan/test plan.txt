@@ -1,0 +1,14 @@
+
+
+usability testing  -->  confusing fn  (not easy to use the app)
+
+any defect which is not sure then it will pass as a question "observation"
+
+
+
+
+at the end of the test execution
+today we have performed 5 hours we are like 3 resources working on this project
+we foudn the below 5 defects as part of testing. list of the defects
+
+ 

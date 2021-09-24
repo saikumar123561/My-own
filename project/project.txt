@@ -1,0 +1,173 @@
+
+Current Employer: Amazon, Hyderabad, India
+Current Designation: Software Test Engineer
+
+
+Good experience on Auto It.
+
+Generated Loggers using log4j.
+========================================================================================================
+
+Project
+============
+
+purpose: Collaboration between health professionals to provide complete treatment to patients and improve overall well-being.
+domain  -->  healthcare domain 
+tools  --.   dev -->  javascript, html as a front end tool, to develop api used java, database: mysql
+technology -->  what kind of testings : api testing, fn testing, ....   pom framework, 
+features  --> means wt are the diff fn our app is doning          ecommerce  -->  selecting product from list, add to cart, do payment, delivered
+team size - 5
+duration -  
+
+Manual
+============
+
+what is ur contribution in manual testing?
+understanding the req, identifying the scenarios, writing the TC's, reviewing the TC's with the team like dev, testers and PO, executing the TC, bug reporting
+
+how many TC's u written for ur project?
+per day -->  depends on complex 4-6
+
+how many TC's execute per day?
+10 - 12  suppose if the build failure then the execution will be slow
+if everything goes smooth we can execute good no of TC's
+
+
+how many high severity bug u found in ur project?
+app crashes, build fialures, login even if we valid data we r getting blank page
+
+team size  -->   5
+
+what u will do if u find a bug?
+i will check the flow i have done, in which condition the bug occurs, env issues
+official way --> bug Id, description, steps what we have performed, wt test data we have used, log file, screenshot, priority and severity
+
+ 
+dev not accepted the bug?
+who wrote the req, especially in agile PO write the user stories
+
+
+Automation
+===========
+
+domain?
+
+technologies?
+
+how to choose TC's for automation?
+-->  TC's which we need to execute again and again, to avoid repetitive tasks, it's better to automate them.
+-->  high priority TC's
+--> TC's which requires huge data 
+-->  regression cases and retest cases
+
+
+not prefer for automation:
+
+sending notifications via emails to end users
+changing pw tests can be avoided
+terminated or deleted accounts scenarios
+tc which can tested manually quickly
+
+
+how many TC's automated per day?
+
+complex or large flow or n no of pages involved  -->   1 day or 2 day /   2 TC's
+medium   -->    2 
+easy  -->   4-5
+
+Q) tools used in automation?
+selenium, testng, pom
+
+Q) wt kind of reports generated in automation project?
+we have used extent reports, test execution, bug reports, daily status report, weekly status report, failed tc report
+
+Q) wt framework?
+we have followed POM design -->  tell tools, in which we have used selenium webdriver, testng, maven, jenkins, git and github
+
+
+Q) what is ur contribution in framework?
+yes, i have involved. we have created page object class and created our test methods and we have executed those TC's and i have generated the reports and also created some library files
+lead assing the page objects and we write                            check in to repo
+all the implementation of configuaration files, project structure, reporting structure, reusable components
+
+Q) what are the challenges faced during automating TC's?
+elements could not identify with xpath and css eventhough the syntax is correct overcome with javascript like hidden elements
+freqent changes of app.      58:30
+while executing the TC's 
+
+
+Q) tell one scenario or TC u have automated in ur project?
+searching the customer 1:02
+
+
+Q) have u worked on BDD   -->  no
+
+Q) do u know about continuous integration?
+here developing and testing activities go parallel in between we have devops team they will provide the infrastructure
+all these things happen in jenkins tool
+
+
+
+API          i have knowlege but i haven't involved.
+=======
+
+
+Q) have u tested api in ur project -->  yes or no
+
+Q) how many api's
+
+Q) tools   -->   POSTMAN -->  manual   & RestAssured   -->   automation
+
+Q) 
+
+
+
+developing the scripts using elements locators, webdriver methods, testng annotations
+
+
+purpose: Collaboration between health professionals to provide complete treatment to patients and improve overall well-being.
+
+domain -> healthcare
+
+client -> dsouza
+
+
+Integrated Health Care involves sharing of Information among team members related to patient care and establishment of a comprehensive treatment plan.
+
+login -->  providers and patients
+
+advantages: it's an easy way to colloborate with providers
+
+team size - 5
+programming lang: java
+tools: eclipse ide, selenium webdriver, git, maven, jenkins, jira, mysql, testng
+platform: windows
+pom framewok
+
+
+domain terminology: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+flow  -->  https://existek.com/blog/hospital-managment-system/
+
+patient flow  -->  patient registration  -->  make an appointment  -->  sync with insurance services (insurance plan)  -->  visit doctor  -->  work with health records   -->  medical tests   -->   doctor   -->   diagnosis    -->   treatment    -->  patient monitoring
+
+
+
+sign in -->   username , password,  login
+
+sign up  -->  firstname , lastname, gender, height, weight, age, dob, health insurance policy 
+
+home  -->  home, about, facility, review, contact, post
+
+About --> ambulance services, emergency rooms, free checkups
+
+make an appointment  -->    name, phno, email, time, policy no 
+
+buy a policy   -->
+
+facility   -->    
+
+cashless, copayment, coinsurance, medical records, 
+
+doctor workflow  -->  login, view requests, chat, prescription, amt, generate then email will sent to the particualr patient
+
+as a provider he/she can identify the patients and maintain electronic patient records
+as a provider he/she can store patient histories and medication lists
+as a provider he/she can maintian clinical notes
+
+====================================================================================================
+
+communicate with providers, hospitals, 
+
+
+
+services: the patient can enroll themselves in to the hospital starting from taking the appointment to the lab results 
+
+
+
+
+specialists name  --> cardiology, orthepedic, gynecology, 
+
+name specialist qualification         --> by seeing the details we can book appointment
+
+
+doctor workflow  -->  login, view requests, chat, prescription, amt, generate then email will sent to the particualr patient
+
+patient workflow  -->   sing in/ sign up, 
+find doctor        -->      doctor, request Id, specialist, name, doctor Id and qualication will be autopopulate when we select the doctor.
+find hospital      -->    hospital, distance 
+book appointment      --> choose hospital, name: u need to choose, book time, complain    -->   add appointment button
+sing out
+
+admin workflow  -->  sign in, sign out
+add doctor --> doctor id, specialist, name, password, qualification, mobile number, email Id    -->  info update in database
+
+
+
+
+
+

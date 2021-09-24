@@ -1,0 +1,62 @@
+xpath                                                                                     CSS
+===============                                                           ===================
+
+//tagname[@attname='attvalue']                                tagname[attname='attvalue']
+ 
+$x("//tagname[@attname='attvalue']")                          $$("tagname[attname='attvalue']")
+
+//input[contains(@attname,'xxxxxx')]                          input[class*='xxxx']
+
+
+
+input#identifierId                     -       through id (css)       -->        #                      
+
+
+input.whsOnd.zHQkBf                  -         through classname (css)    -->       .
+
+
+input[class*='whsOnd']        -                contains      -->      *
+
+
+input[class^='whsOnd']        -                starts with    -->      ^
+
+
+input[class$='zHQkBf']        -                ends-with        -->      $
+
+
+input#identifierId + div      -                following sibling    -->     +  or ~
+
+
+input#identifierId + div:nth-of-type(1)    -   for index          -->      nth-of-type(1)
+
+direct child  -->         >       
+
+indirect child   -->   space
+
+
+
+functions 
+
+//input[contains(@class, 'gLFyf')]                                                      input[class*='gLFyf']
+
+
+//input[contains(text(), 'My Account')]      -->  text is a function so should not use @text
+===========================================================================================================
+
+
+Q) how to handle dynamic elements using selenium?
+
+The dynamic elements can be handled with dynamic XPath or dynamic CSS selectors. we can also use functions, such as contains, ends with, starts-with, etc. to handle dynamic objects.
+
+what is dynamci elements?
+
+the elements which don't have unique attribute values or the attribute values are frequently changing
+
+id = test_123
+id = test_435                   -->    starts-with  or contains 
+id = test_789                                                                                  //input[contains()
+
+
+id = 123_test_t
+id = 345_test_t             -->      ends-with
+id = 789_test_t

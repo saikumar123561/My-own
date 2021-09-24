@@ -1,0 +1,76 @@
+
+properties files   -->  17 April first  -  17 april Second    (2 classes)
+
+
+
+
+
+Q) how u implemented properties files?
+
+A) basically the data in properties files maintained in the form of keys and values 
+
+in order to work with properties files we have properties class which is coming from java.util package   -->  
+"FileInputStream" to specify the path of the file which is coming from "java.io package"
+
+Properties class  -->  
+
+getProperty()  -->  to get the values based on key from properties files
+
+getProperty(String key, defaultvalue)
+
+setProperty()  -->  we can write the data in the form of keys and values to the properties files
+
+get()   -->  map interface
+
+getOrDefault()    -->  map interface
+
+put()   -->  map interface
+
+==============================================================================================================
+excels sheets  -->  refer 18 April - 21 April First    (2 classes)
+
+in order to work with excel sheets we have apache poi Api, by using apache poi Api we perform read and write operations to work with the excel sheets.
+
+
+we have custom class ExcelReader where we have created all the custom functions to read and write data to the excel sheets   
+(getsheet, getcell data from specific row, to get row data, to get sheet data, to get row data, to get sheet data without duplicates.
+
+
+
+Q) how u implemented excel sheets?
+
+A) we have implemented excel sheets using APACHE POI API      -->  "FileInputStream" to specify the path from "java.io package"
+
+WorkbookFactory class   -->  to create workbook
+                             create()
+
+Workbook interface   -->  to get the sheets
+                          getSheet()
+                          getSheetAt()
+
+
+
+
+
+==============================================================================================================
+
+
+Q) how u implemented text files?
+
+A) we can implement text files using "File" class java.io package in that we have classes 
+
+File class which is coming from java.io   -->  to give location of the file
+
+FileWriter class  -->  to write data to the file
+
+BufferWriter class  -->   to write the in the form of characters, arrays, Strings
+                          write(), 
+                          newLine();
+                          flush();  -->   after writing to move the data to file use it.
+
+FileReader  -->  to read data from the file
+
+BufferReader  -->  to read data from the file
+                   ready(), readLine()
+ 
+

@@ -1,0 +1,185 @@
+
+Exception Handling:     refer 22 April
+========================
+
+Q) what is Exception?
+
+An unwanted event that disturbs the normal flow of the program
+
+Types of Exception
+
+checked Exception / compile time Exception
+unchecked Exception / runtime Exception
+
+checked Exception: the exception which are checked by the compiler is called checked Exceptions.
+ex: filenotfoundexception, ioexception, interruptedexception
+we can handle checked Exception using throws keywork and try catch block mechanism
+by using throws keyword we can handle exceptions at method level (that can b e any main | concrete)
+
+unchecked Exception
+the exception which are checked by the compiler is called unchecked Exceptions.
+ex: nullpointerexception, arrayindexoutofboundexception, unsupportedoperationexception
+we can handle by following the standards
+
+===========================================================================================================
+
+finally
+
+finally is a block always associated with try catch to maintain cleanup code. finally block is always going to be executed irrespective of  whether we get the exception or not.
+
+
+try 
+{
+;;;;
+risky code   (code may rise an exception)
+;;;;
+}
+
+catch(Exception e) 
+{
+;;;
+handling code
+;;;
+}
+
+finally 
+{
+;;;
+cleanup code  (closing the connections)      like closing the file, bufferreader, ......
+;;;
+}
+
+to print exception info we have 3 methods   -->   we need to write as part of catch block
+===============================================
+void printStackTracce();
+String getMessage();
+String toString();
+
+===========================================================================================================
+
+finalize(): finalize is a method  which always going to be executed before destroying any object by garbage collector.
+
+
+who is calling the finalize()   -->   garbage collector
+when the garbage collector calls finalize()   -->    just before destroying an object
+for which purpose it is calling the finalize()  -->  to perform cleanup activities
+
+Note:
+
+Q) diff btw finally and finalize?   because both does cleanup activities
+A) finally is meant for cleanup activities related to try block.
+   finalize is meant for cleanup activities related to object.
+
+===============================================================================================================
+
+Q) how u create ur own exceptions?
+-->  in order to create our own exception our custom class should be the child class of either exception | throwable the it becomes exception type.
+
+-->  in java every exception consists of two constructors  1) default    2) parameterized  
+
+-->  using throw keyword we can throw our own customized exception
+
+ex:
+
+public class JobMust extends Exception   {
+
+      public JobMust()   { 
+          super("u need to work hard");   
+                                    }
+
+      public JobMust(String message) {
+             super(message);
+                                     } 
+}
+
+
+use:
+
+throw new JobMust();
+throw new JobMust("practice");  
+
+
+===============================================================================================================
+
+diff btw throw and throws?
+A) throws is to handle the checked exceptions and throw is used to throw the customized exceptions. 
+
+
+in our program if there is a chance of checked exceptions so handle them with 
+using try catch block we can handle checked exceptions (we have to handle)    -->    prefer using try catch
+using throws keywork we can handle checked exceptions at method level(jvm will handle)
+
+FileInputStream fip = new FileInputStream(filepath);   -->   in this case there might be file not found so we need to report  "FileNotFoundException"  -->   using throws keyword
+
+
+Thread.sleep(1000);   -->   here we need to report "InterruptedException"   -->  using throws keyword
+
+==============================================================================================================
+
+Q) top 5 exceptions
+
+ElementNotVisibleException -->  we need to overcome this using explicit wait | fluent wait | java script executor  -->   4:00
+
+WebDriverException  -->  when we try to perform any action on non existing driver (may be firefox
+
+NoSuchElementException   -->   when the webdriver could not find the element (chk whether we find element with xpath|css|id .. is it valid     2) chk whether element is present in the webpage or not    3) at the time of find operation may be the webpage is still loading not fully loaded to avoid it we can use pageloadtimeout  |  webdriver wait
+
+
+TimeoutException   -->  element is not found within the given time
+
+InvalidSelectorException  -->  
+
+InvalidSwitchToTargetExcpetion  -->  whenever the frame | window is not exists  -->  driver.switchTo().frame()
+
+JavascriptExcpetion  -->  whenever u use java script executor, if java script is invalid
+
+MoveTargetOutofBoundsExcpetion  -->
+
+NoAlertPresentExcpetion   -->  whenever we switch to alert and alert is not present on the screen
+
+NoSuchAttributeException  -->  whenever the attribute is not there
+
+StaleElementReferenceExcpetion  -->    (may be the element is inside the frame)
+
+
+
+What are different types of Selenium WebDriver Exceptions you have faced?    -->   we can handle through try catch block
+
+NoSuchElementException : this exception occurs if the element could not be found.       -->    waits
+
+ElementNotInteractableException: if we try to interact to the element which is not visible on the webpage.   -->  ajax component
+
+ElementNotVisibleException: this exception occurs when an existing element in DOM has a feature set as hidden  -->  overcome with javascriptexecutor.    -->   type = hidden
+
+StaleElementReferenceException: this exception occurs if the element is either removed or no longer attached to DOM.
+
+ElementNotSelectableException: this exception occurs when an element is present in DOM but not able to interact.
+
+NoSuchFrameException: whenever we are trying to switch frame that does not exists.
+
+NoAlertPresentException: whenever we are trying to switch Alert that does not exists.
+
+NoSuchWindowException: whenever we are trying to switch invalid window or window is not exists
+
+InvalidSelectorExcpetion: if the xpath is not according to the rules | problem with xpath syntax
+
+NoSuchSessionException: performing the actions after closing the browser.
+
+TimeoutException: whenever the element is not displayed within that specific time like implementing waits.
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+final is a modifier applicable at classes, variables, methods, enums
+
+if we declare a class as final we cannot extends that class (means we cannot create child class for that class)
+if we declare a variable as final we cannot perform reassignment for that variable
+if we declare method as final we cannot override that method in the child class
+if we declare enum as final we can define our own data types

@@ -1,0 +1,133 @@
+
+
+
+
+Defination:
+==================
+
+to design a system by using we can solve bussiness problems in a systamatic way
+
+in the context of automation to convert the manual TC's to automation so i need a platfom that platform is framework   -->   TestNG framework 
+ex: TestNG is a unit testing framework to write the TC's
+
+types of framework:
+=======================
+data driven with hybrid 
+pom is a design pattern: it is applicable for web app(UI)
+
+components in POM:
+==========================
+
+1st component  -->     Base_Test
+
+
+
+
+
+2nd component  -->       pages in framework:     (page layer or page libraries)
+======================================
+for each and every page we need to create separate java class
+
+in each page we define all the web elements and write the corresponding methods available in that page
+methods like click on login, click on forgot pw, click on image, select dd, enter un, switching to frame, verify title ....... respective features available in that particular page
+
+to make it available driver to this inside static block  (we have predefined class called pageFactory in that we have static methods initElements to initialise the elements) -->   14:00
+
+	static 
+	{
+		PageFactory.initElements(getDriver(), FlipkartHomePage.class);
+	}
+
+
+3rd component  -->   Test layer
+===========================
+
+we use annotations, assertions to verify, @dataprovider(these will fetch the data from excel sheets)
+
+
+4th component    -->    excel sheets  using apache poi api
+=================
+In this worksheet we define all the data in the form of rows and columns like homepage data, account data, password data, contacts data ...........
+
+5th component:       --> supporters
+=====================
+to read the data from these excel sheet we have ExcelReader  -->  where we define the methods
+to read the data from configuation files we have PropertiesReader
+
+6th component  -->   utilities
+===================
+
+we define all the utilities which will very useful for my framework like to take screenshot, to create objects (pojoutility)
+
+
+
+7th component 
+===============
+
+reports and logs (log4j api)
+
+
+8th component
+=================
+
+to execute the my TC's we use TestNG.xml file  -->  it can access all these classes 
+
+entire thing is available on maven   -->   POM.xml file    (all the dependencies, maven plugins), this file will interact with TestNG.xml file (we make an entry inside the POM.xml file)
+
+
+
+
+GIT
+========
+
+Create a branch and entire thing check into that branch
+
+jenkins
+==========
+
+now it's time execute daily basis and publish the reports to the team
+
+2 ways 
+individual in local machine called stand alone execution
+we can setup jenkins
+
+jenkins will interact with git repo  (we need to all the configurations)
+we can trigger the jobs manually and at specific time using cron job
+
+=======================================================================================
+
+what is Lombok?
+A) by using Lombok we can avoid getter and setter methods, in general 
+
+earlier i worked on hybrid with data driven framework
+since 2 years i am working on page object model with data driven framework
+
+
+
+base   -->    Base_Test, ActionsEngine
+pageObjects   -->  Gmail_Home_Page, Ui_Home_Page
+bussinessscripts  -->  TC's
+supporters -->  PropertiesReader, ExcelReader, TextReader
+utilities  -->  DriversPaths, ScreenshotUtility, PojoUtility(we maintain all the object creation here)
+listners  -->  ReRun_Faile_TCS, AnnotationRetry   (here we are taking the classes to rerun the failed tc's )
+customised exceptions  -->  FrameworkException   (here we created our own exceptions)
+reports  -->  here we writing custom fn in extentreports
+folders  -->  drivers, reports, screenshots, popups, confi.properties file
+
+
+
+
+POM is applied for both web and mobile
+
+
+assertions should be write in page class, assertions should write in tests class
+in test class never use webdriver api like find elements, sendkeys. click, is displayed   (driver should talk to the page)
+
+
+
+
+
+
+
+
+

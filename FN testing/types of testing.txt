@@ -1,0 +1,127 @@
+Regression Testing
+===================
+
+what?
+regression testing is done to make sure that new fn and bug fixes are not impacting the existing fn.
+
+when?
+Before every release, after complete our functional testing.
+
+when thre is a defect fix
+when there is performance issue fix
+when there is env change
+
+why?
+to make sure that new fn and bug fixes are not impacting the existing fn.
+
+pre requisite
+QA environment should stable before we start regression testing.
+
+selection of regression
+
+if we won't do regression there might be 100% issues in production  
+
+
+==========================================================================================================
+
+smoke testing:
+=================
+
+what?
+
+smoke is done to verify build by testing major and critical functionality of the application before starting ur functional testing. smoke testing is called as build verification test
+
+
+sometimes critical functionality will be missing then we can ask dev to chk and get it correct, so that we need not waste our time
+in middle of testing if we come to know that some critical fn is missing ex: some button which is most imp is missing
+
+
+we must be ready with our test cases
+
+
+sanity testing:
+====================
+
+sanity testing is to test all impacted areas before starting your regression testing.
+lets say there are 2 bug in app. so dev worked and fixed those bugs so he has given a new build for fixing those bugs. just to make sure the bugs are fixed and changes are not impacting the existing fn.
+
+sanity testing is not documented
+
+when do we have code deployment(enhancement) and defect fix then we deploy the code in to QA. when u know that either of it is impacting any other module of our app then we perform sanity testing 
+
+why?
+to make sure the change made is not impacting related modules
+
+this is imp because it saves time if we identify any issue by checking it quickly
+
+
+How do we estimate which functionalities have been actually impacted after a code deployment or code fix. Please explain
+A) That’s a good question. To determine that one must understand code changes made and its impact in ur application. So that’s the reason technical knowledge is very much important to QA. 
+1) work closely with ur development team to understand change and impact on application 
+2) experience in ur application will help u to understand more and more. If you are new to this application or domain then it’s not a bad idea to talk to your SME until you gain experience.
+
+
+smoke vs sanity
+
+smoke to verify build before starting ur functional testing and sanity testing is to test all impacted areas before starting your regression testing. These two types are high level testing which can go sometimes undocumented as well.
+
+
+===============================================================================================================
+
+what is end to end testing?
+A) It includes functional and non functional testing 
+
+
+upstream app and downsteam app
+
+
+
+===============================================================================================================
+
+UAT or yellow box testing
+=========================
+
+testing is done to verify the end to end bussiness flow. it is the final phase of testing before we move the software to the production.
+
+it is done by PO and will give the feedback
+
+acceptance testing  -->    dev, qa, project managers and client will involve      (we should ready with software as per client req)
+we have two types of acceptance testing  alpha and beta 
+alpha  testing is done by project based companies        -->    (we give demo of the software to client and client will give the feedback)
+beta    testing is done by product based companies       -->   (they will look for overall market req)     we give the software to the some banks and collects the feedback   if they like they will buy the licenses                                                                            
+
+
+1. Agile also has its own place for UAT. In some cases it goes in parallel with SIT.  (system integration testing)  
+2. Business/client/users will themselves perform UAT. (No way different than waterfall) 
+3. Yes, Product based companies do follow agile.
+
+==============================================================================================================
+
+Reliable Testing: used to confirm the expected output is reliable
+ex: if we run the software on particular env, OS, browser then it should show same expected result
+
+==============================================================================================================
+
+compliance Testing: it is a non fn testing which we validate pre defined req are met in the software.
+
+==============================================================================================================
+
+localisation test: it is used to test the software in specific region.
+ex: country lang, currency format and date and time format as per the country
+
+==============================================================================================================
+
++ve -->  the purpose of -ve testing is to ensure feature should work for valid data
+
+==============================================================================================================
+
+-ve -->  the purpose of -ve testing is to cover the hidden tests by providing the invalid data.
+
+==============================================================================================================
+
+vulnerability testing: to check security loops holes should not be there in software
+ex: pw should be encrypted
+
+==============================================================================================================
+
+what all the components u have in tc's

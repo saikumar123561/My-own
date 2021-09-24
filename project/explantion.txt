@@ -1,0 +1,285 @@
+I was really excited to read about the job opeing of Automation tester.
+
+ms outlook, microsoft teams
+manager: kamal kumar P, hr: ruchika b, 
+srikanth, manoj, anusha, vijay, and me
+lead : dinesh reddy
+emp id: 22468
+address: kondapur, next to vvc mahindra
+email: saikumarnallanagulu.n@crestinformatics.com
+working hours  -->   9:00 -> 6:30
+floor  --> 1st floor  
+
+Hello Good afternoon. my name is saikumar, i am here for the interview
+ 
+Tell me about urself
+=====================
+
+i am having around 3+ years of experience into IT and it is totally into Software testing. 
+I worked with CREST INFORMATICS as a Test Engineer and the project which i worked was provider integrated format and it is a healthcare domain.
+
+i am basically responsible for all testing activities that we are doing like developement of the scripts, developement of the framework where we build utilities, execution of the script via jenkins and finally maintainence.
+
+the tools and technologies that i have experience are selenium webdriver with java, testng, pom design with data driven framework, hybrid framework, git, maven, jenkins
+
+I am currently looking for ways to grow in my career and i am really passionate the work i do and 
+i am ready to take new responsiblities and learn new technologies. that's about me.  
+
+===========================================================================================================
+
+Responsibilities:
+=====================
+
+The moment i opened my laptop, i will check the imp emails and reply those imp emails if required on time. make sure no miss emails from my side.
+running smoke suites on daily basis and sending mail to team on health of the app.
+i actively participate in scrum ceremonies. so where we have daily stand up, sprint planning, sprint review, sprint retrospective.
+working on user stories in current sprint. we usually have 2 weeks of sprint.
+
+and also i majorly involved in to all test activities that we are doing.  as part of automation
+i majorly involved in automation activities, where i am taking part in developement of the scripts, developement of the framework where we build utilities, execution of the script via jenkins and finally maintainence whenever the test fails we analyze the results we fix it and run it. 
+running automation suites, smoke, regression and sanity
+
+raising the defects through jira and retest the defects which are fixed by Dev.
+
+=============================================================================================================
+
+Project explanation:
+=====================
+
+client side : HTML5, CSS, javascript
+server side: Linux, apache, mysql, php
+
+HTML5   -->  is a language used to define the structure of web page
+CSS  -->  is a language used to style the web page by using diff styling features
+javascript   -->  gives web pages interactive elements that engage a user
+
+
+
+I worked on healthcare Domain. It is a web application developed using LAMP (Linux, HTML, CSS, and MySQL) technology…
+Through this provider integrated platform which helps in collobarating with the patient to provide complete treatment and overall well being. 
+
+overhere the patient can schedule an appointment online. provider can see the list of patients, details of paitent visits, health history, clinical documents, patient health condition, current medication, prescription, advice for visit  and other services, patient can claim his insurance policy, 
+And it has 3 major Interfaces admin, provider, patient, receptionist and Database Interface also…
+
+most of the cases these are manual, like enter the details in word/excel document as a result client had to maintain a huge volume like patient documents, missing documents, patient medical records
+departments for approvals which results in patient dissatisfaction
+
+Admin Interface for maintaining the application (ex: Add/Edit/Delete services, provider details, patient details, managing drugs)
+
+patient Interface for performing specified business operations (ex: in my Application, patient Registration, Login to Application, make appointment, consult doctor etc..are important business operations…
+
+provider Interface for editing doctor details, appointment details with a patient health history.
+
+receptionist Interface to confirm appointment
+
+Database interface is to store the data, and processing the data.
+
+i have involved in testing admin module and patient module aswell
+
+Admin Module- in this module important functionalities are,  doctor services, medical services, managing drugs, patient details, doctor details and other services
+
+Patient Module- in this module important functionalities are, Patient registration, Login to Application Patient Interface,
+Make an appointment, Consult doctor
+
+
+tools and technologies we implemented as part of testing are selenium webdriver with java for automation, writing the TC in testng and implementing POM desing with Data Driven framework. for SCM we are using Git, build tool we are using Maven and for CI/CD we are using jenkins. and we are following agile methadology
+
+in this the project i majorly involved into automation activities where i am taking part in development of scripts, developement of framework where we build utilities, execution of the script via jenkins and finally maintainence. 
+
+https://www.gcreddy.com/2017/07/tell-me-about-your-current-project.html
+
+============================================================================================================
+
+
+Project Architecture:
+=====================
+
+we are using client and server architecture where we are implementing 3 tier. so the app is virtually split into three separate logical layers. such as presentation layer, application layer, data access layer.
+
+presentation layer where we see the UI and application layer where bussiness logic will be written and data access layer where the data stored.
+
+internally it work like First, Client send a request through browser, business logic happens at second layer, it executes the request. Based on your request, corresponding business logic is triggered. And, then it will pass the request to database server which processes the data. And again it will sent back to Business layer and passed on to Client layer. And henceforth, you see response on your browser. 
+
+the  technologies we used to design this 3 tier architecture
+
+For Presentation Layer – we used scripting languages HTML5, JavaScript and CSS
+
+For Business Layer –  we used java programming languages to code.
+
+For Data access Layer – we used MySQL
+
+https://www.linkedin.com/pulse/client-server-architecture-understand-apis-mukta-sharma/
+
+=============================================================================================================
+
+features:   -->   https://www.softermii.com/blog/20-must-have-healthcare-app-features-with-examples
+https://solutiondots.com/blog/9-modules-hospital-management-system-developed-solutiondots-systems/
+================    
+
+Online appointment feature  -->  where patient can make an appointment with doctor at their available slots and ge the confirmation via sms or email
+
+An e-Prescription Feature 
+EHR (electronic health record) software  enable us to record and store medical records on a remote or cloud-hosted server.
+Electronic health records software (EHR software), also known as electronic medical records software (EMR software), creates electronic data sets of patient information, such as charts of medical and treatment histories, diagnoses, medications, immunizations, allergies, lab results, and more.
+
+The User and Doctor Profile Feature    -->  where patient can see provider details and provider can see patient details and their health history, lab reports etc
+
+Drugs management feature  -->  allow to add/edit/delete the drugs
+  
+Payment Processing Feature    --> medicare, medicaid, cashless, copayment, credit card and insurance policy scanning feature
+Medicare is a federal program that provides health coverage if you are 65+ or under 65 and have a disability, no matter your income. Medicaid is a state and federal program that provides health coverage below poverty line
+
+cashless   -->  it is a feature of health insurance policy where policy holder doesn't need to pay. settlement will be btw health insurance and the policy.
+
+invoice  -->  After the appointment confirmation Invoice System generates an automatic invoice against that specific patient, this invoice helps to know about the current status of payment as well as complete payment.
+
+
+Chat Feature   -->   where patient can chat with the provider
+
+Patient Privacy Features   -->  as per HIPAA   -->   Health Insurance Portability and Accountability Act
+ 
+
+=============================================================================================================
+
+Project advantages:   -->  
+https://technologyrivers.com/blog/what-patients-are-really-looking-for-in-a-healthcare-app-features-of-an-ideal-health-app/
+=====================
+
+Doctors spend more time on patients’ treatment rather than documentation.
+it's an easy way to colloborate with providers
+less time consuming              Medicine time
+make Appointments
+Schedule follow-ups
+Prescription renewals
+Frequent Vitals checks
+
+======================================================================================================
+Challenges in ur project
+========================
+
+understanding the healthcare terminology like healthcare plan like medicare, medicaid and BCBS and how it works.
+HCFA 1500  -->   claim form used for submitting physician and professional claims to bill Medicare providers,    UB92
+UB04 form used by medicare, medicaid and other insurance companies
+
+HIPAA: It is a set of rules and regulations which doctors, hospitals, healthcare providers and health plan must follow in order to provide their services
+
+inpatient vs outpatient  -->  inpatient means patient is taking treatment in the hopital and Once discharged from the hospital by the doctor, the patient becomes an outpatient.
+
+703-417-1315
+212-506-4321
+619-754-3211
+800-544-7345
+702-327-8462
+
+
+
+texas, califonia, florida, nyc, washington, minnesota, mexico, naveda
+
+
+
+
+Reports
+=====================
+
+html reports using extent reports api    -->  automated tc report
+testng-failed report       -->   testng
+i am involve sometimes in execution and plublishing the report for test case execution
+Bug report / defect report  
+retesting report
+Test summary report
+Sprint report
+
+production checklists
+smoke checklists
+sanity checklist
+
+======================================================================================================
+
+Project related questions
+=====================
+
+Q) what UI framework using?
+angular as a ui framework and we are using browser cache for cahce purpose
+
+Q) how to validate whether the user is authenticated or not?
+we are using ldap for the authentication. But, I never get a chance to work on the ldap. so, i don't have exact idea how ldap works. 
+
+lightweight directory access protocol, it is very very light weight and so much secure. it runs over the tcp and ip protocol
+
+Q) how cache was configured
+by the time i join the project the project was already setup so i was not completely aware how the cache was configured
+
+
+coming to the back end services we have used rest api to expose our api's 
+
+db -->  mysql and we are using jdbc to connect to the db
+
+
+Q) why is ur project design in that way?
+by the time i joined the project was already designed
+
+Q) what design patterns u followed and y?
+singleton design pattern/ factory design pattern / abstract factory design pattern
+
+Q) what was the most complicated part of our project?
+us healthcare terminology and it's usages
+
+
+Q) how have u handled cache?
+
+
+Q) how do u connect to db?
+jdbc / hibernet there are n no of technologies
+
+
+Q) why u are using jdbc 
+we have a senior architecture who decides what technologies to be used.
+as a service based we have to follow the client  we have taken up input he suggested to go with hybernet
+
+Q) who are user end users of ur project?
+patient, providers
+
+
+Q) how do u validate a user is authorized to access a particular page of fn?
+
+
+Q) why have u used selenium only? what benifit?
+we had a decision from the client architect
+
+Q) how easy is it ur project to add a new fn?
+we can add easily 
+
+
+Q) do u participate in project design?
+i attend the project design meetings and sit with my seniors i just listen and i provide input to my senior not directly on the call.
+
+
+into, adv, features availabe
+diff modules and which module u involved
+tools and tech to implement the project
+responsibilities in the project  -->  should be short
+
+
+
+how long it took time to complete the project
+
+=============================================================================================================
+
+Release Process
+=====================
+
+major    -->   3-5 months
+minor    -->   2-3 months
+hotfix    -->    within 24 hours 
+
+
+release version :  1.0.0 (mj.mi.ht)
+===========================================================================================================
+
+Test scenarios
+=====================
+
+https://www.guru99.com/healthcare-application-testing-with-sample-test-cases.html#13
+
+
+

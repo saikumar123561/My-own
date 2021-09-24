@@ -1,0 +1,165 @@
+Please prepare:
+---------------
+java
+selenium
+testng
+selenium frameworks (like page object model framework)
+sql 
+basics of api testing
+
+
+
+1. Core Java:
+-------------
+1. whar are variables in java?   -->  variables are used to store data value.
+2. what are methods in java?     -->  method is a block of code which used to provide the implementations
+3. what is main() in java?
+4. OOPS concepts in java
+5. What is overloading & overriding?
+6. What is abstract vs interface?       -->   durgasoft
+7. What is abtract?
+8. what is interfcae?
+9. Can we create object for abstrct class (No)
+10. Can we create object for interface (No)
+12. Can we create constructor in abstrct class (Yes) and we can execute abstrct class constructor through child class construcor
+13. this,super keywords
+14. this(),super() constrcutor calls
+15. what is constructor?
+16. Can we overload the constructor?(Yes)
+17. What is encapsulation
+18. Wat is inheritence OR IS-A Relationship?        
+19. what is HAS-A Relationship?
+20. What is polymorphism?
+21. What is data abstrction & data hiding?
+22. what are arrays in java?
+23. diff between List Set Queue Map?
+24. what is collection framework in java
+25. What is arraylist and linked list?
+26. What is hashtable and hashmap
+27. what is map?
+28. What is comparator & comparable?
+29. What is TreeSet & TreeMap?
+30. What are cursors in java?
+31. for each loop in java
+32. Properties class in java
+33. What re generics?                          List<String>
+34. Regular expressions in java?
+35. Exception handling in java?
+36. How do u handle exceptions?
+37. checked vs unchecked exceptions
+38. Can we create our own exceptions?(Yes)            
+39. Mutable vs immutable in java?
+40. diff between final finally finalize()
+41. throw vs throws
+42. String vs StringBuffer vs StringBuilder
+43. Exception vs error
+44. How do u replace word in the paragraph?
+45. How do u remove duplicates?
+[1,1,2,2,8,8,8]
+46. Where u implemented overloading and overriding?
+47. where u implemented List Set Map in selenium?
+48. reverse of a string
+49. git commands
+50. how to run code from jenkins
+51. diff between static method & non static method
+
+
+Selenium:
+=========
+1. explain ur framework in detail?
+2. how do u achieve synchronisation with syntaxes?
+3. locators in selenium
+4. without using sendKeys(-) can we send the data? (yes using JavascriptExecutor interface)
+5. can v achieve 100% automation?
+6. Actions class in detail
+7. Select class in detail
+8. right click operations
+9. drag and drop operations
+10. how do find total noof disabled links?
+11. how do handle multiple windows
+12. diff between findElements(By by) & getWindowHandles()?
+13. How do u launch the chrome browser?
+14. what are WebDriver commands or methods?
+15. How do u switch to frames?
+16. How do u handle alerts ?
+17. diff between NoSuchElementException vs StaleElementReferenceException
+18. Dynamic xpaths?
+19. cssselector vs xpath
+20. How do work excel sheets (APACHE POI API)
+21. Testng Annnotations
+22. How do u re run the failed test cases?
+23. ExtentReports in selenium?
+24. GIT commands
+25. How do u push the code?
+26. How do u merge the code?
+27. frames in selenium
+28. alerts in selenium
+29. cross browser in tesng?
+30. headless browser testing?
+31. roles n responbilities
+32. Actions class methods in details
+33. what is robot class in selenium
+34. explain ur framework in detail
+35. what are assertins or validations?
+36. what is maven and commands
+37. Jenkins in detail
+38. How do u take screenshot?
+39. listeners in selenium?
+40. when do we get NoSuchElementException?
+41. How do u switch from one window to another window?
+42. expalin ur selenium framework
+43. how to take screenshots
+44. how do u achieve synchronisation?
+45. how u vl use waits in selenium?
+46. without using sendkeys() method can we send the data?(using javascript executor)
+47. diff exception in selenium web driver
+48. what is staleelementexception
+49. what is robot class
+50. how to upload a file?
+51. junit annotations
+52. what is testng and annotations?
+53. junit or testng better?
+54. how to skip test case in selenium?
+55. how do u re run the failed test cases?
+56. how to run the jenkins server from command prompt
+57. how to run the selenium server from command prompt
+58. explain about ur selenium framework detail
+
+SQL:
+====
+1. what DDL DML commands?
+2. write a query to get second highest salary?
+3. get all emp names in ascending order from emp table?
+4. what are JOINS and types of joins can u plz expalin?
+5. data types in sql?
+6. what are constraints?
+7. primary key vs foreign key?
+8. inner join vs outer join
+9. left outer join vs right outer join
+10. alter drop truncate delete commands
+11. how to connect to database through jdbc step
+12. groupby and joins in sql
+13. having,group by use case
+
+
+
+API Testing POSTMAN:
+====================
+1. diff between soap and rest api
+2. what is api & web service
+3. error status codes (200 ).....
+4. how do u validate responces
+5. methods get() post()
+6. what is d diff between get() & post()
+7. api automation flow
+
+
+
+
+
+
+
+
+
+whenever the data is constant. static variable will create a one single copy and it will share to all the objects in the class
+whenever the data is not constant. non static variable will create a separate copy for every object.

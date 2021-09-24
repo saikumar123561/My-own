@@ -1,0 +1,509 @@
+
+Q) Swap Two Numbers
+
+		int a = 10;
+		int b = 20;
+		
+		System.out.println("before swapping " + a + " " + b);
+		int temp = a;
+		
+		a = b;
+		
+		b = temp;
+		
+		System.out.println("after swapping " + a + " " + b);
+
+------------------------------------------------------------------------------------------------------------------
+
+int a = 10;
+		int b = 20;
+		
+		System.out.println("before swapping " + a + " " + b);
+		
+		a = a + b;
+		
+		b = a - b;
+		a = a - b;
+ 		
+		
+		System.out.println("after swapping " + a + " " + b);
+
+==============================================================================================================
+
+Q) Swap Two Strings
+
+		String a = "hello";
+		String b = "world";
+		
+		String temp = a;
+		
+		a = b;
+		
+		b = temp;
+		
+		System.out.println(a);
+		System.out.println(b);
+
+------------------------------------------------------------------------------------------------------------------
+
+		String a = "hello";
+		String b = "world";
+
+		a = a + b;                                        //helloworld
+ 
+		b = a.substring(0, a.length() - b.length());                               //helloworld-world               8-5 = 3
+
+		a = a.substring(b.length());                                                          //beginning index is b.length()    
+
+		System.out.println(a);
+		System.out.println(b);
+
+
+==============================================================================================================
+
+Q) Reverse A Number
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the number");
+		
+		int num = sc.nextInt();
+		
+		int rev = 0;
+		while(num!=0)
+		{
+			rev = rev*10 + num % 10;       //modular operator return last digit (eliminates first)
+			num = num/10;                  // 1234/10 = 123  it eliminates last digit
+		}
+		System.out.println("reverse number is : " + rev);
+
+------------------------------------------------------------------------------------------------------------------
+we can use StringBuilder also
+==============================
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the number");
+		
+		int num = sc.nextInt();
+		
+		StringBuffer sb = new StringBuffer(String.valueOf(num));
+		StringBuffer rev = sb.reverse();
+		
+		System.out.println("reverse number is : " + rev);
+
+------------------------------------------------------------------------------------------------------------------
+
+Q) Reverse A String
+
+		String a = "saikumar";
+		
+		String rev = "";
+		for(int i=a.length()-1; i>=0; i--)
+		{
+			char ch = a.charAt(i);
+			rev = rev + ch;
+		}
+
+		System.out.println("reverse is : " + rev);
+
+------------------------------------------------------------------------------------------------------------------
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String");
+		
+		String str = sc.next();
+		
+		String rev = "";
+		for(int i=str.length()-1; i>=0; i--)
+		{
+			char ch = str.charAt(i);
+			rev = rev + ch;
+		}
+
+		System.out.println("reverse is : " + rev);
+
+------------------------------------------------------------------------------------------------------------------
+
+String a = "saikumar";
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append(a);
+		
+		StringBuffer rev = sb.reverse();
+
+		System.out.println("reverse is : " + rev);
+------------------------------------------------------------------------------------------------------------------
+
+		String a = "saikumar";
+		
+		String rev = "";
+		char[] c = a.toCharArray();
+		
+		for(int i =c.length-1; i>=0; i--)
+		{
+			rev = rev + c[i];
+		}
+
+		System.out.println("reverse is : " + rev);
+
+==============================================================================================================
+
+Q) Palindrome Number : A Palindrome Number is a number that remains same even after the digits are reverse.
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a number");
+		int num = sc.nextInt();
+	
+		int org_num = num;
+		
+		int rev = 0;
+		while(num!=0)
+		{
+			rev = rev * 10 + num % 10;
+			num = num / 10;
+		}
+		
+		if (org_num == rev) {
+			System.out.println("It is Palindrome Number");
+		} else {
+			System.out.println("It is not a Palindrome Number");			
+		}
+
+==============================================================================================================
+
+Q) Palindrome String
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a String");
+		String num = sc.next();
+	
+		String org_num = num;
+		
+		String rev = "";
+		for(int i = num.length()-1; i>=0; i--)
+		{
+			char c = num.charAt(i);
+			rev = rev + c;
+		}
+		
+		if (org_num.equals(rev)) {
+			System.out.println("It is Palindrome String");
+		} else {
+			System.out.println("It is not a Palindrome String");			
+		}
+
+==============================================================================================================
+
+Q) Count Number Of Digits in A Number    /      occurences of digits in number
+
+		int num = 12344;
+		
+		int count = 0;
+		while(num>0)
+		{
+			num = num/10;        //eliminates last digit
+			count++;
+		}
+		System.out.println(count);
+
+==============================================================================================================
+
+Q) Count Number Of characters in A String  / occurence of character in a String     
+
+		String a = "saikumar";
+		
+		int count = 0;
+		char[] c = a.toCharArray();
+
+		for(char ch : c)
+		{
+			count++;
+		}
+		
+		System.out.println(count);
+
+==============================================================================================================
+
+Q) occurence of character 's' in a String 
+
+		String a = "saikumar";
+		
+		int count = 0;
+		char[] c = a.toCharArray();
+
+		for(char ch : c)
+		{
+			if (ch == 's') {
+				count++;
+			}
+		
+		}
+		
+		System.out.println(count);
+
+==============================================================================================================
+Q) occurences of word in a String
+
+		String a = "sai kumar sai";
+		
+		int count = 0;
+		String[] s = a.split(" ");
+
+		for(String ch : s)
+		{
+			if (ch.equals("sai")) {
+				count++;
+			}
+		
+		}
+		
+		System.out.println(count);
+
+==============================================================================================================
+
+Q) Count Number Of EVEN & ODD Digits in A Number
+
+		int num = 1345687;
+		
+		int even_count = 0;
+		int odd_count = 0;
+	
+		while(num>0)
+		{
+			int rem = num % 10;
+			
+			if (rem%2==0) {
+				
+				even_count++;
+				
+			} else {
+				
+				odd_count++;
+			}
+			num = num/10;
+			
+		}
+
+		System.out.println("even : " + even_count);
+		System.out.println("odd : " + odd_count);
+
+==============================================================================================================
+
+Q) Count Sum Of Digits in a Number
+
+		int num = 123;
+		
+		int sum = 0;
+		while(num>0)
+		{
+			int n = num % 10;
+			sum = sum + n;
+			num = num / 10;
+		}
+
+		
+		System.out.println(sum);
+
+==============================================================================================================
+
+Q) extract numbers and do sum
+
+		Pattern pat = Pattern.compile("[0-9]");
+		Matcher mat = pat.matcher("sai123");
+
+		int sum = 0;
+		while(mat.find())
+		{
+			String mat_group = mat.group();
+			int i = Integer.parseInt(mat_group);
+			sum = sum + i;
+			
+		}
+
+		System.out.println(sum);
+
+------------------------------------------------------------------------------------------------------------------
+
+		String n = "sai123";
+		
+		char[] c = n.toCharArray();
+		
+		int sum = 0;
+		for(char ch : c)
+		{
+			if (Character.isDigit(ch)) {
+				int i = Character.getNumericValue(ch);
+				sum = sum + i;
+			}
+		}
+		
+		System.out.println(sum);
+
+
+
+==============================================================================================================
+
+Q) Find Largest Of 3 Numbers
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a");
+		int a = sc.nextInt();
+		
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("enter b");
+		int b = sc1.nextInt();
+		
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("enter c");
+		int c = sc2.nextInt();
+
+		if (a>b && a>c) {
+			System.out.println("a is the largest number");
+		}
+		
+		else if (b>a && b>c) {
+			System.out.println("b is the largest number");
+		}
+
+		else if (c>a && c>b) {
+			System.out.println("c is the largest number");
+		}
+
+==============================================================================================================
+
+Q) Generate Fibonacci series   -->  A series of number in which each number is the sum of 2 preceding numbers
+
+0 1 1 2 3 5 8 13
+
+		int n1 = 0, n2 = 1;
+		
+		System.out.print(n1 + " " + n2);
+		
+		int sum = 0;
+		for(int i=2; i<10; i++)
+		{
+			sum = n1+n2;        //1
+			System.out.print(" " + sum);
+			n1=n2;
+			n2=sum;
+		}
+
+==============================================================================================================
+
+Q) Check Given Number is Prime Or Not
+
+what is prime number?                            -->  number which is not able to division remainder 0
+ --> natural number > 1
+ --> which has 2 factors and it should divide by 1 and itself
+
+19 -> 1 and 19 -> prime number
+28 ->  div by 1,2,4,14,28
+
+examples: 2,3,5,7,13,17,19 are prime numbers
+
+
+		int num = 4;
+		
+		int count = 0;
+		if(num > 1)
+		{
+			for(int i = 1; i <= num; i++)
+			{
+				if (num % i == 0) {
+					count++;
+				}
+			}
+			
+			if (count == 2) {
+				
+				System.out.println("it is a prime number");
+			} else {
+
+				System.out.println("it is not a prime number");
+			}
+		}
+ 
+==============================================================================================================
+
+Q) How To Remove Junk or Special Characters in String
+
+		String st = "s*$()(*$;ai#$)$ku^$*^(mar^^($%*@&((@";
+		
+		//regular expression [^a-zA-Z0-9]
+		
+		String s = st.replaceAll("[^a-zA-Z0-9]", "");
+		
+		System.out.println(s);
+		
+		
+		//print special characters
+		
+		String str = "&%(sai(&)";
+		
+		String s1 = str.replaceAll("[a-zA-Z0=9]", "");
+		System.out.println(s1);
+
+===========================================================================================================
+
+Q) How To Remove White Spaces in a String
+
+		String name = "sai   kumar  gg";
+		
+		String n = name.replaceAll("\\s", "");
+		
+		System.out.println(n);
+
+===========================================================================================================
+
+Q) How To Count Occurrences of a Character in a String
+
+		String name = "sai kumar";
+
+		char[] c = name.toCharArray();
+
+		int count = 0;
+		for(char ch : c)
+		{
+			if(ch=='a')
+				count++;
+		}
+
+		System.out.println(count);
+
+===========================================================================================================
+
+Q) How To Count Words in a String
+
+		String name = "sai kumar sai";
+
+		String[] c = name.split(" ");
+
+		int count = 0;
+		for(String ch : c)
+		{
+			if(ch.equals("sai"))
+				count++;
+		}
+
+		System.out.println(count);
+
+===========================================================================================================
+
+Q) reverse a String
+
+		String name = "saikumar";
+
+		String rev = "";
+		for(int i=name.length()-1; i>=0; i--)
+		{
+			char c = name.charAt(i);
+			rev = rev + c;
+		}
+
+		System.out.println(rev);
+
+===========================================================================================================

@@ -1,0 +1,14 @@
+Arrays
+=======
+
+Arrays.asList(names);     -->   to convert arrays to 
+
+Collections
+===========
+
+Collections.synchronizedMap(map) 
+
+Collections.singleton    -->   refer collection full text file
+
+Collections.reverseorder()      -->    to reverse arrays or collections
+

@@ -1,0 +1,243 @@
+
+
+Q)  Find Sum of Elements in Array
+
+		int[] num = {1,3,4};
+		
+		int sum = 0;
+		
+		for(int val : num)
+		{
+			sum = sum + val;
+		}
+		System.out.println(sum);
+
+===========================================================================================================
+
+Q) Print Even & Odd Numbers from an Array
+
+
+		int[] num = { 1, 3, 4, 2 };
+
+		System.out.println("even numbers ..............");
+		for (int val : num) {
+			if (val % 2 == 0) {
+
+				System.out.println(val);
+			}
+		}
+
+		System.out.println("odd numbers .............");
+
+		for (int val1 : num) {
+			if (val1 % 2 != 0) {
+				System.out.println(val1);
+			}
+
+		}
+
+
+===========================================================================================================
+
+Q) How To Check The Equality Of Two Arrays
+
+		int[] num = {1,2,3,4};
+		
+		int[] num1 = {1,2,3};
+		
+		if (Arrays.equals(num, num1)) {
+			
+			System.out.println("arrays are equal");
+			
+		} else {
+			
+			System.out.println("arrays are not equal");
+		}
+
+===========================================================================================================
+
+Q) Find Missing Number in an Array
+
+		//dup should not be there
+		//no need to be sorted order
+		//should be in range
+
+		int[] num = {1,2,3,5,6};
+		
+		int sum = 0;
+		for(int c : num)
+		{
+			sum = sum + c;
+		}
+		System.out.println("sum of array : " + sum);
+		
+		int sum1 = 0;
+		for(int i=1; i<=6; i++)
+		{
+			sum1 = sum1 + i;
+		}
+		
+		System.out.println("missing number : " + (sum1-sum));
+
+===========================================================================================================
+
+Q) How To Find Maximum & Minimum Values in Array
+
+		int[] num = {1,3,7,2,9,4};
+		
+		int max = num[0];
+		
+		for(int i=1; i<num.length; i++)
+		{
+			if (num[i]>max) {
+				
+				max = num[i];
+			}
+		}
+		
+		System.out.println("max : " + max);
+		
+		int min = num[0];
+		
+		for(int i=1; i<num.length; i++)
+		{
+			if (num[i]<min) {
+				
+				min = num[i];
+			}
+		}
+
+		System.out.println("min : "+ min);
+
+===========================================================================================================
+
+Q) How To Find Duplicate Elements in Array
+
+		int[] num = {1,3,7,2,9,4,9};
+		
+		Set<Integer> set = new HashSet<>();
+		
+		for(int ele : num)
+		{
+			if (set.add(ele) == false) {
+				
+				System.out.println(ele);
+			}
+		}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+		int[] num = {1,3,7,2,9,4,9};
+
+		for(int i=0; i<num.length; i++)
+		{
+			for (int j = i+1; j < num.length; j++) {
+				
+				if (num[i] == num[j]) {
+					
+					System.out.println("duplicate : " + num[i]);
+				}
+			}
+		}
+===========================================================================================================
+
+Q) Searching an Element in Array | Linear Search
+
+		int[] num = { 1, 3, 7, 2, 9, 4 };
+
+		int search = 1;
+
+		boolean flag = false;
+		for (int i=0; i<num.length; i++) {
+			if (search == num[i]) {
+				System.out.println("element found at : " + i);
+				flag = true;
+				break;
+			}
+		}
+
+		if (flag == false) {
+			System.out.println("element not found");
+		}
+
+===========================================================================================================
+
+Q) Sort Elements in Array Using Built-in Methods
+
+		int[] num = { 1, 3, 7, 2, 9, 4 };
+
+		System.out.println("before sort : " + Arrays.toString(num));
+//		Arrays.parallelSort(num);
+		Arrays.sort(num);
+		
+		System.out.println("after sort : " + Arrays.toString(num));
+
+===========================================================================================================
+
+Q) sort in descending
+
+		Integer[] num = { 1, 3, 7, 2, 9, 4 };
+
+		System.out.println("before sort : " + Arrays.toString(num));
+		
+		Arrays.sort(num, Collections.reverseOrder());
+		
+		System.out.println("after sort : " + Arrays.toString(num));
+
+===========================================================================================================
+
+Q) 		File file = new File("C:\\Users\\user\\Desktop\\february\\feb\\saisolutions\\Files\\sai.txt");
+
+		boolean create = file.createNewFile();
+		
+		if (create) {
+			
+			System.out.println("file is already created");
+		} else {
+
+			System.out.println("creating the file");			
+		}
+		
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		
+		while(br.ready())
+		{
+			String data = br.readLine();
+			System.out.println(data);
+		}
+
+		br.close();
+===========================================================================================================
+
+Q) How To Read Data From Text File
+
+		File file = new File("C:\\Users\\user\\Desktop\\february\\feb\\saisolutions\\Files\\sai.txt");
+
+		boolean create = file.createNewFile();
+		
+		if (create) {
+			
+			System.out.println("creating the file");
+		} else {
+
+			System.out.println("file already exists");			
+		}
+		
+		FileWriter fr = new FileWriter(file, true);
+		BufferedWriter br = new BufferedWriter(fr);
+		
+		br.write("vijay");
+		br.newLine();
+		br.write("mahanthi");
+		br.newLine();	
+		
+		
+		br.close();
+
+
+
+
+
+
+

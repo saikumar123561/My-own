@@ -1,0 +1,121 @@
+
+
+Q) what are the main components of automation framework built for selenium?
+
+Q) how do u handle data parameterization globally in automation framework?         -->     @Parameters
+
+Q) how do u handle data parameterization specific to TC in automation framework?    -->     @DataProviders
+
+Q) how to run selected tests from the set of TC's in  automation framework?                -->        groups
+
+Q) how to execute pre conditions and post conditions for each TC in automation framework?          -->    BeforeMethod and AfterMethod
+
+Q) what is invocation count in TestNG?
+
+Q) what is timeout in TestNG?    -->   
+
+
+Q) parallel execution in TestNG?
+A) by using parallel attribute in testng.xml file at suite level it also has a parameter called thread-count 
+parallel is decided by thread-count. if we give thread-count as 3 then 3 tests invoke at a time
+
+Q) how will u achieve encapsulation in automation framework?
+
+A) we have done in page objects. by declaring all locators as private and to interact with those locators we wrote corresponding methods  and declared as public. and also 
+in Base class we declared all variables as private to available the variables to all the classes we implemented Getters
+
+
+Q) how will u declare globall variables in automation framework?
+
+A) By using properties class (java) this class can access the content inside the .properties extension file
+
+basically this properties files maintain in the form of key and value
+then we need to tell where exactly this file is present by using FIP
+then load the file using load();
+to extract the value just we need to use getProperty();
+to update the data just we need to use setProperty();
+
+
+
+Q) how do u deal with reusable componenets in automation framework?
+
+A) by using extends keyword we can achieve this. we have one BaseTest class where we perform all reusable methods | components to use those reusable components in our actual TC by inheriting them.
+
+
+Q) how to run automation framework from jenkins?
+we can run our automation framework with the help of mvn cmd's 
+
+A) our automation framework should be available in maven project, inside the pom.xml file we need to configure the testng.xml file.
+this framework should be checkin into the any branch in the git
+
+we need to create one job by clicking on new item
+in SCM section we need to provide the repo url where our framework code resides
+in build section we need to pass the mvn goals
+we can schedule our jobs triggers in build trigger section like pollscm, build periodically with the help of cron 
+
+====================================================================================================
+
+Q) how do we arrange the locators in automation framework?             -->   22 question rahul shetty
+
+A) POM  (we seggregate the locators available in each page in separate java class) and write corresponding methods to interact 
+
+test cases are maintain in diff java class where we call the methods specific to that locator
+
+in case any locator needs to be updated | deleted we need to modify them in particular java class for that specific screen not everywhere
+
+easy to use and maintain
+
+====================================================================================================
+
+Q) mvn cmd to achieve profiling?  or        i have mul testng xml files i want to trigger the specific xml file?     -->     23  question 
+  
+  (inside the profile we need to define the plugin)
+  mvn cmd  -->    mvn test -PSmoke      (followed by the id name)
+ 
+<profiles>
+ <profile>
+   <id>Regression</id>
+   <build>
+     <pluginManagement>
+        <plugins>
+          <plugin>
+                 -------------------------------------
+                 -------------------------------------
+                 -------------------------------------
+          </plugin>
+        </plugins>
+     </pluginManagement>
+   </build>
+ </profile>
+ <profile>
+   <id>Smoke</id>
+   <build>
+     <pluginManagement>
+        <plugins>
+          <plugin>
+                 -------------------------------------
+                 -------------------------------------
+                 -------------------------------------
+          </plugin>
+        </plugins>
+     </pluginManagement>
+   </build>
+ </profile>
+</profiles>
+
+
+Q) how to capture screenshot automatically on failed TC's?
+
+A) using TestNG listners like ITestResult
+
+Q) how do u manage the code?
+
+A) Git 
+
+
+TakeScreenshot shot = (TakeScreenshot) driver;
+File file = shot.getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(file, new File(""));
+
+
+

@@ -1,0 +1,19 @@
+
+
+TC design techniques  -->   for good test coverage (thing from diff point of view. we need to thing in a creative way)
+
+error guessing  -->  by updating negative values
+BVA  --> 
+Decision table techniques
+state transaction techniques
+euqivalance partition  or euquivalance class partioning -->   we can save our time by entering one number within that range  -->  5:00
+
+
+euqivalance partition  or euquivalance class partioning
+here we divide our range in to various classes and from each class we will test single value. we can save our time
+
+
+BVA  --> 11:00. here also we can save our time
+
+decision table technique: it is based on conditions, -->   14:00
+comibination of conditions, rules, 

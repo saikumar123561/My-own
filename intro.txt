@@ -1,0 +1,102 @@
+Client
+Team: PO (hariprasad)
+scrum master(revanth)
+Dev
+testers, lead
+
+
+
+                                                                                                  Tell me about yourself
+                                                                                                 ----------------------------------
+  
+i majorly involved in to all test activities that we are doing. i also participated in scrum ceremonies. so where we have daily stand up, sprint planning, sprint review, sprint retrospective. we usually have 2 weeks of sprint.
+i also majorly involved in automation activities, where i am taking part in developement of the scripts, developement of the framework where we build utilities, execution of the script via jenkins and finally maintainence wheneve the test fails we analyze the results we fix it and run it.
+whenever we have new build we run our automation TC's we run our regression TC's
+testing the app whenever we find bug we report it and retest
+
+in every sprint we enhancing our framework
+
+i am saikumar, i have been into IT industry for the past 3.5 years. Initial of my career i started in Testing.  My early days were like i used to do manul testing, where my responsibilities are understanding the requirements, identifying Test Scenarios, writing the TC's
+and executing them reporting defects and tracking defects and retesting on fixed defects
+
+and later i started doing Automation testing using Selenium WebDriver with Java.  The tools and technologies we are implementing as part of Automation. for SCM we are using Git, most of our projects are java based so we tend to use Maven as a build tool, for CI / CD we are using Jenkins. 
+i worked with TestNg, I have worked with POM design with Data Driven Framework. running smoke suites on daily basis, running regression suites. developing automation scripts using Selenium WebDriver.
+we are following Agile methadology. Jira for project management.
+
+This is what i have been doing for the past 3.5 years.
+
+
+where my responsibilities are understanding the requirements selecting the TC's for automation and regression point of view. grouping the TC's and prioritizing the TC's. running regression suite. running smoke suites on daily basis and sending mail to team on health of the app. 
+
+
+                                                     
+ 
+
+experience
+companies, role, project names
+type of testing
+i have worked on selenium with java, TestNG
+i have quick ci|cd pipeline setup
+i have worked with pom 
+u are able to design framework i am able to contribute to the existing framework. i have gone through my company's framework
+i have develop custom utilities for my project 
+agile methadology  --> scrum 
+=======================================================================================================
+
+                                                                                                           Daily activities
+                                                                                                        ---------------------------
+
+
+The moment i opened my laptop, i will check the imp emails and reply those imp emails if required on time. make sure no miss emails from my side.
+running smoke suites on daily basis and sending mail to team on health of the app.
+i actively participate in scrum ceremonies. so where we have daily stand up, sprint planning, sprint review, sprint retrospective.
+working on user stories in current sprint.
+
+and also i majorly involved in to all test activities that we are doing.  as part of automation
+i majorly involved in automation activities, where i am taking part in developement of the scripts, developement of the framework where we build utilities, execution of the script via jenkins and finally maintainence whenever the test fails we analyze the results we fix it and run it. 
+running automation suites, smoke, regression and sanity
+
+retest the defects which are fixed by Dev.
+
+=============================================================================================================
+
+selecting the TC for automation and regression point of view.
+grouping the TC, prioitizing the TC using TestNG
+Data Driven Testing, Cross Browser testing
+running regression suite.
+and any other tasks allocated
+
+verify defects assigned to me and take appropriate actions. and 
+=======================================================================================================
+
+
+we are following Test Automation Pyramid in these we give most of the coverage to unit tests, next we give priority to SIT and the remaining part we give to UI Automation Test and manual test.
+
+so that we can reduce the bugs in UI Automation test like sync issues, app crash, UI issues, xpath is not able to locate. so that we again ask the dev to fix and retest it takes more time to avoid that we use Test Automation Pyramid.
+
+===============================================================================================================
+
+
+selenium is a library which will help us to stimulate browser actions on the web page
+which helps us to identify the webelement, identify web ojects on the web pages
+
+
+
+
+
+
+@DataProvider
+public Object[] [] productData() {
+return new Object[] [] {
+             { "IMac" },
+             { "MacBook" },
+             { "Apple" } };
+                     
+}
+
+@Test(dataProvider = "productData")
+public void searchTest() {
+          ----------------------------------------------(Test)
+          Assert.assertTrue(searchResultPage.
+}
+

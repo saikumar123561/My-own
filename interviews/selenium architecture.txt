@@ -1,0 +1,147 @@
+
+How selenium works?  |  selenium architecture?
+
+selenium works in a client and server design architecture
+
+we have 4 major componenets
+
+selenium libraries     -->        json wire protocol        -->          browser drivers                     -->                    real browsers
+java                                             to interact between                    all browser specific                                       these drivers interact with real browsers
+phython                                    client and server we                     drivers                                                               the browsers don't want to expose its
+c##                                              used json wire                                chromedriver...                                               fn. so we have component broser
+java script ...                            protocol
+
+
+so whenever we write the program and execute in IDE then the request go to json wire protocol and with the help of json wire protocol it interacts with browser drivers and browser drivers interact with real browsers. so action will take place on the real browser
+and in the same way we get the response back from browser to IDE (successful or failure) with meaningful messages in the eclipse console
+
+why not it will interact real browsers?
+A) the browsers don't want to expose its fn. so we have component browser drivers.
+
+
+==============================================================================================================
+
+design ur own web driver  
+===========================
+
+
+public interface WebDriver {
+
+	public void get(String url);
+
+	public void close();
+
+	public void quit();
+
+	public void getTitle();
+
+}
+
+
+public class ChromeDriver implements WebDriver {
+
+	public ChromeDriver()	 {
+		System.out.println("launch browser");
+	}
+	
+	@Override
+	public void get(String url) {
+		System.out.println("enter url");
+		
+	}
+
+	@Override
+	public void close() {
+		System.out.println("close browser");
+		
+	}
+
+	@Override
+	public void quit() {
+		System.out.println("quit Browser");
+		
+	}
+
+	@Override
+	public void getTitle() {
+		System.out.println("get title");
+		
+	}
+
+}
+
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		WebDriver dri = new ChromeDriver();
+		
+		dri.get("www.facebook.com");
+		dri.close();
+		dri.quit();
+		dri.getTitle();
+		
+	}
+
+
+==============================================================================================================
+
+STALE ELEMENT EXCEPTION:
+============================
+
+DOM -->  document object model
+
+we get this exception when the element is either removed or no longer attached to the DOM.
+
+
+when we refresh page the entire webpage is not going to refresh, only the specific section on the webpage is getting refresed that is called ajax component | ajax call.
+
+
+when we refresh we get these exception
+
+
+==============================================================================================================
+
+
+irrespective of the page load the ajax call go to the server and get the response from the server and load the elements   -->   QAFOX
+
+Q) How to handle Ajax calls in Selenium WebDriver?      -->    we get no such element exception
+
+A) selenim is going to wait for all the elements to be loaded on the webpage. selenium is not going to wait for ajax call.
+so to handle these ajax calls we need use explicit wait mechanism
+
+wait.until(ExpectedConditions(visibilityOfElementLocated(By.xpath("[text()='facebook']")));
+
+
+============================================================================================================== 
+
+
+Q) what is API?
+
+API -->  Application Programming Interface
+
+it enables the communication btw 2 diff apps
+
+let's suppose in zomato app to track our order by single click we can track our order through google maps
+so here zomato cannot access the data of google maps directly. and goole maps don't expose their info to 3rd party app
+
+here api comes into the picture
+whenever we click the specific button to tract our order in zomato the request redirect to the google maps api 
+and google maps api send the request to the google map and does the validation and gives the response in zomato
+
+
+api acts as a secure layer btw the 2 apps
+
+
+
+all these app expose their info to api, so this 3rd party app get the info through this api
+
+medium -->  http      (phone)
+format    -->  json | xml    (english language)
+
+
+Q) how API work?
+
+API work in a client and server architecture and needs a format and medium to communicate. 

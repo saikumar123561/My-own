@@ -1,0 +1,20 @@
+
+
+
+iterate  
+=======
+
+list.forEach(num -> Syso(num));
+
+
+remove duplicates
+=================
+
+List<String> unique = list.stream().distinct().collect(Collectors.toList());
+Syso(unique);
+
+
+iterate Map
+============
+
+hm.forEach((k,v) -> System.out.println("key : " + k + "   value : " + v));

@@ -1,0 +1,178 @@
+
+We are using POM design with Data driven Framework
+
+
+folder structure:
+==============
+
+our framework begins with base package in that package we have 2 classes one is BaseTest and other is ActionsEngine.
+
+supporters -->  PropertiesReader, ExcelReader, TextReader to work with those respective files.
+
+in this package we have custom functions to work with the properties files like object repo and configration files we have predefined class called "PropertiesReader", to work with the excel sheets we have predefined class called "ExcelReader", to work with the text files we have predefined class called "TextReader"
+
+reports  -->  here we writing custom fn in extentreports.
+
+customised exceptions  -->  FrameworkException   (here we created our own exceptions)
+
+listners  -->  ReRun_Faile_TCS, AnnotationRetry   (here we are taking the classes to rerun the failed tc's )
+
+utilities  -->  DriversPaths, ScreenshotUtility, PojoUtility. (we define all the utility functions here)
+
+//objectrepo  -->  or.properties file  (here we are maintaining all the webelment identification in the form of properties files)
+
+pageObjects   -->  here we are maintaining all the pages available in the web app
+
+testdata  -->  excel sheets   (we are maintaining out testdata)
+
+bussinessscripts  -->  we are writing all the TC's here
+
+folders  -->  drivers, reports, screenshots, popups, confi.properties file
+
+==============================================================================================================
+explanation
+============
+
+components in POM:
+==========================
+
+1st component  -->     Base package
+
+@BeforeSuite   -->  BaseTest
+BaseTest class here we are writing the core driver fn like opening the browser, closing the browser with the help of TestNG annotations. 
+
+in openbrowser() -->  here we are launching the browser with the help of @Parameters annotation and passing the parameters from xml file. so if we pass the parameter as chrome then the script should be execute on chrome browser likewise it goes with edge, firefox, ... And we annotate it as @BeforeSuite.
+
+@BeforeMethod
+next in beforeTCExecution()  -  here we are tracking which test case is going to execute, with the help of predefined class  method which is coming from java.lang.reflect. And we annotate it as @BeforeMethod.
+
+@AfterMethod
+next in afterTCExecution()  - here we are tracking the status of the TC with the helo ITestResult listner and if the TC fails | skips take a screenshot and we implemented this screenshot implementation as the part of one interface called screenshotutility  and attaching to the reports.
+
+@AfterSuite
+in closeBrowser() - close the browser if driver is not pointing to null
+
+@BeforeTest
+initReports -->   here we are initialising the extentreports.
+
+@AfterTest
+generateReports   -->   here we taken if condition to close the extentreports, if it is not pointing to null
+
+
+inside this class we declare all the variables as private.  it is a tightly encapsulation class.                                    (and corresponding getter methods)
+
+
+ActionsEngine extends BaseTest
+=================
+
+here we are maintaing custom fn related to "Actions class", "javascriptexecutor" interface, "webelement" interface methods like click operation, datatypingaction, explicit, implicit, double click, rightclick, drawborder, getTile ......  all these methods which are used to perform actions on the webpages
+
+
+2nd component  -->       page object package extends BaseTest                                               pages in framework:     (page layer or pagelibraries)
+======================================
+
+for each and every page we need to create separate java class
+
+here we are maintaining all the pages available in the  web app in the form of java class. and in each page class we are writing the By locators and the  corresponding methods to interact with those elements.                                                       
+
+(methods like click on login, click on forgot pw, click on image, select dd, enter un, switching to frame, verify title ....... respective features available in that particular page)
+
+to make it available driver to this, inside static block  (we have predefined class called pageFactory in that we have static methods initElements to initialise the elements) -->   14:00
+
+	static 
+	{
+		PageFactory.initElements(getDriver(), FlipkartHomePage.class);
+	}
+
+
+inside this we declare all the variables as private.  it is a tightly encapsulation class.      
+
+
+3rd component  -->      bussinessscripts package extends BaseTest                               Test layer     (bussinessscripts)
+===========================
+in test class
+we are maintaining all our test here,  we are calling page objects methods. we use annotations, assertions to verify, adding reports, @dataprovider(these will fetch the data from excel sheets)
+
+
+4th component    -->    excel sheets  using apache poi api
+=================
+in this worksheet here we are maintaining the testdata in the form of rows and columns like username data, password data, homepage data, account data,  contacts data ...........
+
+5th component:       --> supporters
+=====================
+
+here we are maintaing all the custom funtions
+
+to read the data from these excel sheet we have ExcelReader  -->  here we have custom fn where we define the methods to get specific sheet, celldata, totalsheetdata, row data
+
+to read the data from configuation files we have PropertiesReader  -->  here we have custom fn where we define the methods to get the values based on keys, get both keys and values, get only keys, get only values
+
+to read the data from Text files we have TextReader  -->  here we have custom fn where we define the methods to get read the data and write the data to the files
+
+to create object for these classes we are maintining a separate class called PojoUtility class.
+
+listners  -->  ReRun_Faile_TCS implements IRetryAnalyzer , AnnotationRetry implements IAnnotationTransformer   
+here we are taking the classes to rerun the failed tc's at runtime using IRetryAnalyzer listner and IAnnotationTransformer listner.   
+in TestNG every listner is interface.
+
+customised exceptions  -->  FrameworkException   (here we created our own exceptions)
+
+6th component  -->   utilities
+===================
+
+we define all the utilities which will very useful for my framework like to take ScreenshotUtility, PojoUtility (to create objects)
+
+
+7th component 
+===============
+
+reports and logs (log4j api)
+
+
+8th component
+=================
+
+to execute the my TC's we use TestNG.xml file  -->  it can access all these classes 
+
+entire thing is available on maven   -->   POM.xml file    (we are adding all the required dependencies, maven plugins to execute) 
+we make TestNG.xml file entry inside the POM.xml file
+this file will interact with TestNG.xml file ()
+
+
+GIT
+========
+
+Create a branch and entire thing check into that branch
+
+jenkins
+==========
+
+now it's time execute daily basis and publish the reports to the team
+
+2 ways 
+individual in local machine called stand alone execution
+we can setup jenkins
+
+jenkins will interact with git repo  (we need to all the configurations)
+we can trigger the jobs manually and at specific time using cron job
+
+
+
+
+page class
+By locators
+page actions    -->  locators
+
+pojoutility
+create object of page class
+
+test class
+call methods
++ assertions
+
+
+
+
+
+
+

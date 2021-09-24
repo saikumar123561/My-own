@@ -1,0 +1,93 @@
+
+
+https://github.com/YadaGiriReddy/HYR-Tutorials/blob/master/Selenium%20Interview%20Questions/Program3.java     -->   broken links
+
+
+Q) broken links
+
+a broken link is a link on the website that no longer accessible     (404)
+
+links are associated with tag anchor tag "a", and contains common attribute href
+collect the links present on the webpage based on tagname
+some of the links href is not at all available. so we need to check only when href available that url should not broken. 
+send http request for each link
+verify http response code
+determine if the link is valid or broken based on httpd response code
+repeat the process for all links
+
+
+
+
+
+
+may be pg removed from the website, may be the page is there in abc not in xyz (not present)
+404 means web page is not displaying
+
+
+we need to get all links and iterate it and verify proper link of broken link
+
+
+List<WebElement> links = driver.findElements(By.xpath("//a));
+Syso(links.size());
+Set<String> broken_Links = new HashSet();
+for(WebElement link : links)
+{                                                                                                                                                     //all url's associated with http protocol
+   String link_URL = link.getAttribute("href");
+   URL url = new URL(link_URL);                                                                                          //creating url instance  (to click)   -->    5:30
+   URLConnection urlConnection = url.openConnection();                                             //open connection to that server
+   HTTPURLConnection httpURLConnection= (HTTPURLConnection)  urlConnection                                                                                          //HTTPURLConnection is an abstract class we can't create instance
+ httpURLConnection.setConnectTimeout(5000);                                    when we r connecting sometimes we get timeout exceptions due                                                                                                                                  internet speed
+      httpURLConnection.connect();
+       
+   
+   if(httpURLConnection.getResponseCode() == 200)  {     (if it is 200 it is valid url other than thise is broken link)
+                 broken_Links.add(link_URL);
+   }
+   else
+                                                                                                                                                  //200 -->   ok
+   httpURLConnection.disconnect();                                                                              //500 -->   internal error
+}                                                                                                                                                //400 -->   bad request
+
+
+driver.quit();
+
+
+for(String brokurl : broken_Links)
+{
+
+
+
+}
+
+
+
+==============================================================================================================
+
+
+links are associated with tag      -->   //a    (href means reference property)
+images are associated with tag -->  //img  (src means reference property)
+
+
+we need to fetch the property of url and images and we need to verify
+
+1) get all the list of all links and images 
+
+List<WebElement> linksList = driver.findElements(By.tagname("a"));
+
+linksList.addAll(findElements(By.tagName("img")));
+
+some of the links href is not at all available. so we need to check only when href available that url should not broken. 
+
+List<WebElement> activeLinks = new ArrayList<WebElement>(); 
+
+for(int i=0; i<linksList.size(); i++) {
+        if(linksList.get(i).getAttribute("href") != null)  {
+        activeLinks.add(linksList.get(i));
+        }
+ 
+}
+
+
+
+
+from java.net package we have http connection api we check the link is correct or not

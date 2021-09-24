@@ -1,0 +1,30 @@
+
+
+regular expression [^a-zA-Z0-9]    -->    to remove junk
+String s = st.replaceAll("[^a-zA-Z0-9]", "");
+
+regular expression [a-zA-Z0-9]    -->    to print only junk
+String s = st.replaceAll("[a-zA-Z0-9]", "");
+
+
+String n = name.replaceAll("\\s", "");     -->    to remove spaces
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Q)  (123) 123 5678   or    123 123 5678    or      (123)-123-5678        or        (123).123.5678       or      (123) 123 5678
+
+Ans)  \(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}     -->  regular expression
+
+
+Q)  +1 (123) 123 5678
+
+Ans)    \+?\d{0,3}\s?    -->    +1 space          and                   \(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}     -->  (123) 123 5678
+
+
+\+?\d{0,3}\s?      -->    +1
+\(?\d{3}\)?           -->    first part
+[-.\s]?                     -->    spacing  
+\d{3}                      -->    second part
+[-.\s]?                     -->    spacing 
+\d{4}                      -->    third part

@@ -1,0 +1,154 @@
+
+hashmap is implementation class of map interface
+we can represent the data in the form of keys and values
+it doesn't allows duplicates
+keys cannot be duplicate values can be duplicate
+insertion order is not reserved
+hashmap is not synchronized. it is not thread safe.                       hashtable is synchronized and it is thread safe.
+concurrent modification exception  -->  fail fast
+
+to fetch the data from specific key   -->   get();       -->  if u don't have the key u will get null
+
+to fetch/iterate the hashmap      -->      entrySet();
+ 
+
+diff btw hashmap and hashtable
+hashmap is not synchronized. it is not thread safe.                       hashtable is synchronized and it is thread safe.
+=============================================================================================
+
+
+Q) how to iterate hashmap?
+
+public static void main(String[] args) {
+		
+		Map<Integer, String> hm = new HashMap<Integer, String>();
+		
+		hm.put(1, "sai");
+		hm.put(2, "sri");
+		hm.put(3, "manoj");
+			
+
+		for(Entry<Integer, String> e : hm.entrySet())
+		{
+			System.out.println(e);
+		}
+		
+		
+	}
+                                                                                                    OR
+
+
+		Iterator<Entry<Integer, String>> it = hm.entrySet().iterator();
+
+		while(it.hasNext())
+		{
+			Entry<Integer, String> entry = it.next();
+			System.out.println("key : " + entry.getKey() + "   value : " + entry.getValue() );
+		}
+
+
+
+                                                                                                    OR
+
+
+hm.forEach((k,v) -> System.out.println("key : " + k + "  value : " + v));
+
+=============================================================================================
+
+
+hashmap comparison    -->   Hashmap package  -->  comparison class    -->  naveen automations
+
+
+//compare on basis of key and value
+//compare on basis of keys
+//find out the extra keys
+//compare by values
+
+=============================================================================================
+
+Q) how to create one single entry map | immutable map with one single entry
+
+Map<Integer, String> map = Collections.singletonMap(1, "sai");
+System.out.println(map.get(1));
+
+map.put(2, "kumar");            // the moment we add another key we get this "UnsupportedOperationException"
+
+sameway  ---->         List, Set also
+=============================================================================================
+
+linkedhashmap?
+
+linkedhashmap is implementation class of map interface
+we can represent the data in the form of keys and values
+it doesn't allows duplicates
+keys cannot be duplicate values can be duplicate
+insertion order is reserved
+linkedhashmap is not synchronized. it is not thread safe.                       hashtable is synchronized and it is thread safe.
+
+default capacity is 16 segments
+
+diff btw hashmap and linkedhashmap?
+linkedhashmap maintains insertion order where as hashmap doesn't maintain insertion order
+
+
+=============================================================================================
+
+hashtable?
+it is legacy class introduced in java 1.1
+it is synchronized
+it doesn't allow null for both keys and values
+default capacity  11
+
+=============================================================================================
+
+Difference b/w ConcurrentHashMap & SynchronizedMap in Java || (HashTable vs HashMap)
+
+synchronized means mul threads perform and get the values
+
+to make hashMap as synchronized there are 3 options available hashtable, synchronized map, concurrentHashMap
+
+see the img
+
+hastable and synchronized map  here once thread 1 complete the work then only thread 2 is allowed
+
+
+concurrentHashMap default capacity is 16 segments   -->  mul thread can read the value on diff segments so lock will apply on segments not on object
+-------------------------------------------------------------------------------------------------------------------------
+how to convert hashmap into a synchronized map?
+
+Map<String, String> map = new HashMap<>();
+
+map.put("sai"):
+map.put("kumar");
+
+Map<String, String> synMap = Collections.synchronizedMap(map);
+Syso(synMap);
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Map<String, String> map = Collections.synchronizedMap(new HashMap<>());
+
+-------------------------------------------------------------------------------------------------------------------------
+how to create ConcurrentHashMap?
+
+ConcurrentHashMap<String, String> map = new ConcurrenHashMap<>();
+
+
+we can represent the data in the form of keys and values
+it allows both homo and hetero
+it doesn't maintains insertion order
+null is not allowed both keys and value we get null pointer exception.
+=============================================================================================
+
+treemap 
+
+we can represent the data in the form of keys and values
+sorting happens based on keys
+it can hold only homo    (because it does sorting)
+it doesn't allow duplicates
+it doesn't allow null (keys)
+
+
+TreeMap doesn't store key and value pair format based on hashcode
+only HashMap it is allowed

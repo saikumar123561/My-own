@@ -1,0 +1,23 @@
+maven latest version  -->  3.8.1  (3.6.3)
+
+maven is a build automation tool
+
+generate artifacts in the form of war, jar
+
+src/main/java   -->   features, libraries
+
+src/test/java     -->    we write automation TC's (using TestNG / JUnit)
+
+src/main/resources    -->    config.properties, xml files, 
+
+src/test/resources    -->   testng.xml files
+
+pom.xml   -->  we define dependencies, plugins, packaging
+
+readme.txt    -->  about the product, tools & technologies
+
+
+
+
+where we give all the packages in the form of jar
+in kind of web app (war  -->  Web Application Resource or Web application ARchive)

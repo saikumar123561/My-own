@@ -1,0 +1,62 @@
+
+Q) How you decide when to stop writing test cases?
+
+ensure we have created atleast one TC for each requirement with the help of requirement tracebility matrix (RTM) 
+and TC review will help to know whether we created enough TC's or not.
+
+Q) how to choose TC from each requirement?
+we need Review the TC
+
+===============================================================================================================
+
+Q) Tell me what are the challenges you have faced as a tester in the current project?
+
+Challenges from Requirements
+
+
+     -->  Requirements are changing after writing the TC
+     -->  delay in clarifying the requirements
+    -->   lack of time
+    -->   challenge with infrastructure
+
+    -->   deployment frequently failing
+    -->   defect fix is delay
+    -->   high defect fail rate
+
+we need to review how many TC are going to be affected, because of these how much additional time we require and then we inform to the client. if requirements are imp and client ready to extend the deadline.
+
+if client is not ready to extend the deadline then atleast we need to take permission to do ad-hoc testing temporarily later whenever we get time we add test cases. but this is risk. if client is ok to take this risk.
+
+
+===============================================================================================================
+
+Q) Challenges faced with Regression Testing
+
+Due to delay in build deployment from dev. not getting enough time to do regression testing.
+we escalted many times. dev team said there are mul issues build deployment, code developement, infrastructure
+
+
+Q)  QA team lost 1 week of time due to build deployment, developement and client is not ready to extend the deadline
+ 
+then we go for selected TC which cover major fn for regression testing
+
+
+Q) how u selected regression TCs?
+
+we need to follow the criteria
+we need to extract the report from jira test execution history for the last 3 releases
+
+we cover regression testing with high risk TC based on
+
+1)  consider high priority TC
+2)  consider frequently failed TC
+3) TC which are dependent on requirements which are modified during current release
+
+
+Q) out of 10 TC as part of regression test suite we have time to execute only 4 TC, but after selecting we got 5 TC
+
+discuss with PO, if it is high risk TC then try to cover 
+
+time depends on complexity, stability of the app, interfaces, fn, modules 
+===============================================================================================================
+

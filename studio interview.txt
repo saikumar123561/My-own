@@ -1,0 +1,50 @@
+
+
+
+tests with lower priority value gets first ref
+
+
+Upper case will take the first priority based on aasic value
+
+if all tests have same priority value, then the tests will get execute in alphabetic order
+
+if one test has priority value other than 0 and other tests do not have priority value, then testng assigns zero priority to those tests which do not have priority value and tests get executed with 0 priority in alphabetic order and atlast test with some priority gets executed. 
+
+can we have tests with -ve priority   -->   yes  -->  negative will execute first
+
+-45, -67, -1, 0, 2, 1  -->     -67, -45, -1, 0, 1, 2
+
+can we have tests with decimal     -->    yes   -->  but it should be type cast with "int"
+
+@Test(priority = (int) 4.5)
+
+can u prove StringBuilder is faster than StringBuffer with sample program
+
+
+
+
+
+
+
+
+
+
+
+
+
+java consider sum of 2 bytes is an int
+
+setclasspath=path tio bin folder of your project;path to lib folder where testng related jar files are located
+
+set classpath = C:\Users\user\Desktop\february\feb\saisolutions\bin;C:\Users\user\OneDrive\Pictures\Selenium\eclipse-jee-oxygen-R-win32-x86_64\eclipse\plugins\*
+
+ Now run testing.xml file using Java org.testng.TestNG "testngmxlfilename.xml"
+
+
+
+
+
+
+streams for 
+
+

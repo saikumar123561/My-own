@@ -1,0 +1,494 @@
+                                                TestNg  (from 8th April to 11th April)
+
+
+
+Q) what is TestNg?
+A) TestNG is a framework, which contains bunch of annotations. it is dedicately designed for java.
+
+==============================================================================================================
+
+to comment the lines in xml file :  <!--               -->
+================================
+
+Q) how u run mul TC's
+A) we can execute group of TC's using suite mechanism (xml file). we can represent a suite in the form of xml file, we can run the TC's based on classes and packages.
+
+----------------------------------------------------     
+<suite name="Suite">
+ <test thread-count="5" name="Test">
+  <classes>   
+  <class> name="packagename.classname"/>
+  <class> name="packagename.classname"/>
+  <class> name="packagename.classname"/>
+  </classes>
+ </test>
+</suite>
+-----------------------------------------------------
+
+<suite name="Suite">
+ <test thread-count="5" name="Test">
+  <packages>   
+  <package> name="packagename"/>
+  <package> name="packagename"/>
+  <package> name="packagename"/>
+  </packages>
+ </test>
+</suite>
+
+===============================================================================================================
+
+Q) i have a class in that class i have 100 test cases in that i want to execute only 2 
+
+A) then go for "xml with classes and then methods include"mechanism.
+
+<suite name="Suite">
+ <test thread-count="5" name="Test">
+  <classes>  
+  <class name="packagename.classname">
+  <methods> 
+     <include name="methodname"></include>
+     <include name="methodname"></include>
+  </methods>
+   </class>
+  </classes>
+ </test>
+</suite>
+
+===============================================================================================================
+
+Q how do u execute sanity | regression | smoke TC's?     by using grouping mechanism
+A) it allows us to group TC's.
+explanation: @Test level we have groups attribute. so we need to specify groups and seggregate the TC belongs to which group, after specifying it.
+we execute the TC's from xml file like after test we have tag called groups again under "groups" we have sub tag called "run" again in run we have sub tag called "include" (here specify it is "regression" | "sanity" | "smoke")
+
+
+What are groups in Testng?
+A) it allows us to group TC's.  we can run them from xml file we have option to run at group level. 
+all the regressions TC's going to execute no matter which class these are there. @Test(groups={"Regression"}).
+
+in my company we have no of groups usually regression group what we run and smoke group is also there. sometimes fn wise will create groups
+advantage is doesn't matter how many classes ur tc's are all will be grouped and run in step wiht the help of xml file
+
+any doubt refer 10th April
+=================================
+
+<suite name="Suite">
+ <test thread-count="5" name="Test">
+ <groups>
+  <run>   
+   <include name="ST"></include>
+   <include name="RG"></include>
+  </run>
+ </groups> 
+  <classes>
+   <class name="packagename.classname"/>
+   <class name="packagename.classname"/> 
+  </classes>
+ </test>
+</suite>
+
+
+===============================================================================================================
+
+any doubt refer 11th April
+=================================
+
+Q) i want to pass parameters to my TC  | how to run TC's based on parameters | what is parameterization in TestNG?
+
+by using this feature we can pass parameters to our TC from testng.xml file.
+for this, first i will go to xml file, at suite level i will take parameter tag inside -------
+to access that parameter values inside the TC we have @Parameters annotation inside it i will pass parameters, we can pass mul
+then we need to pass it to method
+so we are going to run the testng.xml file
+
+                                                       (or)
+@optional --> it is an annotation whenever we are not suppling the parameters from testng.xml file then this @optional is going to be executed
+
+if u supply the parameter from testng.xml file and @optional then the value which is supplied in testng.xml file will get as output.
+
+<?xml version="1.0" encoding="UTF-8"?>    --> xml scheme
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">    -->  doctype
+
+<suite name="Suite">
+ <test thread-count="5" name="Test">
+ <parameter name="practicehrs" value="9"></parameter>
+  <classes>   
+   <class> name="packagename.classname"/>
+   <class> name="packagename.classname"/>
+   <class> name="packagename.classname"/>
+  </classes>
+ </test>
+</suite>
+
+
+===============================================================================================================
+
+Q) i want to pass the parameter to mul test cases?
+A) when we required to pass the parameters to mul test methods then we can read them from constructor and store them into variable and pass them inside test methods.          
+                                                                         
+                                                                                check Pack package -->  ParaConstructor class
+===============================================================================================================
+
+Q)diff btw parameter and @Parameters
+parameter is an attribute which we define in xml to pass the parameters.
+parameters is an annotation which help us to read the parameter values from testng.xml file.
+
+===============================================================================================================
+
+any doubt refer 11th April
+=================================
+Q) i want to send bunch of mul sets of data and i want to execute mul no of times  | how to perform data driven testing
+
+whenever u want to execute the same test case for mul no of times with diff sets of data the go for dataprovider  (like same method with diff parameters)
+
+
+@Dataprovider is an annotation by using it we can send mul sets of data to our test method
+
+
+it help us to perform data driven testing
+by using this feature we can pass mul sets of data to our TC with the help of @DataProvider annotation
+for this i will take one method it returns two dimensional array and annotate it with @DataProvider
+to access these data in my TC, at Test level we have attribute called dataProvider we need to specify the name of the dataprovider
+                                                             ex: @Test(dataProvider = getData)
+then i will pass it to methods
+so when we execute the TC, at run time it identifies @DataProvider in our framework and fetch the data and TC is going to execute with first data set and next test case again execute with second data set
+
+
+
+standard syntax: 
+
+public Object[][] methodname()  {
+               return new Object[][] {
+
+       {"sai","kumar"},
+       {"sri","kanth"}};
+
+}
+
+dataprovider means 2 dimensional object  -->  represent in the form of rows and cloumns
+
+whenever u want to execute the same test case for mul no of times with diff sets of data the go for data provider
+
+
+example:
+===========
+@Test(dataProvider="getData")
+public void Gmail_Test(String un, Strin pw)
+{
+   Syos(un + pw);
+
+}
+
+@DataProvider
+public Object[][] getData() {
+Object[][] data = new Object[2][2]
+
+data[0][0]="kumarsai862@gmail.com"
+data[0][1]="sairokz"
+data[1][0]="saikool60@gmail.com"
+data[1][1]="saikumar"
+
+return data;
+}
+===============================================================================================================
+
+how will u perform data driven with @Dataprovider
+A) we will fetch the data from excel file using custom funtions and with the help of @Datprovider we can execute the same TC again and again with diff sets of data.
+
+=============================================================================================================
+
+
+Q) diff btw @Parameters and @DataProvider
+A) we can pass parameters to the test method
+we can pass mul sets of data to out test method and TC executes mul times.
+
+=============================================================================================================
+
+Annotations in TestNg
+
+before method and after method is going to execute the irrespective of the Test condition (true | false)
+note: we need to extends the base_Test to execute these BM & AM for other tests
+
+before suite and before test execute only one time
+
+before executing each class before class is going to be executed	
+after executing each class after class is going to be executed	
+
+
+=============================================================================================================
+
+interview questions:
+=========================
+
+
+Q) what is TestNG (test next generation)?
+A) TestNG is a framework, which contains bunch of annotations. it is dedicatedly designed for java. in java we have either TestNG or junit.
+
+=============================================================================================================
+
+Q) advantages of TestNg?    | why TestNg
+A) Controls the flow of test case execution
+TestNg provides the parallel execution  of test methods, tests, classes
+we can create the dependency between the test cases
+we can set priorities to our test methods
+we can execute group of test cases 
+we can pass parameters to our TC
+we can perform data driven testing using @Dataprovider annotaion   
+there are alot of assertion to validate like soft assert and hard assert
+we can generate Detailed html report 
+TestNG Listners   -->   IRetryAnalyzer, IAnnotationTransformer(to rerun failed test cases at run time), 
+ITestResult interface (to get the status of TC)
+
+=============================================================================================================
+
+Q) Annotations in TestNg
+A) 
+@Before Test    -->  executes before test
+@After Test     -->  executes after test
+@Before Class   -->  before class           if u give bc and bt first bt is going to execute
+@After Class    -->  after class
+@Before Method  -->  before test
+@After Method   -->  after test
+@Before Suite   -->  executes first
+@After Suite    -->  executes last
+@Before Goups
+@After Gruops
+@Test           --> to convey it as TC
+@DataProvider
+@Parameters
+
+=============================================================================================================
+
+Q) diff btw BeforeTest and BeforeMethod?
+BeforeTest is not related to TC it executes only once before executing all TC's inside that class
+BeforeMethod is related to TC it executes before executing every TC.
+
+https://www.javatpoint.com/testng-beforetest-annotation
+=============================================================================================================
+
+Q) Structure of xml file?
+
+<suite name="Suite>
+ <test thread-count="5" name="Test">
+   <classes>
+       <class name="xxxxxxx"/>              
+   </classes>
+ </test>
+</suite>
+
+=============================================================================================================
+
+Q) importance of testNG.xml file?
+
+to do all the configurations to run the testcase using TestNG.
+allows us to pass parameters
+allows to add the group to execute
+configure parallel execution
+exclude and include TC
+
+=============================================================================================================
+
+Q) what are diff asserts in TestNG?
+A) to verify | to do validations 
+
+=============================================================================================================
+
+Q) what is excecption test in TestNG?
+A) naveen automations 23:00     (at Test level we have attribute called "expectedExceptions = ElementNotFoundException"
+
+=============================================================================================================
+
+Q) how to set priority?
+A) inside the @Test annotation   -->   @Test(priority=0)
+
+
+Q) let's suppose we have 4 TC's, i have given priority for 2 TC's as 0 and 1 and other two i didn't provide anything how do they execute?
+A) Based on alphabetic order
+
+Q) let's suppose we have 2 TC's i have given priority as 1 for both. how do they execute?
+A) Based on alphabetic order
+
+
+=============================================================================================================
+
+Q) how to achieve data driven testing?
+A) with the help of @DataProvider annotation
+
+=============================================================================================================
+
+Q) how to run test cases in parallel  -->  imp    -->  29:00
+A) parallel execution is possible at method, test and class level      we have to use parallel attribute in xml file 
+<suite parallel="methods" name="Suite">          (inside the suite we need the give the entry of parallel)
+
+note: refer Automation Step by Step - Raghav Pal
+
+we can run methods, classes and tests in parallel
+thread-count  --> if thread count is less than no of methods|TC then we cannot execute TC's parallel. we can partially achieve parallel testing.
+
+
+=============================================================================================================
+
+Q) i want to execute only one test method for mul times in parallel?  i have a TC it is passing for 1st time, 2nd it is failing and 3rd time it is passing
+
+A) @Test(threadPoolSize=2, invocationCount=2)
+
+threadPoolSize defines no of threads
+invocationCount defines the no of time to executes my TC
+
+=============================================================================================================
+
+Q) how to exclude the a particular test method from test case?
+A) 
+
+<classes>
+ <class name="............">
+  <methods>
+    <exclude name="testcasename"/>
+ </methods> 
+ </class>
+</classes>
+
+=============================================================================================================
+
+Q) how to exclude the particular group from a TC execution?
+
+
+<groups>
+ <run>
+   <exclude name="......."/>
+ </run>
+</groups>
+
+=============================================================================================================
+
+Q) how to disable | ignore a particular test cases?
+A) inside the @Test(enabled=false)
+
+=============================================================================================================
+
+Q) how to create the dependecy btw the TC's | how TestNG allows to state dependencies?
+A) @Test(dependsOnMethods = "methodname")
+same thing u can use it for dependsOnGroups also
+
+=============================================================================================================
+
+Q) diff ways to produce the reports for TestNG results?
+A) we have index.html file in "test-output" folder
+with the help of ITest Listner and IReporter Listner
+
+=============================================================================================================
+
+Q) what is the use of @Listner in TestNG?
+A) 36:00 (to generate reports and logs)
+
+=============================================================================================================
+
+Q) how to execute testng in maven?
+A) we need to add surefire plugin in plugin tag than we need to take configuration tag in that we can specify the path of my xml file
+
+=============================================================================================================
+
+Q) how to use TestNG using cmd prompt?
+A) C:test
+-->  java c://testng.jar test.java
+
+=============================================================================================================
+
+Q) what is invocation count in @Test(invocationCount=x)
+A) if u want to execute same test case mul times
+
+
+Q) what is @Test(threadPoolSize=x)
+A) it will use at the time of unit level testing. it will work only when invocationCount is there
+
+=============================================================================================================
+
+Q) what is timeout in TestNG?   -->  mostly dev use it not testers
+A) It is a maximum time that test method can take for execution
+
+@Test(timeout=10000) --> for suppose if the particular TC is taking so much time so that we can specify the time limit to execute that TC within that given time, if it takes beyond it terminate the TC.
+
+=============================================================================================================
+
+Q) what is @Factory
+A) will execute all the 
+
+
+
+i have TestNG class with priority and without priority  methods. how will they execute? 
+A) it will execute as per the alphabetic order ignores the priorities
+
+can we have negative priority in TestNG  -->  yes
+
+
+before suite, before test, before class,  before method
+
+
+
+================================================
+
+supriya baru
+
+
+1) how to set the priority to tests in TestNG?
+A) inside @Test(Priority=0)   '0' being the high priority. in my app there are no of TC's as a QA enginner i know what tests need to run in what order
+
+
+2) What are groups in Testng?
+A) it allows us to group TC's. @Test(groups={"Regression"}). we can run them from xml file we have option to run at group level
+all the regressions TC's going to execute no matter which class these are there.
+
+in my company we have no of groups usually regression group what we run and smoke group is alos there. sometimes fn wise will create groups
+advantage is doesn't matter how many classes ur tc's are all will be grouped and run in step wiht the help of xml file
+
+=============================================================================================================
+
+3) annotations in java?
+A) 
+
+4) what are include | exclude methods in TestNG?
+A) i have 50 TC's so out of them there 4 TC'S I don't want them to run at particular. ex: not in scope for that release
+   so wt i want to include and wt i don't want to include. based on req we can use.
+
+
+5) what is xml config in TestNG?
+A) XML level execution is easy. it allows to run mul TC's at one step. we can run at package level. class level, group level, we can pass parameters
+in my project if we want to check the code locally we go to xml file and we have regression, smoke basic fn we grouped them all. so i always make sure i kick them of from xml file. and see whether they are running or not and check how the report looks before we integrate them to git.
+
+
+6) what is parameterization?
+A) in my project i have used this @Parameters to run the TC's based on the browser like chrome, firefox, ie ... it's a key value pair
+
+7) DataProvider
+A) it allows us to pass the parameters to test. to pass mul sets of data to our TC's 
+
+
+8) what is dependency in TestNG?
+A) to create dependency between the testcases we have @Test(dependsOnMethods={"TC3"})
+                       We have @Test(dependsOnMethods={"TC3"})  until my login group of TC's is run don't start another
+
+
+9) explain ur framework?
+A) 15:00 supriya baru
+
+
+10) why TestNG over JUnit?
+A) excellent annotations, grouping TC'S , parameterization, XML configuration, adding dependencies
+parallel testing is possible in TestNG
+
+
+i want to execute the TC's in particular package?
+A) 
+<test>   
+  <packages>          
+ 
+<package name="packagename.*"/>
+
+ </packages>
+
+</test>
+
+
+
+
+

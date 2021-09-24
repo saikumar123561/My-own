@@ -1,0 +1,98 @@
+
+
+severity vs priority
+===================
+
+when we raise any defecrt in JIRA tool we need to give severity and priority
+
+severity  -->  if the defect is impacting the customer or app workflow
+
+priority   -->  how soon we want dev to fix the defect  (imp of defect)   or   urgency of fixing the defects
+
+
+Type of severity:
+==============
+
+Blocker  -->  ur trying to login into the app but ur getting blank page or interanal server error
+
+critical  -->  if the main / basic fn of the app is not working. customer bussniness workflow is completely broken.
+
+major   -->   like when we are buying the product, the amt got paid but i am not getting any confirmation through message, email
+
+minor   -->  look and feel of the app, spelling mistakes, alignment issues
+
+
+
+Types of priority
+================
+
+Highest    -->    which dev has to fix it immediately
+
+high  -->  dev has to fix in the comming builds
+
+low    -->    dev has to fix in the comming releases
+
+lowest    
+
+
+
+high severity and high priority : ur trying to login into the app but ur getting blank page or internal server error   or login button is missing     -->  immediaetely
+
+high severity and low priority : suppose there is link called "About us" but it is taking to blank page. since it is not impacting the customer workflow and customer not frequently visists the page.    -->   upcoming builds
+
+high priority and low severity : lets say in our app login page there is spelling mistake in username and customer frequently visits the page.  or app log     -->  immediaetely
+
+low severity and low priority : suppose there is link called "Contact us" when customer click it, the field "email id" having a spelling mistake.  since it is not impacting the customer workflow. and also the customer won't visit the page most often.
+
+Font issues, alignment issues
+
+
+severity given by QA or BA
+priority decided by Dev
+===============================================================================================================
+
+
+Q) defect severity vs defect priority?
+
+severity
+==========
+Bussiness impact, legal impact, financial impact, no of users impact, impact on brand
+
+Critical severity: if the defect is impacting many users.
+legal impact, No work around, impacting the transactions
+
+High severity: 
+
+
+Low severity: Font issues, alignment issues, no users impacted
+
+
+
+Priority: urgency of fixing the defects
+
+dev have daily bug triage meetings
+
+-->  technical impact, dependencies, order of fixing the defects, time required to fix, how much time we have to release the code
+
+dependencies   -->    if D3 is fixed then only we can fix D2, fixing D3 is very imp because 90% test execution is block, fixing D5 is evening we have customer review
+
+
+
+severity given by QA or BA
+priority decided by Dev
+
+ex: high severity and high priority
+
+blank screen
+technical error page cannot be displayed
+key fn is missing or major failure
+
+
+low severity and low priority
+
+spelling mistake, the field should dislay should display right hand side instead of dispalying center, format issues (alignment issues)
+
+
+High severity and low priority :  there is no urgency to fix the defect but the impact is very high. it won't impact the fn of the app| flow of the app
+
+High priority and low severity

@@ -1,0 +1,114 @@
+1) why do we need typecasting?
+A) in order to execute the methods from that class (JavaScriptExecutor, TakeScreenshot)
+
+
+2) i have one webpage in that i have a radio button with id = practice, i want to click that radio button
+
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		
+		List<WebElement> totalElements = driver.findElements(By.cssSelector("*"));
+		
+		for (WebElement ele : totalElements) {
+			
+			String attribute = ele.getAttribute("type");
+			
+			if (attribute!=null && attribute.equalsIgnoreCase("radio")) {
+				
+				ele.click();
+			}
+		}
+
+
+==========================================================================================================
+
+3) i have one data typing intput box i am trying to perform click operation i am trying to send data but it's not able to perfrom the action
+
+==========================================================================================================
+4) 
+
+
+before java 1.7 inside the interface we can only take abstract methods
+from java 1.8 inside the interface we can take default methods and static methods
+from java 1.9 inside the interface we can take private methods aswell
+
+when do we go for default methods?
+A) whenever u want the default implemenations available to child class, and if the child class wants they can override that implementations aswell.
+
+
+when do we go for static methods?
+A) whenever the implementations are constant, no one is allowed to change the behaviour, the implemenations are final, i want to make it as readonly method.
+
+==========================================================================================================
+What is selenium WebDriver?
+
+A) it is a main component of selenium. it contains collection of API's to automate web application.
+
+this api consists of classes and interfaces. each individual class have predefined methods using which we can automate web app.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+what is Selenium Grid?
+One of the component of selenium. it is used for distribution of automated test across mul machines having diff OS, browser and browser versions for execution.
+
+Selenium IDE  --> record and playback tool
+Selenium RC    --> Depricated
+Selenium Grid  
+Selenium WebDriver
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What are the different types of APIs in Selenium WebDriver? 
+
+Selenium WebDriver itself an API. where WebDriver is an interface consists of child classes like ChromeDriver, ................
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Which WebDriver implementation claims to be the fastest?
+
+Chrome Headless Browser
+                                                                        ----->   we cannot see GUI                      (older htmluniDriver)
+Firefox Headless Browser
+
+ex:
+
+ChromeOptions options = new ChromeOptions();
+
+options.addArguments("headless");
+
+WebDriver driver = new ChromeDriver(options);
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What are few Open Source Frameworks supported by Selenium WebDriver?
+
+Appium, Protractor, WebDriverIO, Robot Framework and many more
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What are different types of Selenium WebDriver Exceptions you have faced?    -->   we can handle through try catch block
+
+NoSuchElementException : this exception occurs if the element could not be found.       -->    waits
+
+ElementNotInteractableException: if we try to interact to the element which is not visible on the webpage.   -->  ajax component
+
+ElementNotVisibleException: this exception occurs when an existing element in DOM has a feature set as hidden  -->  overcome with javascriptexecutor.    -->   type = hidden
+
+StaleElementReferenceException: this exception occurs if the element is either removed or no longer attached to DOM.
+
+ElementNotSelectableException: this exception occurs when an element is present in DOM but not able to interact.
+
+NoSuchFrameException: whenever we are trying to switch frame that does not exists.
+
+NoAlertPresentException: whenever we are trying to switch Alert that does not exists.
+
+NoSuchWindowException: whenever we are trying to switch invalid window or window is not exists
+
+InvalidSelectorExcpetion: if the xpath is not according to the rules | problem with xpath syntax
+
+NoSuchSessionException: performing the actions after closing the browser.
+
+TimeoutException: whenever the element is not displayed within that specific time like implementing waits.
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------

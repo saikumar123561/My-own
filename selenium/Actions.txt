@@ -1,0 +1,35 @@
+
+
+
+
+actions.sendKeys(email, "kumarsai862@gmail.com").perform();      -->   data typing
+
+actions.click(login).perform();                         -->    click
+
+actions.sendKeys(login, Keys.ENTER).perform();	       -->   ENTER
+
+actions.doubleClick(login).perform();              -->   double click
+
+actions.contextClick(ele).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).perform();           -->     right click
+
+actions.moveToElement(ele).perform();          -->   mouse over action
+
+actions.drapAndDrop(src, tar).perform();           -->            drag and drop
+
+actions.clickAndHold(ele).moveToElement(ele).release().perform();      -->   drag and drop
+
+actions.sendKeys(Keys.TAB).perform();                                        -->   tab
+
+actions.sendKeys(ele, Keys.ENTER).perform();                   -->        enter
+actions.sendKeys(Keys.ENTER).perform(); 
+
+actions.sendKeys(Keys.CONTROL, "t").perform();                                     -->        ctrl + 
+
+actions.sendKeys(Keys.chord(Keys.CONTROL, Keys.SHIFT), "t").perform();                 -->   ctrl + shift
+
+ 
+
+
+
+
+

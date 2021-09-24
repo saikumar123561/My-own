@@ -1,0 +1,110 @@
+
+use   https://www.hyrtutorials.com/p/alertsdemo.html  -->  for practice
+
+what is alert?
+A) alert is an interface which is coming from org.openqa.selenium.Alert
+     we cannot inspect inside the alerts
+
+
+Q) how do u handle alerts or popups?
+
+we can handle alerts using "alert api" 
+
+   Alert alert = driver.switchTo().alert();                 
+   alert.accept();
+   alert.dismiss();
+   alert.sendkeys();
+
+System.out.println(alert.getText());                          -->   first get text next click on ok       -->  to check the message of alert
+		
+		alert.accept();	                                             
+
+   driver.switchTo().defaultContent();
+
+
+===============================================================================================================
+
+diff types of popups
+======================
+
+confimation popups  -->  ok|cancel,  yes|no   (one +ve and other -ve)             --->  we need to handle with accept(); | dismiss();
+
+simple alert   -->    just ok                                --->  we need to handle with accept();    
+
+prompt alert    -->   contains input text box        --->  we need to handle with sendKeys();
+
+
+===============================================================================================================
+
+Q) how do u handle window based alerts or popups? | how can u upload files |how to handle file upload popups
+
+A) window based alerts u should not click them     naveen automations: 17:00
+
+
+like browser, attach, upload, add  for all these the common attribute "type = file"       -->  inspect that button, find "type=file"
+
+driver.findElement(By.xpath(".....")).sendKeys("filepath");  -->  for this attribute "type=file" is must
+
+whenever the element is having attribute type = file  -->  we can upload the file using sendKeys mechanism
+
+
+===============================================================================================================
+
+How to handle browser popups?
+naveen automation
+
+===============================================================================================================
+https://the-internet.herokuapp.com/basic_auth
+
+Q) how do u handle authentication alerts or popups?  --> naveen automation
+A)  if login page is not available then it will ask credentials in the form of authentication popup.
+
+main frame app, IT administration site 
+
+with the "URL" itself we can pass
+
+ driver.get("http://username:password@url");    
+
+
+inspect the element to get the confirmation text
+
+=============================================================================================================
+
+we can interact the webelments on the webpage
+if we want to interact with the webelements inside the frame directly.  
+
+driver.switchTo().frame();           -->   through id/name, frame webelement, index (not recommended becuause in future there might add                                                                                                                                                                                                                                               more frames)
+
+driver.switchTo().frame(1);
+driver.switchTo().frame("id");                         -->   through Id
+
+driver.switchTo().frame(driver.findElement(By.xpath("xxxxx")));      --->  throubh webelement
+
+driver.switchTo().parentFrame();
+
+driver.switchTo().defaultContent();
+
+
+
+=============================================================================================================
+package selenium  -->  rough class
+package window   -->   Windowsss class
+
+windows
+=========
+
+Set<String> windows = driver.getWindowHandles();
+
+for(String win : windows) {
+        
+
+}
+
+driver.switchto().window()
+
+
+
+
+
+
+

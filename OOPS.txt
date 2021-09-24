@@ -1,0 +1,146 @@
+
+Abstraction, data hiding, Encapsulation, Tightly copled classes     -->  used to achieve security
+
+inheritance (IS-A), HAS-A Relationship, Polymorphism (method oveloading, method overriding)   -->  used to achieve code reusability
+
+======================================================================================================
+
+Data hiding: it is a process to hide the data to achieve security. 
+
+achieve: by declaring variables as private (these can be achieved by using private access modifier)
+
+======================================================================================================
+
+encapsulation: it is a mechanism of wrapping the data and code acting on data(methods) in one single unit.  (data means variables)
+
+we can achieve security through encapsulation
+
+achieve: 
+-->  by declaring variables as private
+-->  providing public getter and setter methods to initialise and view the data  
+
+see example in saisolutions  -->   pack   -->  Company class
+
+======================================================================================================
+
+Data Abstraction: Abstraction is by hiding the internal implementation and just highlighting the set of sevices that we are offering.
+
+achieve:  
+-->  through abstract class    (where we can achieve 0-100% abstraction)
+-->  through interfaces   (where we can achieve 100% abstraction)
+
+we can achieve security through abstract and interfaces
+
+we cannot create object of abstract class and interface as well but we can create reference
+
+to implement abstraction -->  inheritance and overriding cocepts will involve
+
+a method without body is know as abstract method   (concrete methods have method body)
+
+see example in saisolutions  -->   pack   -->  Srrr class
+======================================================================================================
+
+Polymorphism: Representing one thing in many forms 
+
+2 types
+
+-->  compile time polymorphism -->  we can achive through method overloading  -->  compiler will handle
+
+-->  runtime polymorphism -->  we can achive through method overriding  -->  jvm will handle
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+overloading: same method names with diff argument inside the same class  (methods should be in same class) is the concept of method overloading.
+
+conditions: same method name, diff arguments, same class
+diff arguments   -->  no of arg, sequence of arg, type of arg   -->  should satisfy atleast one condition
+
+if we change the return type of method -->  we can achieve overloading
+can we overload the main method   -->  yes
+
+automatic promotion  -->  polymorphism 26:00  -->  smart programming
+
+Object class is the parent of all the classes in java
+
+public void start(int... a)   -->  varargs came in 1.5 version  (how many arguments we want those many we can take)  -->     38:00
+int  --> introduced in java 1.0
+
+case 3:   31:00 listen    -->   t.show(new StringBuffer("sai"));
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+overriding: so by using inheritance whatever the parent is having by default available to child and if child is not satisfied with parent class implementations then child has ability to override it's methods by using the concept of overriding. 
+
+condition: 
+same method name, same arguments, diff class  (methods should be in diff class), inheritance(IS-A Relationship)
+child class method type should be equal to parent class method type or child type
+child class asscess modifier should be equal or higher than parent class access modifier 
+if parent class method is not throwing any exception then child class can only throw unchecked exception
+if parent class method throws any exception then child class can only throw same exception or child class exception
+
+final, static, private methods cannot be overriden     -->  private accessibility is within the class only
+
+synchronized methods can be overriden and from normal to synchronized also possible
+
+
+from 1.5 we can provide diff return types in methods    -->  yes (child method should be equal or child of parent type)
+
+42:00 --> imp
+======================================================================================================
+
+diff btw IS-A Relationship and Association (HAS-A Relationship)?
+
+HAS-A Relationship   --> creating one class object into another class is known as HAS-A Relationship.
+we can implement through ref variable or new keyword
+
+in case of inheritance both classes are tightly coupled, whereas in case of HAS-A Relationship both classes are not tightly coupled
+
+refer 9th march wordpad
+
+======================================================================================================
+
+Constructor: Constructor is a block having same name as classname 
+
+the purpose of constructor is to provide initialisation of objects.
+
+-->  does not have return type
+-->  constructor name should be same as classname
+-->  access modifiers should be public, protected, default, private
+-->  executes automatically when we create an object
+
+types of constructors: default, no arg constructor, parameterized constructor
+
+======================================================================================================
+
+static keyword
+----------------------
+static can declare at variable(class level), method, block, inner class                             static local variable and outer class  --> no
+static keyword belong to class not object. 
+so static method/variables can be accessed by classname no need to create object. Object occupies memory.
+hence we can used for memory management. so that program speed will increase.
+
+static variable:
+-----------------------
+if variable declared as static then single copy of variable is created and shared among all objects at class level.
+
+static method
+----------------------
+static method cannot refer to this or super keyword
+
+======================================================================================================
+
+
+by using scanner class we can take input from users
+
+
+
+
+
+
+
+
+
+
+
+
+

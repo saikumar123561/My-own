@@ -1,0 +1,33 @@
+
+
+i am saikumar, i am having around 3+ years of experience into IT and it is totally into Software testing. 
+and currently i am working in CREST INFORMATICS as a Test Engineer and the project which i am working on is provider integrated format and it is a healthcare domain.
+
+we are using selenium webdriver with java for automation, writing the TC in testng and implementing POM desing with Data Driven framework.
+tools we are implementing are for SCM we are using Git, most of our projects are java based so we tend to use Maven and for CI/CD we are using jenkins. and we are following agile methadology, we usually have 2 weeks of sprint.
+
+
+
+This is what i have been doing for the past 3.5 years.
+
+i feel ready to take my career to the next level and currently looking new oppurtunity
+
+==============================================================================================================
+
+
+
+
+
+
+
+whenever we have new build we run our automation TC's we run our regression TC's
+testing the app whenever we find bug we report it and retest
+
+we usually have 2 weeks of sprint.
+
+
+i am really excited if i join the job here i could serve all the my responsibilities to the company and serve my best that's all iam looking for
+
+
+
+in every sprint we enhancing our framework

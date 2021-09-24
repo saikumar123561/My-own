@@ -1,0 +1,64 @@
+
+Q) what is Selenium?
+
+Selenium is an automation tool used for automating web app. it supports mul browsers, languages and platforms.
+
+==========================================================================================================
+
+Q) diff forms of Selenium?
+
+Selenium WebDriver: used to automate web app
+Selenium Ide: record and playback tool
+Selenium RC: depricated
+Selenium grid: allow the test scripts to run on mul machines having diff OS, browsers, browser versions
+
+==========================================================================================================
+
+Q) advantages of Selenium?
+
+open source
+supports mul languages
+supports mul browser testing
+platform independent 
+all predefined methods
+
+==========================================================================================================
+
+Q) limitations of Selenium?
+
+we cannot test desktop app
+we have to rely on external libraries for performing tasks like reading external files (like excel POI), to generate reports, testing framework(testng, junit), logging(log4j)
+
+==========================================================================================================
+
+Q) browser supported by selenium?
+
+ios, appium
+
+==========================================================================================================
+
+Q) can we test API's using selenium?
+
+no, we cannot. since api's are headless.
+
+==========================================================================================================
+
+Q) what testing type supported by selenium webdriver?
+
+can be used for automated fn and regression testing
+
+==========================================================================================================
+
+Q) ways to located webelements in selenium?
+
+id, xpath, css, name, classname, ....
+
+==========================================================================================================
+
+Q) what is xpath?
+
+also called as xml path, it's a query language
+
+==========================================================================================================
+
+Q) what is absolute

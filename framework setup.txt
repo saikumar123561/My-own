@@ -1,0 +1,62 @@
+
+
+Selenium 3.141.59
+
+
+selenium jars, testng install
+
+add jars  ------------>  right click on project  -->  build path  -->  configure build path -->  add external jars
+
+download testng   ----------------->        help  -->  eclipse marketplace  -->  type testng  -->  install
+to verify testng is installed or not  ------------->       right click on project  -->  new  -->  other  -->  type testng
+
+for reports   --------------->         extentreports api,   freemarker 2.3.30
+
+when i moved to automation the framework was already setup  -->  so i involve into creating pageclasses and creating test methods and generating TC execution reports using extentreports api
+
+weekly -->  10 TC's
+converting manual TC's to automation   -->  if defects found  --> sending to manul testers if defect is correct then raising the defect
+page classes, TC's 
+
+
+how to take screenshots  -->  14 april (30:00)
+
+C:\Users\user\Desktop\february\feb\.git
+
+documentation    -->  means writing like anna
+coding standards   -->  variables, methods, ..
+selenium concepts   -->    
+locator strategy     -->   traverse from parent to child, ancestor  
+framework design    -->    report, basetest, config, ..........
+execution   -->    chrome.exe file,  (mac, windows, ....) 
+use validations
+
+
+
+
+
+public HomePage login(String un, String pw) {
+     username.sendKeys(un);
+     password.sendKeys(pw); 
+     login.click();
+
+  return new HomePage();
+
+}
+ 
+
+test class
+homePage.login(prop.getProperty("username"), prop.getProperty("password"));
+
+
+
+
+
+
+
+
+
+
+
+
+

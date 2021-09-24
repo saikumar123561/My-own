@@ -1,0 +1,85 @@
+
+Total 6 features
+
+
+New features of Selenium 4.0
+==============================
+
+-->  we can take the screenshot of specific web element   -->  using 
+
+WebElement email = driver.findElement(By.xpath("xxxxxx"));
+File srcfile = email.getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(srcfile, new File("location"));
+
+==============================================================================================================
+
+-->  we can take the screenshot of group web element    -->  same as above 
+
+
+==============================================================================================================
+
+--> Capturing Height and Width of WebElement
+
+in selenium 3
+============			
+WebElement email = driver.findElement(By.cssSelector("#email"));
+			
+Dimension size = email.getSize();          //getSize available in 4 also
+			
+System.out.println(size.getWidth());
+System.out.println(size.getHeight());
+
+            Point point = email.getLocation();
+            System.out.println(point.getX());
+            System.out.println(point.getY());
+
+
+in selenium 4
+===================
+
+Rectangle rec = email.getRect();
+
+System.out.println(rec.getWidth());
+System.out.println(rec.getHeight());
+
+            System.out.println(rec.getX());
+            System.out.println(rec.getY());
+
+==============================================================================================================
+
+-->  in selenium 4 we can invoke new blank tab / window using newWindow();     
+
+driver.switchTo().newWindow(WindowType.TAB).get(url);    //(WindowType is an enum class
+
+driver.switchTo().newWindow(WindowType.WINDOW).get(url);  
+
+==============================================================================================================
+
+along with previous locators we have 
+above: to locate webelement just above the specified element
+below: to locate webelement just below the specified element
+to left off: to locate webelement to left off the specified element
+to right off: to locate webelement to right off the specified element
+near: to locate webelement apporximately 50px away from the specified element
+
+==============================================================================================================
+
+--> we have minimize and maximize methods while in 3.0 we have only maximize
+
+driver.manage().window().minimize();
+==============================================================================================================
+
+--> it does not support opera browser    (not under active dev)
+
+
+
+
+
+--> chromedriver and edgedriver inherited from chromedriver where as in selenium 3.0 chromedriver and edgedriver inherited from RemoteWebDriver
+
+
+--> we have method to take snapshot of the Firefox browser   -->   getFullPageScreenshot() it need to be type casted to firefox instance
+
+--> selenium 4 is based on W3C and 3 was using JSON wire protocol
+
+

@@ -1,0 +1,99 @@
+
+
+CSS -->   cascaded style sheet
+
+JavaScriptExecutor
+==================
+
+Q) what is JavaScriptExecutor?
+
+JavaScriptExecutor is an interface in Selenium WebDriver. so, whenever we cannot able to perform click or datatyping actions using Selenium methods then we can go for JavaScriptExecutor. or to identify hidden elements and there is no method in Selenium to highlight elements, to perform scroll operations. it consists of 2 methods executeScript() and executeAsyncScript();
+
+
+Q) How to find the elements using JavaScriptExecutor?
+
+-->   document.getElementById('email')                                        Through ID
+
+-->   document.getElementsByName('email')                             Through Name
+
+-->   document.getElementsByClassName('inputtext')[0]       Through ClassName
+
+-->   document.getElementsByTagName('input')[2]                  Through TagName
+
+
+-->  document.querySelector('#email')                                         Through CSS Selector
+
+-->  document.evaluate("//input[@id='email']"),document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;
+
+document.evaluate(xpathExpression, contextNode, nameSpaceResolver, resultType, result).singleNodeValue
+
+
+=============================================================================================================
+
+Highlight the Elements            -->                border, background, border + background
+===================
+
+-->    document.getElementById('email').style.border='2px red solid'
+
+-->    document.getElementById('email').style.background='yellow'
+
+By using setAttribute we can pass mul attributes
+
+-->    document.getElementById('email').setAttribute('style','border:3px solid red;background:yellow');
+
+-->   document.getElementById('email').setAttribute('style','border:2px solid red; background:yellow; color:white');   -->   text color
+
+jse.executeScript("arguments[0].setAttribute('style','background: yellow; border: 2px solid red')", searchBox);
+=============================================================================================================
+
+
+hidden elements  
+===============
+ElementNotInteractable    -- for hidden elements   -->  javascriptexecutor
+
+jse.executeScript("document.getElementsByClassName('gLFyf gsfi').value='saikumar';");
+
+
+read javascriptexecutor variable
+=================================
+
+String title = (String) jse.executeScript("return document.title");
+
+sendKeys
+===========
+jse.executeScript("arguments[0].value='xxxxxx';", search);
+
+document.getElementById('email').value='saikumar';
+
+click()
+===========
+
+jse.executeScript("arguments[0].click()", search);
+
+
+scroll                           -->     scroll/scrollTo (from starting), scrollBy(where the cursor there), scrollIntoView
+==========
+
+jse.executeScript("window.scrollBy(0, 600)");         -->  scroll down
+ 
+jse.executeScript("window.scrollBy(0, -200)")        -->   scroll up
+
+jse.executeScript("arguments[0].scrollIntoView(true);", dd);       -->  scroll till the element found
+dd.click();
+
+
+
+window.scrollTo(0,500);
+jse.executeScript("window.scrollTo(0,500);");
+
+window.scrollBY(0,500);            -->  from current location it will scroll
+		jse.executeScript("window.scrollTo(0,500)");
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBY(0,500)");
+
+document.querySelector('img[alt='Advertisement']').scrollIntoView();
+
+
+
+
+

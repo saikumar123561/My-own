@@ -1,0 +1,189 @@
+
+Q) in maven project what would be the project name?
+A) Artifact id
+
+
+
+String sai = "kumar";
+
+String reverse = "";
+for(int i=sai.length()-1; i>=0; i--)
+{
+         char c = sai.chatAt(i);
+         reverse = reverse + c;
+
+}
+System.out.println(reverse);
+
+
+class  {
+
+
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+
+}
+
+
+git checkout <branchname>
+git checkout -b <branchname>
+
+
+
+Q) Can we have Try block without using Catch block in Java ?
+A) yes we can use without using catch block but there should be a finally block.
+
+
+Q) Why to write WebDriver driver=new ChromeDriver() instead of ChromeDriver driver=new ChromeDriver()?
+
+A) we run our selenium automation code on diff browsers. then this is recommended approach.
+then everytime we need to update the script. it is not a standard practice. 
+so if we go with WebDriver driver=new ChromeDriver() then we need not to change everywhere just change in place of chromeDriver FirefoxDriver
+
+
+Q) What is the meaning of WebDriver driver = new ChromeDriver() in Selenium WebDriver?
+
+A) we are creating a ChromeDriver instance and storing it in a variable called driver, which is of type WebDriver interface.
+
+------------------------------------------------------------------------------------------------------------------
+
+Q) PRE & POST Increment Operators In Java| Java Interview Question
+
+POST  -->  first it will initialise and then it will increment
+
+PRE   -->  first it will increment and then it will initialise
+
+	public static void main(String[] args) {
+
+		int b;
+		int a = 3;
+		b = a++;
+		
+		System.out.println(a);     //4
+		System.out.println(b);     //3
+		
+		int x;
+		int y = 2;
+		x = ++y;
+		
+		System.out.println(x);    //3
+		System.out.println(y);    //3
+	}
+
+------------------------------------------------------------------------------------------------------------------
+Q) Difference between System.out.println() and System.out.print()
+
+      println() moves the cursor after printing the result
+      print() keeps the cursor on the same line
+
+
+===========================================================================================================
+
+What is selenium WebDriver?
+
+A) it is a main component of selenium. it contains collection of API's to automate web application
+
+===========================================================================================================
+
+Q) diff btw xpath and css?
+
+A) both are used to identify the webelements on the webpage based on locator mechanism
+
+xpath allows two directional from parent to child and child to parent whereas CSS allow only one directionl i.e; parent to child
+
+xpath is slower in terms of performance and speed compare to CSS.
+
+using xpaht we can locate the WebElement based on the attributes available on the screen whereas in CSS we have special characters to represent attributes and functions like 
+# represents id,                                   . represents classname,                           * represents contains,                  $ represent ends-with,     
+^ represents starts-with,                  > represents /,                                             space represents // 
+ 
+===========================================================================================================
+
+Q) what is fluent wait?
+
+A) it is an advanced version of Explicit Wait
+
+either we can use WebDriverWait or FluentWait explicity waiting for a specific WebElement
+
+WebDriverWait  -->  Default polling time (500 ms -> half second)   -->  every half second it will check for the element     15:00  -->  QA fox
+we cannot customize the polling time.
+
+FluentWait    -->  customized Polling time (1 second)        -->   it will check based on customized polling time  
+we can ignore the exceptions also
+
+===========================================================================================================
+
+Q) Without using sendKeys() command entering text into text fields
+
+WebElement ele = driver.findElement(By.xpath("xxxx"));
+JavaScriptExecutor jsp = (JavaScriptExecutor) driver;
+
+jsp.executeScript(ele, "arguments[0].value='saikumar'");
+
+===========================================================================================================
+
+Q) How to press Enter key using Selenium WebDriver?
+
+in selenium webdriver library we have predefined class called Keys
+Keys is an enumclass, so for each and every key on the keyboard we have constans called ENTER, shift, ..............
+
+driver.findElement(By.xpath("xxxxx")).sendKeys(Keys.ENTER);        //instead of click 
+
+===========================================================================================================
+
+Q) How to pause execution using Selenium WebDriver?  
+
+java   -->   Thread.sleep(5000);
+
+selenium     -->   we have wait() in webdriver interface
+first we need to create a synchronized block and inside it we need to write  driver.wait(5000);
+
+synchronized (driver)   {
+
+driver.wait(5000);
+
+}
+
+===========================================================================================================
+
+Q) What happens if we run this command driver.get(“www.google.com”);?       -->      we get InvalidArgumentException
+
+A) it is not the complete url, in order to make it complete we need to provide https:// at the beggining
+
+===========================================================================================================
+
+Q) What is an alternative to get() command in Selenium WebDriver? 
+
+driver.navigate.to("https://www.google.com");
+
+===========================================================================================================
+
+Difference between get(“URL”) and navigate().to(“URL”)?
+
+A) both does the same work
+
+get: less time to type
+
+navigate:                     driver.navigate().back();,                driver.navigate().forward(),                      driver.navigate().refresh();
+                                 to click on browser back button                      forward button                                              refresh the browser
+===========================================================================================================
+
+
+
+
+
+
+
+
+

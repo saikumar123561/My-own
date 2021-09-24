@@ -1,0 +1,74 @@
+
+Git
+=======
+
+Q) Version control system:
+
+Q) Git
+
+Q) Diff btw Git and SVN?
+
+Q) Diff btw Git and Git Hub?
+
+Q) How will you know in GIT if a branch has been already merged into master?
+
+Q) clone, pull, merge, fetch
+
+Q) user management
+
+Q) how to clone specific branch
+
+Q) what is cherry pick in Git?
+
+Q) fast forward merge vs 3 way merge 
+
+Q) git push -u origin feature
+
+Q) git remote -v
+
+
+
+===============================================================================================================
+
+MVN
+========
+
+Q) what is maven?
+
+Q) what is POM?
+
+Q) imp sections of POM.xml
+
+Q) Structure of POM: 
+
+Q) maven has 3 life cycles: 
+
+Q) Explain what is Maven Repository? What are their types?
+
+Q) maven standard structure (POM.xml)
+
+Q) dependency scope
+
+Q) diff btw ANT and MAVEN?
+
+Q) how to skip the tc's?
+
+
+===============================================================================================================
+
+Q) what is jenkins?
+
+Q) diff btw build periodically and poll scm?
+
+Q) what is continuous integration?
+
+Q) what is continuous delivery?
+
+Q) what is continuous deployment? 
+
+Q) master slave configurations?
+A) to distribute jenkins server load and to build parallel jobs.
+
+Q) what is quiet period in jenkins: run jobs one after another between them wt is the time u need the time interval btw them then the other job will come to build queue
+
+Q) cron job

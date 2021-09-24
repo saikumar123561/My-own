@@ -1,0 +1,34 @@
+
+
+
+How to report a defect?
+
+-->  first check is there any duplicate
+-->  we should not immediately report the defect (u can discuss the defect with ur peers, think in all directions)
+-->  
+
+--------------------------------------------------------------------------------------------------------------------------------
+Summary: small step for defect
+
+Description: steps to reproduce:
+                         Expected Result:
+                         Actual Result:
+
+
+Attachment
+
+Severity: critical, high, medium, low
+
+Application:
+
+Feature:
+
+Release:
+
+Sprint:
+
+Team:
+
+Detected i:  sprint 1, 2, 3, .....
+
+--------------------------------------------------------------------------------------------------------------------------------
